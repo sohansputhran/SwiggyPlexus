@@ -8,8 +8,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RestaurantPage } from "../pages/restaurant/restaurant";
-import {DessertPage} from '../pages/dessert/dessert';
-import {MainCoursePage} from '../pages/main-course/main-course';
+
 import {StarterPage} from '../pages/starter/starter';
 import { ItemDetailPage} from './modals/itemdetail/itemdetail';
 
@@ -24,8 +23,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     RestaurantPage,
-    DessertPage,
-    MainCoursePage,
     StarterPage,
     ItemDetailPage
   ],
@@ -41,8 +38,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     RestaurantPage,
-    DessertPage,
-    MainCoursePage,
     StarterPage,
     ItemDetailPage
   ],

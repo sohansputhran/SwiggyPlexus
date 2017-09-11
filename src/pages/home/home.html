@@ -5,42 +5,61 @@
 </ion-header>
 
 <ion-content>
+
     <ion-card>
         <ion-card-header>
-            Restaurants
+            <h1>RESTAURANTS</h1>
         </ion-card-header>
+
         <ion-card-content>
-            <ion-list>
-                <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-                          <ion-grid>
+            <button ion-item *ngFor="let item of items" (click)="selectedItem(item.name)">
+                 <ion-card>
+                    <ion-card-content>  
+                             
+                        <ion-grid>           
                             <ion-row>                
-                          <ion-col col-4>
-                            <ion-img item-left width="100" height="60" src="{{item.image}}"></ion-img>
-                          </ion-col>
-                      
-                          <ion-col col-8>
-                              <h1>{{item.name}}</h1>
-<hr>
-                              <ion-grid>
-                                  <ion-row>
-                                      <ion-col col-8>
-                                          <ion-icon name="compass">  {{item.location}}</ion-icon>
-                                        </ion-col>
-                                        <ion-col col-4>
-                                          <ion-icon name="star">  {{item.rating}}</ion-icon>
-                                        </ion-col>
-                                    </ion-row>
-                                  </ion-grid>
-                                
 
-
-                          </ion-col>                            
-                          
+                                <ion-col col-4>
+            
+                                    <img item-left src="{{item.image}}">
+            
+                                </ion-col>
+            
+                                <ion-col col-8>
+                                    
+                                        <h1 style="float: left">{{item.name}}</h1>
+                                        <br>
+                                        <hr width="auto">                                                                            
+                                </ion-col>
                             </ion-row>
-                          </ion-grid>
-<hr>
-                        </button>
-            </ion-list>
+                        </ion-grid>                                
+                                <ion-grid>
+            
+                                    <ion-row>
+                                        
+                                        <ion-col col-8>
+            
+                                            <p style="float: left">
+            
+                                                <ion-icon name="navigate">{{item.location}}</ion-icon>
+                                            </p>
+            
+                                        </ion-col> 
+            
+                                        <ion-col col-4>
+            
+                                                <p>
+                                                    <ion-icon name="star">{{item.rating}}</ion-icon>
+                                                    
+                                                </p>
+                                        </ion-col>                                                                            
+                                        </ion-row>
+                    
+                                    </ion-grid>
+                                
+                    </ion-card-content>
+                </ion-card>
+            </button>
         </ion-card-content>
     </ion-card>
 </ion-content>
