@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler,ModalController } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { HttpModule } from '@angular/http';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -12,6 +13,13 @@ import {DessertPage} from '../pages/dessert/dessert';
 import {MainCoursePage} from '../pages/main-course/main-course';
 import {StarterPage} from '../pages/starter/starter';
 import { ItemDetailPage} from './modals/itemdetail/itemdetail';
+//Components
+import {AccordianComponent} from '../components/accordian/accordian';
+import {ItemheaderComponent} from '../components/itemheader/itemheader';
+import {ItemgridComponent} from '../components/itemgrid/itemgrid';
+import {BasiccardComponent} from '../components/basiccard/basiccard';
+import {ImagecardComponent} from '../components/imagecard/imagecard';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,14 +31,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
+    AccordianComponent,
     RestaurantPage,
     DessertPage,
+    ItemheaderComponent,
+    ItemgridComponent,
+    BasiccardComponent,
+    ImagecardComponent,
     MainCoursePage,
     StarterPage,
     ItemDetailPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -40,7 +53,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
+    AccordianComponent,
     RestaurantPage,
+    ItemheaderComponent,
+    ItemgridComponent,
+    BasiccardComponent,
+    ImagecardComponent,
     DessertPage,
     MainCoursePage,
     StarterPage,

@@ -13,15 +13,18 @@
 </ion-header>
 
 
-<ion-content padding >
-    <ion-list>
-       <ion-item ><a (click)="starterPage()">
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="mainCoursePage(item.className)">
 
-                    <ion-icon name="nutrition" > </ion-icon>
-                    Starter
-           </a>
-       </ion-item>
-        
+      <ion-icon name="nutrition"> </ion-icon>
+      <p>
+        {{item.name}}
+      </p>
+
+
+    </ion-item>
+    <!--         
       <ion-item>
         <a  (click)="mainCoursePage()" >
             <ion-icon name="restaurant" > </ion-icon>
@@ -33,9 +36,9 @@
             <ion-icon name="ice-cream" > </ion-icon>
             Dessert 
         </a>
-    </ion-item>
-      </ion-list>
- 
+    </ion-item> -->
+  </ion-list>
+
 
 
 </ion-content>

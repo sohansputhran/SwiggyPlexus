@@ -13,46 +13,26 @@
 </ion-header>
 
 
-<ion-content class="card-background-page">
+ <ion-content class="card-background-page">
+<!-- itemheadercomponent -->
+  <itemheader></itemheader>
+
+
+
+  <ion-list>
+
   
-    <ion-card  (click)="modalPage()">
-        <img src="assets/img/starter/tikka.jpg"/>
-        &#8377; {{ price }}
-       <ion-icon name="star-half" item-left class="abc"></ion-icon>
-        <div class="card-title">São Paulo</div>
-       
-        <div class="card-subtitle">sam</div>
-      </ion-card>
+    <ion-item>
      
-    <hr>
-    <div class="xyz">
-      <ion-card>
-        <img src="assets/img/starter/starter_3.png"/>
-        <div class="card-title">Amsterdam</div>
-        <ion-icon name="star-half" item-left></ion-icon>{{ratings}}
-        <div class="card-subtitle">
-         
-                Amsterdam
-        </div>
-      </ion-card>
-    </div>
-  
-      <ion-card>
-        <img src="assets/img/starter/starter4.png"/>
-        <div class="card-title">San Francisco</div>
-        <ion-icon name="star-half" item-left></ion-icon>
-        <div class="card-subtitle">72 Listings</div>
-      </ion-card>
-    <hr>
-
-      <ion-card>
-        <img src="assets/img/starter/FCBL.png"/>
-        <div class="card-title">starter</div>
-        <ion-icon name="star-half" item-left></ion-icon>
-        <div class="card-subtitle">28 Listings</div>
-      </ion-card>
- 
-    
-
-
+      <ion-toggle item-left [(ngModel)]="Vegonly">VegOnly</ion-toggle>
+    </ion-item>
+  </ion-list>
+  <!-- itemgridcomponent -->
+  <itemgrid> </itemgrid>
+  <!-- basiccardcomponent -->
+  <basiccard></basiccard>
+  <!-- accordiancomponent -->
+  <accordian></accordian>
+  <!--imagecardcompoent -->
+ <imagecard></imagecard>
 </ion-content>
