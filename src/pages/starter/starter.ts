@@ -33,12 +33,12 @@ export class StarterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StarterPage');
-  }
+  }/*
 modalPage(){
   console.log("çalled");
   let modal=this.mdlCtrl.create(ItemDetailPage,{
     foodItemName:this.foodItemName,image:"assets/img/starter.png"
   });
   modal.present();
-}
+}*/
 }

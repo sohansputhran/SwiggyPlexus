@@ -5,12 +5,7 @@ import 'rxjs/add/operator/map';
 import { ItemgridComponent } from "../../components/itemgrid/itemgrid";
 import { Storage } from "@ionic/storage";
 
-/*
-  Generated class for the AddToCartProvider provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
 @Injectable()
 export class AddToCartProvider {
 

@@ -20,9 +20,8 @@ export class ItemgridComponent {
                 {name: "BBBBB", num: "45"},
                 {name: "CCCCC", num: "55"}
               ];
-
   }
-
+  
   addToCart(){
     for(var i=0; i < 3; i++){
       this.add.toCart(this.item[i]);

@@ -23,8 +23,8 @@ import {ImagecardComponent} from '../components/imagecard/imagecard';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AddToCartProvider } from '../providers/add-to-cart/add-to-cart';
-
 import { IonicStorageModule } from "@ionic/storage";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -64,6 +64,7 @@ import { IonicStorageModule } from "@ionic/storage";
   ],
   providers: [
     StatusBar,
+    Storage,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AddToCartProvider

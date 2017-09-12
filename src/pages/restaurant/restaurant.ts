@@ -17,6 +17,7 @@ export class RestaurantPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
       this.item = this.navParams.get('item');
   }  
+
 nextPage(){
     this.navCtrl.push(StarterPage);
   }
