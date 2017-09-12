@@ -24,10 +24,12 @@ export class RestaurantPage {
       this.item = this.navParams.get('item');
   }  
 modalPage(){
-    console.log("çalled");
-    let modal=this.modalCtrl.create(HomePage,{
-      image:"assets/img/starter.png"
-    });
-    modal.present();
-  }
+  //   console.log("çalled");
+  //   let modal=this.modalCtrl.create(HomePage,{
+  //     image:"assets/img/starter.png"
+  //   });
+  //   modal.present();
+  //
+  this.navCtrl.push(StarterPage); 
+}
 }

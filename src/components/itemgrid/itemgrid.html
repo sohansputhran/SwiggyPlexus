@@ -4,7 +4,7 @@
     <ion-row>
       <ion-col col-6>
         <div class="card1">
-          <ion-card (click)="modalPage()">
+          <ion-card >
             <img src="assets/img/starter/tikka.jpg" />
             <div class="card-title">Chicken Tikka</div>
 
@@ -15,7 +15,7 @@
                   <div class="price2"> &#8377; 95 </div>
                 </ion-col>
                 <ion-col>
-                  <div class="add"><button ion-button outline small>Add</button></div>
+                  <div class="add"><button ion-button outline small (click)="addtoCart()">Add</button></div>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -25,7 +25,7 @@
       </ion-col>
       <ion-col col-6>
         <div class="card1">
-          <ion-card (click)="modalPage()">
+          <ion-card >
             <img src="assets/img/starter/tikka.jpg" />
             <div class="card-title">Chicken Tikka</div>
             <ion-grid>
@@ -34,7 +34,7 @@
                   <div class="price2"> &#8377; 95 </div>
                 </ion-col>
                 <ion-col>
-                  <div class="add"><button ion-button outline small>Add</button></div>
+                  <div class="add"><button ion-button outline small  (click)="addtoCart()">Add</button></div>
                 </ion-col>
               </ion-row>
             </ion-grid>

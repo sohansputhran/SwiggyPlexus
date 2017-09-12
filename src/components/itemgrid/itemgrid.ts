@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {AddToCartProvider} from '../../providers/add-to-cart/add-to-cart';
 /**
  * Generated class for the ItemgridComponent component.
  *
@@ -12,11 +12,18 @@ import { Component } from '@angular/core';
 })
 export class ItemgridComponent {
 
-  text: string;
+ item:any;
 
-  constructor() {
-    console.log('Hello ItemgridComponent Component');
-    this.text = 'Hello World';
+  constructor(public add:AddToCartProvider) {
+   this.item=[{name:"shyam",city:"bhopal"},{name:"hello",city:"world"},{name:"hello",city:"bye"}];
   }
+  addtoCart(){
+    this.add.toCart(this.item);
+
+   
+  }
+remove(item){
+
+}
 
 }

@@ -22,7 +22,10 @@ import {ImagecardComponent} from '../components/imagecard/imagecard';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AddToCartProvider } from '../providers/add-to-cart/add-to-cart';
 
+//Native
+import {IonicStorageModule} from '@ionic/storage';
 @NgModule({
   declarations: [
     MyApp,
@@ -41,7 +44,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -61,8 +65,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   providers: [
     StatusBar,
+    Storage,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AddToCartProvider
   ]
 })
 export class AppModule {}
