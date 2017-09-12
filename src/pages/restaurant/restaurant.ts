@@ -3,14 +3,8 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import {HomePage} from '../../pages/home/home';
 import {StarterPage} from '../../pages/starter/starter';
 
-/**
- * Generated class for the RestaurantPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
-@IonicPage()
+//@IonicPage()
 @Component({
   selector: 'page-restaurant',
   templateUrl: 'restaurant.html',
@@ -23,11 +17,7 @@ export class RestaurantPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
       this.item = this.navParams.get('item');
   }  
-modalPage(){
-    console.log("çalled");
-    let modal=this.modalCtrl.create(HomePage,{
-      image:"assets/img/starter.png"
-    });
-    modal.present();
+nextPage(){
+    this.navCtrl.push(StarterPage);
   }
 }

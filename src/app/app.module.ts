@@ -1,10 +1,10 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler,ModalController } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler,ModalController, NavController } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 
-import { AboutPage } from '../pages/about/about';
+import { CartPage } from '../pages/cart/cart';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -22,11 +22,13 @@ import {ImagecardComponent} from '../components/imagecard/imagecard';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AddToCartProvider } from '../providers/add-to-cart/add-to-cart';
 
+import { IonicStorageModule } from "@ionic/storage";
 @NgModule({
   declarations: [
     MyApp,
-     AboutPage,
+     CartPage,
     ContactPage,
     HomePage,
     TabsPage,
@@ -41,12 +43,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-     AboutPage,
+     CartPage,
     ContactPage,
     HomePage,
     TabsPage,
@@ -62,7 +65,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AddToCartProvider
   ]
 })
 export class AppModule {}
