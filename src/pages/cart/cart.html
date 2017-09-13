@@ -10,16 +10,40 @@
     <ion-card>
 
         <ion-card-header>
-            Your Order/s
+            <strong><h1> Your Order/s</h1></strong>
         </ion-card-header>
+        <div class="item">
+            Item Name
+        </div>
 
         <ion-card-content>
-            <ion-icon name="remove-circle"></ion-icon>
-            <ion-icon name="add-circle"></ion-icon>
-            <ion-icon name="backspace"></ion-icon>
+
+            <ion-grid>
+                <ion-row>
+                    <ion-icon name="remove-circle" item-right></ion-icon>
+                    &nbsp;
+                    <input type="text" size="2"> &nbsp;
+                    <ion-icon name="add-circle"></ion-icon>
+                    <ion-icon name="backspace"></ion-icon>
+                   
+                    <!-- <ion-col col-2>
+                        Total :&nbsp;
+                    </ion-col> -->
+                </ion-row>
+            </ion-grid>
         </ion-card-content>
 
     </ion-card>
+    
 </ion-content>
+<ion-footer>
+        <ion-toolbar>
+                <div class="total">
+                        <strong>Total&nbsp;:
+                        </strong>
+                    </div>
+           <button ion-button block >Checkout</button>
+        </ion-toolbar>
+      </ion-footer>
 
 </html>
