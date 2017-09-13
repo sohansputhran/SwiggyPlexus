@@ -19,6 +19,8 @@ export class CartPage {
   constructor(public navCtrl: NavController, public addCart: AddToCartProvider) {
     this.addCart.sendData().then(result => {
       this.data = result;
+      console.log("Inside cart :",this.data);
+
     });
     
   }
