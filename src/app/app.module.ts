@@ -14,7 +14,6 @@ import {MenuPage} from '../pages/menu/menu';
 
 //Components
 import {AccordianComponent} from '../components/accordian/accordian';
-import {ItemheaderComponent} from '../components/itemheader/itemheader';
 import {ItemgridComponent} from '../components/itemgrid/itemgrid';
 import {BasiccardComponent} from '../components/basiccard/basiccard';
 import {ImagecardComponent} from '../components/imagecard/imagecard';
@@ -33,7 +32,6 @@ import { IonicStorageModule } from "@ionic/storage";
     TabsPage,
     AccordianComponent,
     RestaurantPage,
-    ItemheaderComponent,
     ItemgridComponent,
     BasiccardComponent,
     ImagecardComponent,
@@ -53,7 +51,6 @@ import { IonicStorageModule } from "@ionic/storage";
     TabsPage,
     AccordianComponent,
     RestaurantPage,
-    ItemheaderComponent,
     ItemgridComponent,
     BasiccardComponent,
     ImagecardComponent,

@@ -1,29 +1,28 @@
 <ion-header>
 
-
     <ion-navbar>
-        <ion-title>{{item}}</ion-title>
+        <ion-title>{{restaurant.name}}</ion-title>
     </ion-navbar>
+
 </ion-header>
 
 <ion-content class="card-background-page">
 
-    <ion-card (click)="nextPage()">
+    <ion-card (click)="nextPage('starters')">
         <img src="assets/images/starters/tikka.jpg" />
         <div class="card-title">Starters</div>
     </ion-card>
     <br/><br/>
 
-    <ion-card (click)="nextPage()">
+    <ion-card (click)="nextPage('main courses')">
         <img src="assets/images/maincourse/golden.jpg" />
-        <div class="card-title">Main Course</div>
+        <div class="card-title">Main Courses</div>
     </ion-card>
     <br/><br/>
 
-    <ion-card (click)="nextPage()">
+    <ion-card (click)="nextPage('desserts')">
         <img src="assets/images/dessert/choclatecake.png" />
         <div class="card-title">Desserts</div>
     </ion-card>
-
 
 </ion-content>

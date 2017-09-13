@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { NavController, NavParams } from "ionic-angular";
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { ItemgridComponent } from "../../components/itemgrid/itemgrid";
 import { Storage } from "@ionic/storage";
 
 @Injectable()
