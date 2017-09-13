@@ -11,7 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { RestaurantPage } from "../pages/restaurant/restaurant";
 
 import {MenuPage} from '../pages/menu/menu';
-import { ItemDetailPage} from './modals/itemdetail/itemdetail';
+
 //Components
 import {AccordianComponent} from '../components/accordian/accordian';
 import {ItemheaderComponent} from '../components/itemheader/itemheader';
@@ -37,8 +37,7 @@ import { IonicStorageModule } from "@ionic/storage";
     ItemgridComponent,
     BasiccardComponent,
     ImagecardComponent,
-    MenuPage,
-    ItemDetailPage
+    MenuPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -58,8 +57,7 @@ import { IonicStorageModule } from "@ionic/storage";
     ItemgridComponent,
     BasiccardComponent,
     ImagecardComponent,
-    MenuPage,
-    ItemDetailPage
+    MenuPage
   ],
   providers: [
     StatusBar,

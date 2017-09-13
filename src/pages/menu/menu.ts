@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
-import {ItemDetailPage} from '../../app/modals/itemdetail/itemdetail';
 import {AccordianComponent} from '../../components/accordian/accordian';
 import {ItemheaderComponent} from '../../components/itemheader/itemheader';
 import {ItemgridComponent} from '../../components/itemgrid/itemgrid';
