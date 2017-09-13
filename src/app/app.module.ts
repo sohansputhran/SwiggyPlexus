@@ -10,7 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RestaurantPage } from "../pages/restaurant/restaurant";
 
-import {StarterPage} from '../pages/starter/starter';
+import {MenuPage} from '../pages/menu/menu';
 import { ItemDetailPage} from './modals/itemdetail/itemdetail';
 //Components
 import {AccordianComponent} from '../components/accordian/accordian';
@@ -37,7 +37,7 @@ import { IonicStorageModule } from "@ionic/storage";
     ItemgridComponent,
     BasiccardComponent,
     ImagecardComponent,
-    StarterPage,
+    MenuPage,
     ItemDetailPage
   ],
   imports: [
@@ -58,7 +58,7 @@ import { IonicStorageModule } from "@ionic/storage";
     ItemgridComponent,
     BasiccardComponent,
     ImagecardComponent,
-    StarterPage,
+    MenuPage,
     ItemDetailPage
   ],
   providers: [

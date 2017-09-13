@@ -8,7 +8,7 @@ import {BasiccardComponent} from '../../components/basiccard/basiccard';
 import {ImagecardComponent} from '../../components/imagecard/imagecard';
 /**
 /**
- * Generated class for the StarterPage page.
+ * Generated class for the MenuPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
@@ -16,10 +16,10 @@ import {ImagecardComponent} from '../../components/imagecard/imagecard';
 
 @IonicPage()
 @Component({
-  selector: 'page-starter',
-  templateUrl: 'starter.html',
+  selector: 'page-menu',
+  templateUrl: 'menu.html',
 })
-export class StarterPage {
+export class MenuPage {
   price:any;
   ratings:any;
   foodItemName:any;
@@ -32,12 +32,12 @@ export class StarterPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StarterPage');
+    console.log('ionViewDidLoad MenuPage');
   }/*
 modalPage(){
   console.log("çalled");
   let modal=this.mdlCtrl.create(ItemDetailPage,{
-    foodItemName:this.foodItemName,image:"assets/img/starter.png"
+    foodItemName:this.foodItemName,image:"assets/img/menu.png"
   });
   modal.present();
 }*/

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import {HomePage} from '../../pages/home/home';
-import {StarterPage} from '../../pages/starter/starter';
+import {MenuPage} from '../../pages/menu/menu';
 
 
 //@IonicPage()
@@ -19,6 +19,6 @@ export class RestaurantPage {
   }  
 
 nextPage(){
-    this.navCtrl.push(StarterPage);
+    this.navCtrl.push(MenuPage);
   }
 }
