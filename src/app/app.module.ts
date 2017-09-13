@@ -19,7 +19,6 @@ import {ItemgridComponent} from '../components/itemgrid/itemgrid';
 import {BasiccardComponent} from '../components/basiccard/basiccard';
 import {ImagecardComponent} from '../components/imagecard/imagecard';
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AddToCartProvider } from '../providers/add-to-cart/add-to-cart';

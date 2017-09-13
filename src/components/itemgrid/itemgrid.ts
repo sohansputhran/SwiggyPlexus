@@ -21,10 +21,8 @@ export class ItemgridComponent {
                 {name: "CCCCC", num: "55"}
               ];
   }
-  
+
   addToCart(){
-    for(var i=0; i < 3; i++){
-      this.add.toCart(this.item[i]);
-    }
+      this.add.toCart(this.item);
   }
 }

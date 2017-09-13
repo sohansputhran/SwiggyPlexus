@@ -5,7 +5,6 @@ import 'rxjs/add/operator/map';
 import { ItemgridComponent } from "../../components/itemgrid/itemgrid";
 import { Storage } from "@ionic/storage";
 
-
 @Injectable()
 export class AddToCartProvider {
 
@@ -23,10 +22,16 @@ constructor(public storage: Storage){
     this.storage.set(item.name,this.str);
   }
 
+  sendData(){
+    return Promise.resolve(this.item);
+  }
+
   toCart(item){
     console.log(item);
     this.item = item;
-    this.setData(item);
+    for(var i = 0; i < item.length;i++){
+      this.setData(item[i]);
+    }
     this.getData();
   }
 
