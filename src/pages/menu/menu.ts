@@ -30,5 +30,9 @@ export class MenuPage {
     
   }
 
+  sendToCart(item){
+    this.add.toCart(item);
+  }
+
 
 }

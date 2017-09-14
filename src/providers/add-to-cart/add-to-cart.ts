@@ -25,13 +25,10 @@ constructor(public storage: Storage){
     return Promise.resolve(this.item);
   }
 
-  toCart(restaurant){
-    this.item = restaurant;
-    for(var i = 0; i < 3;i++){
-      this.setData(restaurant[i]);
-      console.log("adding:",this.item[i]);
-    }
-    this.getData();
+  toCart(item){
+    this.item = item;
+    
+      console.log("adding:",this.item);
   }
 
   removeData(i){

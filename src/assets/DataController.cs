@@ -65,7 +65,7 @@ namespace SwiggyPlexusApi.Controllers
                 items.Add(new Item { ItemId = 1, Image = "../../assets/images/maincourse/butterchicken.jpg", Name = "Butter Chicken", Price = 200, Rating = 5, IsRecommended = true });
                 items.Add(new Item { ItemId = 2, Image = "../../assets/images/maincourse/friedrice.jpg", Name = "Fried Rice", Price = 150, Rating = 4, IsRecommended = false });
                 items.Add(new Item { ItemId = 3, Image = "../../assets/images/maincourse/chickenmughlai.jpg", Name = "Chicken Mughlai", Price = 220, Rating = 3, IsRecommended = true });
-                items.Add(new Item { ItemId = 4, Image = "../../assets/images/maincourse/pannerkadai,jpg", Name = "Panner Kadai", Price = 150, Rating = 4, IsRecommended = true });
+                items.Add(new Item { ItemId = 4, Image = "../../assets/images/maincourse/pannerkadai.jpg", Name = "Panner Kadai", Price = 150, Rating = 4, IsRecommended = true });
                 items.Add(new Item { ItemId = 5, Image = "../../assets/images/maincourse/kofta.jpg", Name = "Kofta", Price = 130, Rating = 2, IsRecommended = false });
             }
             else if (courseId == 2)

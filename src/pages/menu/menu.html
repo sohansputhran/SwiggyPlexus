@@ -49,30 +49,34 @@
     <div class="itemGrid">
         <ion-card class="maincard">
             <ion-grid>
+                <ion-list *ngFor="let item of items">
+                    <ion-row>
+                        <ion-col col-6>
+                            <div class="card">
+                                <ion-card>
+                                    <img src="{{item.Image}}" />
+                                    <div class="card-title">
+                                        <br/>
+                                        <p>{{item.Name}}</p>
+                                    </div>
 
-                <ion-row>
-                    <ion-col col-6>
-                        <div class="card">
-                            <ion-card>
-                                <img src="" />
-                                <div class="card-title">{{courseName}}</div>
 
+                                    <ion-grid>
+                                        <ion-row>
+                                            <ion-col col-6>
+                                                <div class="price"> {{item.Price}} </div>
+                                            </ion-col>
+                                            <ion-col col-6>
+                                                <div class="add"><button ion-button outline small (click)="sendToCart(item)">Add</button></div>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-grid>
 
-                                <ion-grid>
-                                    <ion-row>
-                                        <ion-col col-6>
-                                            <div class="price"> {{restaurantName}} </div>
-                                        </ion-col>
-                                        <ion-col col-6>
-                                            <div class="add"><button ion-button outline small (click)="addToCart()">Add</button></div>
-                                        </ion-col>
-                                    </ion-row>
-                                </ion-grid>
-
-                            </ion-card>
-                        </div>
-                    </ion-col>
-                </ion-row>
+                                </ion-card>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-list>
             </ion-grid>
         </ion-card>
     </div>
