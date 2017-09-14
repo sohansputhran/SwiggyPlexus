@@ -9,6 +9,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RestaurantPage } from "../pages/restaurant/restaurant";
+import { ApiService } from "../providers/api-service";
 
 import {MenuPage} from '../pages/menu/menu';
 
@@ -61,7 +62,8 @@ import { IonicStorageModule } from "@ionic/storage";
     Storage,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AddToCartProvider
+    AddToCartProvider,
+    ApiService
   ]
 })
 export class AppModule {}
