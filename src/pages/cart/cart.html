@@ -8,47 +8,47 @@
 
 <ion-content padding>
     <ion-card>
-            
+
         <ion-card-header>
             <strong><h1> Your Order/s</h1></strong>
         </ion-card-header>
         <ion-card-content>
 
-            <ion-item *ngFor='let dat of data'>
-                   
+            <ion-item *ngFor="let dat of data;let i=index">
+
                 <ion-card>
 
-                       
+
 
                     <ion-card-content>
-                            <ion-icon name="backspace" item-left ></ion-icon>
-                            <ion-grid>
-                                    <ion-row>
-                                        <ion-col col-10>
-                                           
-                                            <p> <strong>{{dat.name}}</strong></p>
-                                        </ion-col>
-                                        <ion-col col-2>
-                                                <div class="price2"> &#8377; 95 </div>
-                                        </ion-col>
-                                    </ion-row>
-                                </ion-grid>                    
-    
-                                   
-                                  
-                               
+                        <ion-icon name="backspace" item-left (click)="removeItem(i)"></ion-icon>
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col col-10>
+
+                                    <p> <strong>{{dat.name}}</strong></p>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <div class="price2"> &#8377; 95 </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+
+
+
+
 
                         <ion-grid>
                             <ion-row>
-                              <ion-col col-10>
-                                  <ion-icon name="remove-circle" ></ion-icon>
-                                &nbsp;
-                                <input type="text" size="4" > &nbsp;
-                                <ion-icon name="add-circle"></ion-icon>
-                              </ion-col>
-                               <ion-col col-2>
-                                  <h1> total item</h1>
-                               </ion-col>
+                                <ion-col col-10>
+                                    <ion-icon name="remove-circle" (click)="decrement(i)"></ion-icon>
+                                    &nbsp;
+                                    <input type="text" size="4" name="quantity" style="color:black" value="{{quantity[i]}}"> &nbsp;
+                                    <ion-icon name="add-circle" (click)="increment(i)"></ion-icon>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <h1> total item {{ totalItemprice[i] }}</h1>
+                                </ion-col>
                                 <!-- <ion-col col-2>
                                     Total :&nbsp;
                                 </ion-col> -->

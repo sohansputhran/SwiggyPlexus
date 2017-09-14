@@ -18,7 +18,8 @@ export class ItemgridComponent {
   constructor(public add: AddToCartProvider) {
     this.item =[{name: "AAAAA", num: "35"},
                 {name: "BBBBB", num: "45"},
-                {name: "CCCCC", num: "55"}
+                {name: "CCCCC", num: "55"},
+                {name: "DDDDD", num: "65"}
               ];
   }
 
