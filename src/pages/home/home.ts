@@ -24,9 +24,5 @@ export class HomePage {
        restaurantId: restaurant.RestaurantId,
        restaurantName: restaurant.Name
     });
-
-    // this.navCtrl.push(MenuPage, {
-    //   restaurantRating : restaurant.Rating
-    // })
   }
 }

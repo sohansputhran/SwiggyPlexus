@@ -18,7 +18,6 @@ export class RestaurantPage {
       this.restaurantName = this.navParams.get('restaurantName');
       
       this.apiService.GetCoursesForRestaurants(this.restaurantId).then(courses =>{
-        //console.log('courses: ', courses);
         this.courses = courses;  
       });
       

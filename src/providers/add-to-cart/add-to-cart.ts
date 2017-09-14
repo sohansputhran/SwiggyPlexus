@@ -8,17 +8,15 @@ import { Storage } from "@ionic/storage";
 export class AddToCartProvider {
 
 item: any;
-str: string;
-items: any;
+itemDetails: string;
+retrievedItem: any;
 
 constructor(public storage: Storage){
-    
-
   }  
   
-  setData(restaurant){
-    this.str = JSON.stringify(restaurant);
-    this.storage.set(this.item.Name,this.str);
+  setData(itemObject){
+    this.itemDetails = JSON.stringify(itemObject);
+    this.storage.set(this.item.Name,this.itemDetails);
   }
 
   sendData(){
@@ -27,20 +25,18 @@ constructor(public storage: Storage){
 
   toCart(item){
     this.item = item;
-    
-      console.log("adding:",this.item);
+    console.log("adding:",this.item);
+    this.setData(this.item);
   }
 
-  removeData(i){
-    this.storage.remove(i);
+  removeData(itemKey){
+    this.storage.remove(itemKey);
   }
 
-  getData(){
-    this.storage.get('Taj Mahal').then((result) => {
-      this.items = JSON.parse(result);
-      console.log('items: ', this.items);
+  getData(itemKey){
+    this.storage.get(itemKey).then((result) => {
+      this.retrievedItem = JSON.parse(result);
+      console.log('items: ', this.retrievedItem);
     });
-   
-    
   }
 }
