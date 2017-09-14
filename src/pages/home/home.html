@@ -12,7 +12,7 @@
         </ion-card-header>
 
         <ion-card-content>
-            <button ion-item *ngFor="let item of items" (click)="selectedItem(item.name)">
+            <button ion-item *ngFor="let restaurant of restaurants" (click)="selectedItem(restaurant)">
                  <ion-card>
                     <ion-card-content>  
                              
@@ -20,43 +20,36 @@
                             <ion-row>                
 
                                 <ion-col col-4>
-            
-                                    <img item-left src="{{item.image}}">
-            
+                                    <img item-left src="{{restaurant.Image}}">
                                 </ion-col>
             
-                                <ion-col col-8>
-                                    
-                                        <h1 style="float: left">{{item.name}}</h1>
-                                        <br>
-                                        <hr width="auto">                                                                            
+                                <ion-col col-8>                
+                                    <h1 style="float: left">{{restaurant.Name}}</h1>
+                                    <br>
+                                    <hr width="auto">                                                                            
                                 </ion-col>
+
                             </ion-row>
                         </ion-grid>                                
-                                <ion-grid>
-            
-                                    <ion-row>
+    
+                        <ion-grid>
+                            <ion-row>
                                         
-                                        <ion-col col-8>
+                                <ion-col col-8>
+                                    <p style="float: left">
+                                        <ion-icon name="navigate">  {{restaurant.Location}}</ion-icon>
+                                    </p>           
+                                </ion-col> 
             
-                                            <p style="float: left">
-            
-                                                <ion-icon name="navigate">{{item.location}}</ion-icon>
-                                            </p>
-            
-                                        </ion-col> 
-            
-                                        <ion-col col-4>
-            
-                                                <p>
-                                                    <ion-icon name="star">{{item.rating}}</ion-icon>
-                                                    
-                                                </p>
-                                        </ion-col>                                                                            
-                                        </ion-row>
-                    
-                                    </ion-grid>
-                                
+                                <ion-col col-4>
+                                    <p>
+                                        <ion-icon name="star">  {{restaurant.Rating}}</ion-icon>                                                   
+                                    </p>
+                                </ion-col>                                                                            
+ 
+                            </ion-row>                
+                        </ion-grid>
+                               
                     </ion-card-content>
                 </ion-card>
             </button>

@@ -23,7 +23,7 @@ export class ItemgridComponent {
               ];
   }
 
-  addToCart(){
-      this.add.toCart(this.item);
-  }
+ // addToCart(){
+   //   this.add.toCart(this.item);
+  //}
 }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { NavController, NavParams } from "ionic-angular";
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { ItemgridComponent } from "../../components/itemgrid/itemgrid";
 import { Storage } from "@ionic/storage";
 
 @Injectable()
@@ -17,20 +16,20 @@ constructor(public storage: Storage){
 
   }  
   
-  setData(item){
-    this.str = JSON.stringify(item);
-    this.storage.set(item.name,this.str);
+  setData(restaurant){
+    this.str = JSON.stringify(restaurant);
+    this.storage.set(this.item.Name,this.str);
   }
 
   sendData(){
     return Promise.resolve(this.item);
   }
 
-  toCart(item){
-    console.log(item);
-    this.item = item;
-    for(var i = 0; i < item.length;i++){
-      this.setData(item[i]);
+  toCart(restaurant){
+    this.item = restaurant;
+    for(var i = 0; i < 3;i++){
+      this.setData(restaurant[i]);
+      console.log("adding:",this.item[i]);
     }
     this.getData();
   }
@@ -40,7 +39,7 @@ constructor(public storage: Storage){
   }
 
   getData(){
-    this.storage.get('AAAAA').then((result) => {
+    this.storage.get('Taj Mahal').then((result) => {
       this.items = JSON.parse(result);
       console.log('items: ', this.items);
     });

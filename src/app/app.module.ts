@@ -9,12 +9,12 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RestaurantPage } from "../pages/restaurant/restaurant";
+import { ApiService } from "../providers/api-service";
 
 import {MenuPage} from '../pages/menu/menu';
-import { ItemDetailPage} from './modals/itemdetail/itemdetail';
+
 //Components
 import {AccordianComponent} from '../components/accordian/accordian';
-import {ItemheaderComponent} from '../components/itemheader/itemheader';
 import {ItemgridComponent} from '../components/itemgrid/itemgrid';
 import {BasiccardComponent} from '../components/basiccard/basiccard';
 import {ImagecardComponent} from '../components/imagecard/imagecard';
@@ -33,12 +33,10 @@ import { IonicStorageModule } from "@ionic/storage";
     TabsPage,
     AccordianComponent,
     RestaurantPage,
-    ItemheaderComponent,
     ItemgridComponent,
     BasiccardComponent,
     ImagecardComponent,
-    MenuPage,
-    ItemDetailPage
+    MenuPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -54,19 +52,18 @@ import { IonicStorageModule } from "@ionic/storage";
     TabsPage,
     AccordianComponent,
     RestaurantPage,
-    ItemheaderComponent,
     ItemgridComponent,
     BasiccardComponent,
     ImagecardComponent,
-    MenuPage,
-    ItemDetailPage
+    MenuPage
   ],
   providers: [
     StatusBar,
     Storage,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AddToCartProvider
+    AddToCartProvider,
+    ApiService
   ]
 })
 export class AppModule {}

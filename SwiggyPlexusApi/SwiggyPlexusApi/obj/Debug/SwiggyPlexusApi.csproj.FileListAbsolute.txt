@@ -1,0 +1,145 @@
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\ApplicationInsights.config
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\csc.exe
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\csc.exe.config
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\csc.rsp
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\csi.exe
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\csi.rsp
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.AppContext.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.Collections.Immutable.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.IO.FileSystem.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\vbc.exe
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\vbc.exe.config
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\vbc.rsp
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\VBCSCompiler.exe
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\VBCSCompiler.exe.config
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\SwiggyPlexusApi.dll.config
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\SwiggyPlexusApi.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\SwiggyPlexusApi.pdb
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Antlr3.Runtime.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.Web.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.WindowsServer.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.ApplicationInsights.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.Web.Infrastructure.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Newtonsoft.Json.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Net.Http.Formatting.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Helpers.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Http.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Http.WebHost.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Mvc.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Optimization.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Razor.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.Deployment.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.Razor.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\WebGrease.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Newtonsoft.Json.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Net.Http.Formatting.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Helpers.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Http.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Http.WebHost.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Mvc.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Optimization.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Razor.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.Deployment.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.Razor.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Antlr3.Runtime.pdb
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.ApplicationInsights.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.WindowsServer.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.Web.xml
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\obj\Debug\SwiggyPlexusApi.dll
+c:\users\bitupon hazarika\documents\visual studio 2017\Projects\SwiggyPlexusApi\SwiggyPlexusApi\obj\Debug\SwiggyPlexusApi.pdb
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\ApplicationInsights.config
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\csc.exe
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\csc.exe.config
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\csc.rsp
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\csi.exe
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\csi.rsp
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.AppContext.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.Collections.Immutable.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.IO.FileSystem.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\vbc.exe
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\vbc.exe.config
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\vbc.rsp
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\VBCSCompiler.exe
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\roslyn\VBCSCompiler.exe.config
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\SwiggyPlexusApi.dll.config
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\SwiggyPlexusApi.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\SwiggyPlexusApi.pdb
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Antlr3.Runtime.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.DependencyCollector.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.Web.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.WindowsServer.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.ApplicationInsights.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Newtonsoft.Json.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Net.Http.Formatting.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Helpers.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Http.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Http.WebHost.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Mvc.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Optimization.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Razor.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.Razor.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\WebGrease.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Newtonsoft.Json.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Net.Http.Formatting.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Helpers.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Http.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Http.WebHost.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Mvc.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Optimization.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.Razor.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\System.Web.WebPages.Razor.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Antlr3.Runtime.pdb
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.ApplicationInsights.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.DependencyCollector.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.WindowsServer.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\bin\Microsoft.AI.Web.xml
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\obj\Debug\SwiggyPlexusApi.dll
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\obj\Debug\SwiggyPlexusApi.pdb
+C:\Projects\SwiggyPlexusApi\SwiggyPlexusApi\obj\Debug\SwiggyPlexusApi.csprojResolveAssemblyReference.cache

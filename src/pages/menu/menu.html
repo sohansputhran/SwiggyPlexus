@@ -1,13 +1,7 @@
-<!--
-  Generated template for the MenuPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
     <ion-navbar>
-        <ion-title>menus</ion-title>
+        <ion-title> Menu</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -15,20 +9,94 @@
 
 <ion-content class="card-background-page">
     <!-- itemheadercomponent -->
-    <itemheader></itemheader>
+    <div class="itemHeader">
+        <ion-card>
+            <div class="uppertop">
+                <b>{{restaurant.Name}}</b>
+                <br>
+                <div class="mealType"> {{mealType}} </div>
+            </div>
 
+            <hr>
 
+            <ion-grid>
+
+                <ion-row>
+                    <ion-col col-4>
+                        <ion-icon name="star" item-center class="ratingstar">&nbsp;{{restaurant.rating}}</ion-icon>
+                    </ion-col>
+                    <ion-col col-4>
+                        <div class="data">data</div>
+                    </ion-col>
+                    <ion-col col-4>
+                        <div class="price"> &#8377; 95 </div>
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
+    </div>
 
     <ion-list>
-
-
         <ion-item>
-
             <ion-toggle item-left [(ngModel)]="Vegonly">Veg Only</ion-toggle>
         </ion-item>
     </ion-list>
+
     <!-- itemgridcomponent -->
-    <itemgrid> </itemgrid>
+    <div class="itemGrid">
+        <ion-card class="maincard">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6>
+                        <div class="card1">
+                            <ion-card>
+                                <img src="assets/images/starters/tikka.jpg" />
+                                <div class="card-title">Chicken Tikka</div>
+
+
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col>
+                                            <div class="price2"> &#8377; 95 </div>
+                                        </ion-col>
+                                        <ion-col>
+                                            <div class="add"><button ion-button outline small (click)="addToCart()">Add</button></div>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+
+                            </ion-card>
+                        </div>
+                    </ion-col>
+                    <ion-col col-6>
+                        <div class="card1">
+                            <ion-card>
+                                <img src="assets/images/starters/tikka.jpg" />
+                                <div class="card-title">Chicken Tikka</div>
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col>
+                                            <div class="price2"> &#8377; 95 </div>
+                                        </ion-col>
+                                        <ion-col>
+                                            <div class="add"><button ion-button outline small (click)="addToCart()">Add</button></div>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+
+
+
+
+                            </ion-card>
+                        </div>
+                    </ion-col>
+
+                </ion-row>
+            </ion-grid>
+
+        </ion-card>
+    </div>
     <!-- basiccardcomponent -->
     <basiccard></basiccard>
     <!-- accordiancomponent -->

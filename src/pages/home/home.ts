@@ -1,25 +1,30 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { ApiService } from "../../providers/api-service";
 import { RestaurantPage } from "../restaurant/restaurant";
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  items: any;
-  
-  constructor(public navCtrl: NavController) {
-    this.items = [{name: "Hotel Empire", location: "Tamil Nadu", rating: "4.5",image:"../../assets/images/logos/empire.jpg", type: "Biryani"},
-                  {name:"Green Leaf", location: "Karnataka", rating:"1",image:"../../assets/images/logos/green_leaf.png", type: "North Indian"},
-                  {name:"AAAAA",location:"Kerala", rating: "2",image:"../../assets/images/logos/empire.jpg", type: "Indian"},
-                  
-                ]
-      
+  restaurants: any;
+
+  constructor(public navCtrl: NavController, private apiService: ApiService) {
+    // this.restaurants = [{name: "Hotel Empire", location: "Tamil Nadu", rating: "4.5",image:"../../assets/images/logos/empire.jpg"},
+    //                     {name:"Green Leaf", location: "Karnataka", rating:"1",image:"../../assets/images/logos/green_leaf.png"},
+    //                     {name:"Taj Mahal",location:"Kerala", rating: "5",image:"../../assets/images/logos/empire.jpg"}
+    //                    ];
+
+    this.apiService.GetRestaurants().then(restaurants =>{
+      this.restaurants = restaurants;
+    })
   }
-  selectedItem(item){
-     this.navCtrl.push(RestaurantPage, {
-       item: item
-     });
- }
+
+
+  selectedItem(restaurant){
+    this.navCtrl.push(RestaurantPage, {
+       restaurant: restaurant
+    });
+  }
 }

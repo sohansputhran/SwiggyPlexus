@@ -1,14 +1,54 @@
-page-menu {
-    hr {
-        border: none;
-        border-top: 1px dotted black;
-        color: #fff;
-        background-color: #fff;
-        height: 1px;
-        width: 100%;
+hr {
+    border: none;
+    border-top: 1px dotted black;
+    color: #fff;
+    background-color: #fff;
+    height: 1px;
+    width: 100%;
+}
+
+.card-title {
+    padding: 20px 0px 0px 10px;
+    font-size: 1.5rem;
+}
+
+.itemHeader {
+    .uppertop {
+        font-size: 1.8rem;
+        margin: 5px 10px 0px 10px;
     }
-    .card-title {
-        padding: 20px 0px 0px 10px;
-        font-size: 1.5rem;
+    .ratingstar {
+        border: 1px;
+        margin: 1px 15px 15px 13px;
+        color: #DBE827;
+    }
+    .data {
+        border: 1px;
+        text-align: center;
+        font-size: 2.0rem;
+        margin: 1px 15px 0px 1px;
+    }
+    .price {
+        color: #088C1B;
+        text-align: right;
+        margin: 1px 15px 15px 13px;
+    }
+    .mealType {
+        text-transform: capitalize;
+    }
+}
+
+.itemgrid {
+    .price2 {
+        text-align: left;
+        color: green;
+        margin: 10px 5px;
+        padding-left: 10px;
+    }
+    .add {
+        text-align: right;
+        color: #807E00;
+        margin-top: 0px;
+        padding-right: 10px;
     }
 }
