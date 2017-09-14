@@ -34,8 +34,8 @@ constructor(public storage: Storage){
     this.getData();
   }
 
-  removeData(){
-    this.storage.remove('BBBBB');
+  removeData(i){
+    this.storage.remove(i);
   }
 
   getData(){
