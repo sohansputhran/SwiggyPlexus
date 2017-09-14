@@ -1,34 +1,19 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>{{restaurant.Name}}</ion-title>
+        <ion-title>{{restaurantName}}</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 <ion-content class="card-background-page">
-
-    <ion-card (click)="nextPage('Starter')">
-        <img src="assets/images/starters/tikka.jpg" />
-        <div class="card-title">Starter</div>
-    </ion-card>
-    <br/><br/>
-
-    <ion-card (click)="nextPage('Main Course')">
-        <img src="assets/images/maincourse/golden.jpg" />
-        <div class="card-title">Main Course</div>
-    </ion-card>
-    <br/><br/>
-
-    <ion-card (click)="nextPage('Desserts')">
-        <img src="assets/images/dessert/choclatecake.png" />
-        <div class="card-title">Desserts/Salads</div>
-    </ion-card>
-    <br/><br/>
-
-    <ion-card (click)="nextPage('Drinks')">
-        <img src="assets/images/dessert/choclatecake.png" />
-        <div class="card-title">Drinks</div>
-    </ion-card>
+    <ion-list *ngFor='let course of courses'>
+        <ion-item (click)="selectedCourse(course)">
+            <ion-card>
+                <img src="{{course.Image}}" />
+                <div class="card-title">{{course.Name}}</div>
+            </ion-card>
+        </ion-item>
+    </ion-list>
 
 </ion-content>

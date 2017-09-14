@@ -32,23 +32,23 @@ namespace SwiggyPlexusApi.Controllers
 
             if (restraurantId == 1)
             {
-                courses.Add(new Course { CourseId = 1, Name = "Main Course", Image = "" });
-                courses.Add(new Course { CourseId = 2, Name = "Starter", Image = "" });
-                courses.Add(new Course { CourseId = 3, Name = "Desserts", Image = "" });
-                courses.Add(new Course { CourseId = 4, Name = "Drinks", Image = "" });
+                courses.Add(new Course { CourseId = 1, Name = "Main Course", Image = "assets/images/starters/tikka.jpg" });
+                courses.Add(new Course { CourseId = 2, Name = "Starter", Image = "assets/images/starters/tikka.jpg" });
+                courses.Add(new Course { CourseId = 3, Name = "Desserts", Image = "assets/images/starters/tikka.jpg" });
+                courses.Add(new Course { CourseId = 4, Name = "Drinks", Image = "assets/images/starters/tikka.jpg" });
             }
             else if (restraurantId == 2)
             {
-                courses.Add(new Course { CourseId = 1, Name = "Main Course", Image = "" });
-                courses.Add(new Course { CourseId = 2, Name = "Starter", Image = "" });
-                courses.Add(new Course { CourseId = 5, Name = "Desserts", Image = "" });
-                courses.Add(new Course { CourseId = 6, Name = "Drinks", Image = "" });
+                courses.Add(new Course { CourseId = 1, Name = "Main Course", Image = "assets/images/starters/tikka.jpg" });
+                courses.Add(new Course { CourseId = 2, Name = "Starter", Image = "assets/images/starters/tikka.jpg" });
+                courses.Add(new Course { CourseId = 5, Name = "Desserts", Image = "assets/images/starters/tikka.jpg" });
+                courses.Add(new Course { CourseId = 6, Name = "Drinks", Image = "assets/images/starters/tikka.jpg" });
             }
             else
             {
-                courses.Add(new Course { CourseId = 1, Name = "Main Course", Image = "" });
-                courses.Add(new Course { CourseId = 2, Name = "Starter", Image = "" });
-                courses.Add(new Course { CourseId = 3, Name = "Desserts", Image = "" });
+                courses.Add(new Course { CourseId = 1, Name = "Main Course", Image = "assets/images/starters/tikka.jpg" });
+                courses.Add(new Course { CourseId = 2, Name = "Starter", Image = "assets/images/starters/tikka.jpg" });
+                courses.Add(new Course { CourseId = 3, Name = "Desserts", Image = "assets/images/starters/tikka.jpg" });
             }
 
             return courses;

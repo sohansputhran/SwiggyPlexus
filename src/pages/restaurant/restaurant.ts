@@ -1,24 +1,35 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-
-import {MenuPage} from '../../pages/menu/menu';
+import { ApiService } from "../../providers/api-service";
+import { MenuPage } from '../../pages/menu/menu';
 
 @Component({
   selector: 'page-restaurant',
-  templateUrl: 'restaurant.html',  
+  templateUrl: 'restaurant.html'
 })
 
 export class RestaurantPage {
-    restaurant: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
-      this.restaurant = this.navParams.get('restaurant');
+    restaurantId: number;
+    restaurantName: string;
+    courses: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private apiService: ApiService) {
+      
+      this.restaurantId = this.navParams.get('restaurantId');
+      this.restaurantName = this.navParams.get('restaurantName');
+      
+      this.apiService.GetCoursesForRestaurants(this.restaurantId).then(courses =>{
+        //console.log('courses: ', courses);
+        this.courses = courses;  
+      });
+      
   }  
+selectedCourse(course){
+  this.navCtrl.push(MenuPage, {
+    courseId: course.CourseId,
+    courseName: course.Name,
+    restaurantName: this.restaurantName
+ });
+}
 
-nextPage(mealType){
-    this.navCtrl.push(MenuPage, {
-      restaurant: this.restaurant,
-      mealType: mealType
-    });
-  }
 }
 
