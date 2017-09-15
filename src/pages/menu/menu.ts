@@ -31,6 +31,7 @@ export class MenuPage {
   }
 
   sendToCart(item){
+    //var obj = {item: item, quantity: }
     this.add.toCart(item);
   }
 
