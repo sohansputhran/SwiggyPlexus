@@ -22,11 +22,19 @@ export class CartPage {
     this.addCart.sendData().then(result => {
       this.items = result;
       console.log("Inside cart :",this.items);
-
-    });
-    
+              });
+}
+changeQuantity(index,changeStatus){
+  if(changeStatus){
+      this.items[index].quantity+=1;
+  }
+  else{
+    this.items[index].quantity-=1;
   }
 
+}
+
+}
   
 
     // increment(i){
@@ -47,4 +55,4 @@ export class CartPage {
     // removeItem(itemKey){
     //   this.addCart.removeData(this.data[itemKey].name);
     // }
-}
+

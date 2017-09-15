@@ -26,7 +26,7 @@ constructor(public storage: Storage){
     //If no, then create this item and set quantity as 1.
     var index = -1;
     for(var i = 0; i<this.itemsArray.length; i++){
-      if(item.Name == this.itemsArray[i].Name){
+      if(item.Name == this.itemsArray[i].item.Name){
         index = i;
         break;
       }
@@ -36,7 +36,7 @@ constructor(public storage: Storage){
       this.itemsArray[index].quantity += 1;
     }else{
       index = this.itemsArray.length;
-      this.itemsArray.push({item: item, qunatity: 1});
+      this.itemsArray.push({item: item, quantity: 1});
     }
 
     if(shouldSetNow){
