@@ -60,30 +60,7 @@ constructor(public storage: Storage){
 
   save(){
     this.items.forEach(item=>{
-      this.storage.set(item.Name, JSON.stringify(item));
+      this.storage.set(item.item.Name, JSON.stringify(item));
     });
   }
-  // getData(itemKey){
-  //   this.storage.get(itemKey).then((result) => {
-  //     this.retrievedItem = JSON.parse(result);
-  //     console.log('items: ', this.retrievedItem);
-  //   });
-  // }
-  
-  // CreateItemsArray(): any{   
-
-  //     return this.itemsArray;
-  //   }
-
-  //   changeQuantity(item, shouldAdd){
-  //     //find this item in the items array.
-  //     if(shouldAdd)
-  //     for( var index=0;index<this.itemsArray.length;index++){
-  //       this.items[index] ={item: item, quantity: this.qty};
-  //   }
-  // }
-
-    
-
-
 }
