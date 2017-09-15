@@ -14,22 +14,22 @@
         </ion-card-header>
         <ion-card-content>
 
-            <ion-item *ngFor="let item of items">
+            <ion-item *ngFor="let item of items;let i=index">
 
                 <ion-card>
 
 
 
                     <ion-card-content>
-                        <ion-icon name="backspace" item-left></ion-icon>
+                        <ion-icon name="backspace" item-left ></ion-icon>
                         <ion-grid>
                             <ion-row>
                                 <ion-col col-10>
-
-                                    <p> <strong>{{item.Name}}</strong></p>
+                                       
+                                    <p> <strong>{{item.item.Name}}</strong></p>
                                 </ion-col>
                                 <ion-col col-2>
-                                    <div class="price2"> &#8377; {{item.Price}} </div>
+                                    <div class="price2"> &#8377; {{item.item.Price}} </div>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
@@ -41,10 +41,10 @@
                         <ion-grid>
                             <ion-row>
                                 <ion-col col-10>
-                                    <ion-icon name="remove-circle"></ion-icon>
+                                    <ion-icon name="remove-circle" (click)="changeQuantity(i,false)"></ion-icon>
                                     &nbsp;
-                                    <input type="text" size="4" name="quantity" style="color:black" value=""> &nbsp;
-                                    <ion-icon name="add-circle"></ion-icon>
+                                    <input type="text" size="4" name="quantity" style="color:black" value="{{item.quantity}}"> &nbsp;
+                                    <ion-icon name="add-circle" (click)="changeQuantity(i,true)"></ion-icon>
                                 </ion-col>
                                 <ion-col col-2>
                                     <!-- <h1> total item {{ totalItemprice[i] }}</h1> -->
