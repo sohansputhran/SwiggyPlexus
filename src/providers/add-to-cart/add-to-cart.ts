@@ -36,7 +36,7 @@ constructor(public storage: Storage){
       this.itemsArray[index].quantity += 1;
     }else{
       index = this.itemsArray.length;
-      this.itemsArray.push({item: item, qunatity: 1});
+      this.itemsArray.push({item: item, quantity: 1});
     }
 
     if(shouldSetNow){
