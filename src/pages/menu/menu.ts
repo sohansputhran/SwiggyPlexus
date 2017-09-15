@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import {AccordianComponent} from '../../components/accordian/accordian';
 import {BasiccardComponent} from '../../components/basiccard/basiccard';
-import {ImagecardComponent} from '../../components/imagecard/imagecard';
+
 import { AddToCartProvider } from "../../providers/add-to-cart/add-to-cart";
 import { ApiService } from "../../providers/api-service";
 

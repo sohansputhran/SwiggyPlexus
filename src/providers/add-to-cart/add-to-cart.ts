@@ -6,7 +6,7 @@ import { Storage } from "@ionic/storage";
 
 @Injectable()
 export class AddToCartProvider {
-
+total : number=0;
 item: any;
 itemDetails: string;
 retrievedItem: any;
@@ -34,9 +34,11 @@ constructor(public storage: Storage){
 
     if(index != -1){
       this.itemsArray[index].quantity += 1;
+      //this.total=this.itemsArray[index].item.Price *this.itemsArray[index].quantity;
     }else{
       index = this.itemsArray.length;
       this.itemsArray.push({item: item, quantity: 1});
+      //this.total=this.itemsArray[index].item.Price *this.itemsArray[index].quantity;
     }
 
     if(shouldSetNow){
@@ -50,14 +52,24 @@ constructor(public storage: Storage){
     this.storage.set(itemObject.item.Name,this.itemDetails);
   }
 
-  sendData(){
-    return Promise.resolve(this.itemsArray);
+
+
+  sendData(): any{
+    return this.itemsArray;
   }
 
   removeData(itemKey){
     this.storage.remove(itemKey);
   }
-
+  totalPrice(){
+    console.log('this.itemsArray: ', this.itemsArray);
+    this.total = 0;
+    for(var i = 0; i<this.itemsArray.length; i++){
+      console.log(this.itemsArray[i].item.Price);
+      this.total += this.itemsArray[i].item.Price * this.itemsArray[i].quantity;
+    }
+    return this.total;
+  }
   save(){
     this.items.forEach(item=>{
       this.storage.set(item.Name, JSON.stringify(item));

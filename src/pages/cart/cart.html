@@ -68,10 +68,10 @@
 <ion-footer>
     <ion-toolbar>
         <div class="total">
-            <strong>Total&nbsp;:
+            <strong>Total&nbsp;:{{total}}
                         </strong>
         </div>
-        <button ion-button block>Checkout</button>
+        <button ion-button block (click)="checkout()">Checkout</button>
     </ion-toolbar>
 </ion-footer>
 

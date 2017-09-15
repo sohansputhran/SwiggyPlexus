@@ -1,4 +1,6 @@
-import { Component,ElementRef } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { ToastController } from 'ionic-angular';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddToCartProvider } from "../../providers/add-to-cart/add-to-cart";
 /**
@@ -12,30 +14,64 @@ import { AddToCartProvider } from "../../providers/add-to-cart/add-to-cart";
 @Component({
   selector: 'page-cart',
   templateUrl: 'cart.html',
-  
+
 })
 export class CartPage {
   items: any;
-  totalItemprice:any=[];
-  constructor(public navCtrl: NavController, public addCart: AddToCartProvider,public elem:ElementRef) {
+  totalItemprice: any = [];
+  total: number = 0;
+  constructor(public toastCtrl: ToastController,public navCtrl: NavController, public addCart: AddToCartProvider, public elem: ElementRef,public storage:Storage) {
+
+    // this.addCart.sendData().then(result => {
+    //   this.items = result;
+    //   //console.log();
+    //   console.log("Inside cart :", this.items);
+    //   // for(var i = 0; i< 3; i++){
+    //   //   console.log('this.items[i].item.Price: ',this.items[i].item.Price);
+    //   //   console.log('this.items[i].quantity: ',this.items[i].quantity);
+    //   //   this.total += this.items[i].item.Price * this.items[i].quantity;
+    //   // }
+    //   var total = 0;
+    //   this.items.array.forEach(element => {
+    //     total += element.item.Price * element.quantity;
+    //   });
+    //   console.log('this.total: ',total);
+    // });
     
-    this.addCart.sendData().then(result => {
-      this.items = result;
-      console.log("Inside cart :",this.items);
-              });
-}
-changeQuantity(index,changeStatus){
-  if(changeStatus){
-      this.items[index].quantity+=1;
-  }
-  else{
-    this.items[index].quantity-=1;
   }
 
+  ionViewDidEnter(){
+    this.items = this.addCart.sendData();
+    this.total = this.addCart.totalPrice();
+    console.log('this.total: ', this.total);
+  }
+
+  changeQuantity(index, changeStatus) {
+    if (changeStatus) {
+      this.items[index].quantity += 1;
+      this.total = this.total + this.items[index].item.Price;
+
+    }
+    else {
+      this.items[index].quantity -= 1;
+      this.total = this.total - this.items[index].item.Price;
+
+    }
+
+  }
+  checkout(){
+    this.storage.clear();
+    let toast = this.toastCtrl.create({
+      message: 'Checkout!',
+      duration: 3000,
+      position: 'middle',
+      closeButtonText: 'Ok'
+    });
+    toast.present();
+
+  }
 }
 
-}
-  
 
     // increment(i){
     //  // this.counter = this.elem.nativeElement.getAttribute('value');
