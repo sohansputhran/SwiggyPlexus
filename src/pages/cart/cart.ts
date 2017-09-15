@@ -15,11 +15,12 @@ import { AddToCartProvider } from "../../providers/add-to-cart/add-to-cart";
   
 })
 export class CartPage {
-  data: any = [];
-  
+  data: any  ;
+  items: any
   totalItemprice:any=[];
   constructor(public navCtrl: NavController, public addCart: AddToCartProvider,public elem:ElementRef) {
-
+    this.items = this.addCart.CreateItemsArray();
+    
     this.addCart.sendData().then(result => {
       this.data = result;
       console.log("Inside cart :",this.data);
@@ -27,6 +28,8 @@ export class CartPage {
     });
     
   }
+
+  
 
     // increment(i){
     //  // this.counter = this.elem.nativeElement.getAttribute('value');

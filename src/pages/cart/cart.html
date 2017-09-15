@@ -14,19 +14,19 @@
         </ion-card-header>
         <ion-card-content>
 
-            <ion-item *ngFor="let dat of data;let i=index">
+            <ion-item>
 
                 <ion-card>
 
 
 
                     <ion-card-content>
-                        <ion-icon name="backspace" item-left (click)="removeItem(i)"></ion-icon>
+                        <ion-icon name="backspace" item-left></ion-icon>
                         <ion-grid>
                             <ion-row>
                                 <ion-col col-10>
 
-                                    <p> <strong>{{dat.name}}</strong></p>
+                                    <p> <strong>{{data.Name}}</strong></p>
                                 </ion-col>
                                 <ion-col col-2>
                                     <div class="price2"> &#8377; 95 </div>
@@ -41,19 +41,19 @@
                         <ion-grid>
                             <ion-row>
                                 <ion-col col-10>
-                                    <ion-icon name="remove-circle" (click)="decrement(i)"></ion-icon>
+                                    <ion-icon name="remove-circle"></ion-icon>
                                     &nbsp;
-                                    <input type="text" size="4" name="quantity" style="color:black" value="{{quantity[i]}}"> &nbsp;
-                                    <ion-icon name="add-circle" (click)="increment(i)"></ion-icon>
+                                    <input type="text" size="4" name="quantity" style="color:black" value=""> &nbsp;
+                                    <ion-icon name="add-circle" ></ion-icon>
                                 </ion-col>
                                 <ion-col col-2>
-                                    <h1> total item {{ totalItemprice[i] }}</h1>
+                                    <!-- <h1> total item {{ totalItemprice[i] }}</h1> -->
                                 </ion-col>
                                 <!-- <ion-col col-2>
                                     Total :&nbsp;
                                 </ion-col> -->
-                            </ion-row>
-                        </ion-grid>
+                             </ion-row>
+                        </ion-grid> 
                     </ion-card-content>
                 </ion-card>
             </ion-item>

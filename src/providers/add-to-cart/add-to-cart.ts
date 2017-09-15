@@ -10,7 +10,8 @@ export class AddToCartProvider {
 item: any;
 itemDetails: string;
 retrievedItem: any;
-
+items:any=[];
+qty:any;
 constructor(public storage: Storage){
   }  
   
@@ -19,13 +20,41 @@ constructor(public storage: Storage){
     this.storage.set(this.item.Name,this.itemDetails);
   }
 
-  sendData(){
-    return Promise.resolve(this.item);
-  }
+  CreateItemsArray(): any{
+    var itemsArray =[];
+      this.storage.forEach((v, k, i)=>{
+        itemsArray.push(JSON.parse(v));
+      })
+      return itemsArray;
+    }
+
+    changeQuantity(item, shouldAdd){
+      //find this item in the items array.
+      for( var index=0;index<this.items.length;index++)
+      this.items[index] ={item: item, quantity: this.qty};
+    }
+
+    Save(){
+      this.items.forEach(item=>{
+        this.storage.set(item.Name, JSON.stringify(item));
+      })
+    }
+  
+
+  
+
+  // sendData(){
+  //   return Promise.resolve(this.item);
+  // }
 
   toCart(item){
-    this.item = item;
+    //this.item = item;
+    //Firstfind if this item already exists on the items array.
+    //If yes, then update the quantity
+    //If no, then create this item and set quantity as 1.
+
     console.log("adding:",this.item);
+    // items.push
     this.setData(this.item);
   }
 

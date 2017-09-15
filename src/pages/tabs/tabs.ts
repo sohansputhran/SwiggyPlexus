@@ -16,7 +16,5 @@ export class TabsPage {
 
   
   }
-  cartAdded(){
-    this.added.sendData();
-  }
+ 
 }
