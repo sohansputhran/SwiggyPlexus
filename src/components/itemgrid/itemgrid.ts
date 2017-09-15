@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from "ionic-angular";
-import { AddToCartProvider } from "../../providers/add-to-cart/add-to-cart";
+//import { AddToCartProvider } from "../../providers/add-to-cart/add-to-cart";
 /**
  * Generated class for the ItemgridComponent component.
  *
@@ -15,7 +15,7 @@ export class ItemgridComponent {
 
   item: any;
 
-  constructor(public add: AddToCartProvider) {
+  constructor() {
     this.item =[{name: "AAAAA", num: "35"},
                 {name: "BBBBB", num: "45"},
                 {name: "CCCCC", num: "55"},

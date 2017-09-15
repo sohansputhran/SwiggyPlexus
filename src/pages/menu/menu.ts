@@ -17,7 +17,6 @@ export class MenuPage {
   restaurantName: string;
   items: any;
   restaurantRating: number;
-  item: any;
 
   constructor(public navCtrl: NavController, public add:AddToCartProvider, public navParams: NavParams,private apiService: ApiService) {
       
@@ -31,7 +30,7 @@ export class MenuPage {
   }
 
   sendToCart(item){
-    //var obj = {item: item, quantity: }
+    console.log("item: ",item);
     this.add.toCart(item);
   }
 

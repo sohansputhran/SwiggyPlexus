@@ -12,60 +12,78 @@ itemDetails: string;
 retrievedItem: any;
 items:any=[];
 qty:any;
+itemsArray =[];
 constructor(public storage: Storage){
-  }  
-  
-  setData(itemObject){
-    this.itemDetails = JSON.stringify(itemObject);
-    this.storage.set(this.item.Name,this.itemDetails);
+    this.storage.forEach((value, k, i)=>{
+      this.itemsArray.push(JSON.parse(value));
+    });
   }
-
-  CreateItemsArray(): any{
-    var itemsArray =[];
-      this.storage.forEach((v, k, i)=>{
-        itemsArray.push(JSON.parse(v));
-      })
-      return itemsArray;
-    }
-
-    changeQuantity(item, shouldAdd){
-      //find this item in the items array.
-      for( var index=0;index<this.items.length;index++)
-      this.items[index] ={item: item, quantity: this.qty};
-    }
-
-    Save(){
-      this.items.forEach(item=>{
-        this.storage.set(item.Name, JSON.stringify(item));
-      })
-    }
   
-
-  
-
-  // sendData(){
-  //   return Promise.resolve(this.item);
-  // }
-
-  toCart(item){
-    //this.item = item;
+  // Execution starts from here.
+  toCart(item, shouldSetNow = true){
     //Firstfind if this item already exists on the items array.
     //If yes, then update the quantity
     //If no, then create this item and set quantity as 1.
+    var index = -1;
+    for(var i = 0; i<this.itemsArray.length; i++){
+      if(item.Name == this.itemsArray[i].Name){
+        index = i;
+        break;
+      }
+    }
 
-    console.log("adding:",this.item);
-    // items.push
-    this.setData(this.item);
+    if(index != -1){
+      this.itemsArray[index].quantity += 1;
+    }else{
+      index = this.itemsArray.length;
+      this.itemsArray.push({item: item, qunatity: 1});
+    }
+
+    if(shouldSetNow){
+      this.setData(this.itemsArray[index]);
+    }
+  }
+
+  setData(itemObject){
+    console.log('itemObject: ', itemObject);
+    this.itemDetails = JSON.stringify(itemObject);
+    this.storage.set(itemObject.item.Name,this.itemDetails);
+  }
+
+  sendData(){
+    return Promise.resolve(this.itemsArray);
   }
 
   removeData(itemKey){
     this.storage.remove(itemKey);
   }
 
-  getData(itemKey){
-    this.storage.get(itemKey).then((result) => {
-      this.retrievedItem = JSON.parse(result);
-      console.log('items: ', this.retrievedItem);
+  save(){
+    this.items.forEach(item=>{
+      this.storage.set(item.Name, JSON.stringify(item));
     });
   }
+  // getData(itemKey){
+  //   this.storage.get(itemKey).then((result) => {
+  //     this.retrievedItem = JSON.parse(result);
+  //     console.log('items: ', this.retrievedItem);
+  //   });
+  // }
+  
+  // CreateItemsArray(): any{   
+
+  //     return this.itemsArray;
+  //   }
+
+  //   changeQuantity(item, shouldAdd){
+  //     //find this item in the items array.
+  //     if(shouldAdd)
+  //     for( var index=0;index<this.itemsArray.length;index++){
+  //       this.items[index] ={item: item, quantity: this.qty};
+  //   }
+  // }
+
+    
+
+
 }

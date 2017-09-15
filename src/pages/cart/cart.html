@@ -14,7 +14,7 @@
         </ion-card-header>
         <ion-card-content>
 
-            <ion-item>
+            <ion-item *ngFor="let item of items">
 
                 <ion-card>
 
@@ -26,10 +26,10 @@
                             <ion-row>
                                 <ion-col col-10>
 
-                                    <p> <strong>{{data.Name}}</strong></p>
+                                    <p> <strong>{{item.Name}}</strong></p>
                                 </ion-col>
                                 <ion-col col-2>
-                                    <div class="price2"> &#8377; 95 </div>
+                                    <div class="price2"> &#8377; {{item.Price}} </div>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
