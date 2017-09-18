@@ -15,44 +15,27 @@ import { AddToCartProvider } from "../../providers/add-to-cart/add-to-cart";
   
 })
 export class CartPage {
-  items: any;
-  totalItemprice:any=[];
+  items = [];
+  totalPrice = 0;
+  itemTotal: any;
+
   constructor(public navCtrl: NavController, public addCart: AddToCartProvider,public elem:ElementRef) {
-    
+    this.totalPrice = this.addCart.totalPriceValue();
+    console.log('res: ', this.totalPrice);
     this.addCart.sendData().then(result => {
       this.items = result;
       console.log("Inside cart :",this.items);
-              });
-}
+      });      
+  } 
+
 changeQuantity(index,changeStatus){
-  if(changeStatus){
-      this.items[index].quantity+=1;
+    if(changeStatus){
+        this.items[index].quantity+=1;
+        this.totalPrice = this.totalPrice + this.items[index].item.Price;
+    }
+    else{
+      this.items[index].quantity-=1;
+      this.totalPrice = this.totalPrice - this.items[index].item.Price;
+    }
   }
-  else{
-    this.items[index].quantity-=1;
-  }
-
 }
-
-}
-  
-
-    // increment(i){
-    //  // this.counter = this.elem.nativeElement.getAttribute('value');
-    //   this.quantity[i]+=1;
-    //   this.totalAmnt(i);
-    //  // console.log(i,this.quantity[i]);
-    // }
-    // decrement(i){
-    //   if(this.quantity[i]>1){
-    //   this.quantity[i]-=1;
-    //   this.totalAmnt(i);
-    // }
-    // }
-    // totalAmnt(i){
-    //     this.totalItemprice[i]=this.quantity[i] * 95;
-    // }
-    // removeItem(itemKey){
-    //   this.addCart.removeData(this.data[itemKey].name);
-    // }
-
