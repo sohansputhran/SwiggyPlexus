@@ -64,10 +64,10 @@
         <div class="total">
             <strong>Total&nbsp;:
                         </strong>
-            <input type="text" size="4" name="quantity" style="color:black" value="{{totalPrice}}"> &nbsp;
+            <input type="text" size="4" name="quantity" style="color:black" value="{{total}}"> &nbsp;
 
         </div>
-        <button ion-button block>Checkout</button>
+        <button ion-button block (click)="checkout()">Checkout</button>
     </ion-toolbar>
 </ion-footer>
 

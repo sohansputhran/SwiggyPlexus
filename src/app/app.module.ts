@@ -16,7 +16,7 @@ import {MenuPage} from '../pages/menu/menu';
 //Components
 import {AccordianComponent} from '../components/accordian/accordian';
 import {BasiccardComponent} from '../components/basiccard/basiccard';
-import {ImagecardComponent} from '../components/imagecard/imagecard';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +33,7 @@ import { IonicStorageModule } from "@ionic/storage";
     AccordianComponent,
     RestaurantPage,
     BasiccardComponent,
-    ImagecardComponent,
+   
     MenuPage
   ],
   imports: [
@@ -51,7 +51,7 @@ import { IonicStorageModule } from "@ionic/storage";
     AccordianComponent,
     RestaurantPage,
     BasiccardComponent,
-    ImagecardComponent,
+    
     MenuPage
   ],
   providers: [

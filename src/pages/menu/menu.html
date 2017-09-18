@@ -12,9 +12,9 @@
     <div class="itemHeader">
         <ion-card>
             <div class="uppertop">
-                <b>{{restaurantName}}</b>
+                <h1 class="restaurant">{{restaurantName}}</h1>
                 <hr>
-                <h3> {{courseName}} </h3>
+                <h3>{{courseName}}</h3>
             </div>
 
         </ion-card>
@@ -30,41 +30,123 @@
     <div class="itemGrid">
         <ion-card class="maincard">
             <ion-grid>
-                <ion-list *ngFor="let item of items">
-                    <ion-row>
-                        <ion-col col-6>
-                            <div class="card">
-                                <ion-card>
-                                    <img src="{{item.Image}}" />
-                                    <div class="card-title">
+                <ion-item>
+                    <ion-list *ngFor="let item of items; let i = index">
+                        <ion-row *ngIf="i%2==1">
+                            <ion-col col-6>
+                                <div class="card">
+                                    <ion-card>
+                                        <img src="{{items[i-1].Image}}" style="width:200px;height:80px" />
+
                                         <br/>
-                                        <p>{{item.Name}}</p>
-                                    </div>
+                                        <p text-align:left><strong>{{items[i-1].Name}}</strong></p>
 
+                                        <ion-grid>
+                                            <ion-row>
+                                                <ion-col col-4>
+                                                    <div class="price"> &#8377;{{items[i-1].Price}} </div>
+                                                </ion-col>
+                                                <ion-col col-8>
+                                                    <div class="add"><button ion-button outline small (click)="sendToCart(items[i-1])">Add</button></div>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-grid>
 
-                                    <ion-grid>
-                                        <ion-row>
-                                            <ion-col col-6>
-                                                <div class="price"> {{item.Price}} </div>
-                                            </ion-col>
-                                            <ion-col col-6>
-                                                <div class="add"><button ion-button outline small (click)="sendToCart(item)">Add</button></div>
-                                            </ion-col>
-                                        </ion-row>
-                                    </ion-grid>
+                                    </ion-card>
+                                </div>
+                            </ion-col>
 
-                                </ion-card>
-                            </div>
-                        </ion-col>
-                    </ion-row>
-                </ion-list>
+                            <ion-col col-6>
+                                <div class="card">
+                                    <ion-card>
+                                        <img src="{{items[i].Image}}" style="width:200px;height:80px" />
+
+                                        <br/>
+                                        <p text-align:left><strong>{{items[i].Name}}</strong></p>
+
+                                        <ion-grid>
+                                            <ion-row>
+                                                <ion-col col-4>
+                                                    <div class="price"> &#8377;{{items[i].Price}} </div>
+                                                </ion-col>
+                                                <ion-col col-8>
+                                                    <div class="add"><button ion-button outline small (click)="sendToCart(items[i])">Add</button></div>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-grid>
+
+                                    </ion-card>
+                                </div>
+                            </ion-col>
+
+                        </ion-row>
+                    </ion-list>
+                </ion-item>
+                <ion-row>
+                    <ion-col col-6>
+                        <div class="card" *ngIf="itemsLength % 2 == 0">
+                            <ion-card>
+                                <img src="{{items[itemsLength].Image}}" style="width:200px;height:80px" />
+
+                                <br/>
+                                <p text-align:left><strong>{{items[itemsLength].Name}}</strong></p>
+
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col col-5>
+                                            <div class="price">&#8377;{{items[itemsLength].Price}} </div>
+                                        </ion-col>
+                                        <ion-col col-7>
+                                            <div class="add"><button ion-button outline small (click)="sendToCart(items[itemsLength])">Add</button></div>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+
+                            </ion-card>
+                        </div>
+                    </ion-col>
+                </ion-row>
             </ion-grid>
         </ion-card>
     </div>
     <!-- basiccardcomponent -->
     <basiccard></basiccard>
+
     <!-- accordiancomponent -->
     <accordian></accordian>
     <!--imagecardcompoent -->
-    <imagecard></imagecard>
+    <!-- <imagecard></imagecard> -->
+    <hr>
+    <ion-card>
+        <img src="assets/images/starters/starter4.png" />
+        <div class="card-title">starter</div>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div class="price"> &#8377;95 </div>
+                </ion-col>
+                <ion-col>
+                    <div class="add"><button ion-button outline small>Add</button></div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </ion-card>
+    <hr>
+
+    <ion-card>
+        <img src="assets/images/starters/FCBL.png" />
+        <div class="card-title">Starter</div>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div class="price"> &#8377; 95 </div>
+                </ion-col>
+                <ion-col>
+                    <div class="add"><button ion-button outline small>Add</button></div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </ion-card>
 </ion-content>

@@ -8,7 +8,7 @@
 
     <ion-card>
         <ion-card-header>
-            <h1>RESTAURANTS</h1>
+            <h1 class="home">Restaurants</h1>
         </ion-card-header>
 
         <ion-card-content>
@@ -20,11 +20,11 @@
                             <ion-row>                
 
                                 <ion-col col-4>
-                                    <img item-left src="{{restaurant.Image}}">
+                                    <img item-left src="{{restaurant.Image}} ">
                                 </ion-col>
             
                                 <ion-col col-8>                
-                                    <h1 style="float: left">{{restaurant.Name}}</h1>
+                                    <h2 style="float: left"><strong>{{restaurant.Name}}</strong></h2>
                                     <br>
                                     <hr width="auto">                                                                            
                                 </ion-col>
@@ -36,14 +36,20 @@
                             <ion-row>
                                         
                                 <ion-col col-8>
-                                    <p style="float: left">
-                                        <ion-icon name="navigate">  {{restaurant.Location}}</ion-icon>
+                                    <p class="location" style="float: left">
+                                        
+                                            <ion-icon name="navigate">  {{restaurant.Location}}
+                                            </ion-icon>
+                                        
                                     </p>           
                                 </ion-col> 
             
                                 <ion-col col-4>
-                                    <p>
-                                        <ion-icon name="star">  {{restaurant.Rating}}</ion-icon>                                                   
+                                    <p class="rating">
+                            
+                                            <ion-icon name="star"> {{restaurant.Rating}}
+                                            </ion-icon>
+                                                                                      
                                     </p>
                                 </ion-col>                                                                            
  

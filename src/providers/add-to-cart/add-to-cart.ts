@@ -6,43 +6,34 @@ import { Storage } from "@ionic/storage";
 
 @Injectable()
 export class AddToCartProvider {
-
+total : number=0;
 item: any;
 itemDetails: string;
 retrievedItem: any;
 items:any=[];
 qty:any;
 itemsArray =[];
-totalPrice = 0;
+
 
 constructor(public storage: Storage){
-    this.storage.forEach((value, k, i)=>{
-      this.itemsArray.push(JSON.parse(value));
+    this.getItemsList().then(res => {
+      this.itemsArray = res;
     });
   }
 
-  calculateTotalPrice(index,quantityStatus){
-    if(quantityStatus){
-       this.totalPrice = this.totalPrice + this.itemsArray[index].item.Price;  
-    }
-    else{
-        this.totalPrice = this.totalPrice - this.itemsArray[index].item.Price;
-     }
+  getItemsList(): Promise<any>{
+    var itemsList = [];
+    return new Promise(resolve => {
+      this.storage.forEach((value,key,i) => {
+        itemsList.push(JSON.parse(value));
+      }).then(val =>{
+        resolve(itemsList);
+      });
+    })
   }
 
-  totalPriceValue(){
-    return this.totalPrice;
-  }
-  
   // Execution starts from here.
   toCart(item, shouldSetNow = true){
-    //Firstfind if this item already exists on the items array.
-    //If yes, then update the quantity
-    //If no, then create this item and set quantity as 1.
-    for(var i = 0; i<this.itemsArray.length; i++){
-      console.log("Loop: ",this.totalPrice);
-      this.totalPrice = this.totalPrice + this.itemsArray[i].item.Price;
-    }
     var index = -1;
     for(var i = 0; i<this.itemsArray.length; i++){
 
@@ -54,11 +45,9 @@ constructor(public storage: Storage){
 
     if(index != -1){
       this.itemsArray[index].quantity += 1;
-      this.calculateTotalPrice(index,true);
     }else{
       index = this.itemsArray.length;
       this.itemsArray.push({item: item, quantity: 1});
-      this.calculateTotalPrice(index,true);
     }
 
     if(shouldSetNow){
@@ -72,24 +61,24 @@ constructor(public storage: Storage){
     this.storage.set(itemObject.item.Name,this.itemDetails);
   }
 
-  sendData(){
-   // this.cartPage.cartPrice(this.sendTotalPrice());
-    return Promise.resolve(this.itemsArray);
+  sendData(): any{
+    return this.itemsArray;
   }
-
-  // sendTotalPrice(){
-  //   for(var index=0; index < this.items.length; index++){
-  //     console.log("Loop Price: ", this.totalPrice);
-  //     this.totalPrice = this.totalPrice + this.items[index].item.Price * this.items[index].quantity;
-  //   }
-  //   console.log("Price: ", this.totalPrice);
-  //   return this.totalPrice; 
-  // }
-
+  
   removeData(itemKey){
     this.storage.remove(itemKey);
   }
-
+  
+  totalPrice(){
+    console.log('this.itemsArray: ', this.itemsArray);
+  
+    for(var i = 0; i<this.itemsArray.length; i++){
+      console.log(this.itemsArray[i].item.Price);
+      this.total += this.itemsArray[i].item.Price * this.itemsArray[i].quantity;
+    }
+    return this.total;
+  }
+  
   save(){
     this.items.forEach(item=>{
       this.storage.set(item.item.Name, JSON.stringify(item));
