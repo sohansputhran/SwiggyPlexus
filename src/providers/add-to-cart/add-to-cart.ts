@@ -12,13 +12,24 @@ itemDetails: string;
 retrievedItem: any;
 items:any=[];
 qty:any;
-itemsArray =[];
+itemsArray = [];
 constructor(public storage: Storage){
-    this.storage.forEach((value, k, i)=>{
-      this.itemsArray.push(JSON.parse(value));
+    this.getItemsList().then(res =>{
+      this.itemsArray = res;
     });
   }
   
+  getItemsList(): Promise<any>{
+    var itemsList = [];
+    return new Promise(resolve =>{
+      this.storage.forEach((value, k, i)=>{
+        itemsList.push(JSON.parse(value));
+      }).then(val =>{
+        resolve(itemsList);
+      });
+    })
+  }
+
   // Execution starts from here.
   toCart(item, shouldSetNow = true){
     //Firstfind if this item already exists on the items array.
@@ -52,29 +63,43 @@ constructor(public storage: Storage){
     this.storage.set(itemObject.item.Name,this.itemDetails);
   }
 
-
-
-  sendData(): any{
-    return this.itemsArray;
+  sendData(): Promise<any>{
+    return new Promise(resolve =>{
+      this.getItemsList().then(res =>{
+        resolve(res);
+      })
+    })
   }
 
   removeData(itemKey){
     this.storage.remove(itemKey);
   }
-  totalPrice(){
-    console.log('this.itemsArray: ', this.itemsArray);
-    this.total = 0;
-    for(var i = 0; i<this.itemsArray.length; i++){
-      console.log(this.itemsArray[i].item.Price);
-      this.total += this.itemsArray[i].item.Price * this.itemsArray[i].quantity;
-    }
-    return this.total;
+
+  totalPrice(): Promise<number>{
+    return new Promise(resolve =>{
+      this.total = 0;
+      this.getItemsList().then(res =>{
+        for(var i = 0; i<this.itemsArray.length; i++){
+          this.total += this.itemsArray[i].item.Price * this.itemsArray[i].quantity;
+        }
+        resolve(this.total);
+      })
+    })
   }
-  save(){
-    this.items.forEach(item=>{
-      this.storage.set(item.Name, JSON.stringify(item));
-    });
+
+
   }
+
+
+
+
+
+  // save(){
+  //   this.items.forEach(item=>{
+  //     this.storage.set(item.Name,);
+  //     console.log(" item name :+" +item.Name +" save in provder",itemQty);
+  //   });
+  // }
   // getData(itemKey){
   //   this.storage.get(itemKey).then((result) => {
   //     this.retrievedItem = JSON.parse(result);
@@ -98,4 +123,4 @@ constructor(public storage: Storage){
     
 
 
-}
+

@@ -22,28 +22,17 @@ export class CartPage {
   total: number = 0;
   constructor(public toastCtrl: ToastController,public navCtrl: NavController, public addCart: AddToCartProvider, public elem: ElementRef,public storage:Storage) {
 
-    // this.addCart.sendData().then(result => {
-    //   this.items = result;
-    //   //console.log();
-    //   console.log("Inside cart :", this.items);
-    //   // for(var i = 0; i< 3; i++){
-    //   //   console.log('this.items[i].item.Price: ',this.items[i].item.Price);
-    //   //   console.log('this.items[i].quantity: ',this.items[i].quantity);
-    //   //   this.total += this.items[i].item.Price * this.items[i].quantity;
-    //   // }
-    //   var total = 0;
-    //   this.items.array.forEach(element => {
-    //     total += element.item.Price * element.quantity;
-    //   });
-    //   console.log('this.total: ',total);
-    // });
-    
+  
+   
   }
 
   ionViewDidEnter(){
-    this.items = this.addCart.sendData();
-    this.total = this.addCart.totalPrice();
-    console.log('this.total: ', this.total);
+    this.addCart.sendData().then(items =>{
+      this.items = items;
+      this.addCart.totalPrice().then(totalPrice =>{
+        this.total = totalPrice;
+      })
+    })
   }
 
   changeQuantity(index, changeStatus) {
@@ -53,12 +42,14 @@ export class CartPage {
 
     }
     else {
+      if( this.items[index].quantity>1){
       this.items[index].quantity -= 1;
       this.total = this.total - this.items[index].item.Price;
-
+      }
     }
 
   }
+  
   checkout(){
     this.storage.clear();
     let toast = this.toastCtrl.create({
@@ -70,25 +61,17 @@ export class CartPage {
     toast.present();
 
   }
+
+  removeItem(itemKey){
+      this.addCart.removeData(itemKey);
+     }
+    
 }
 
 
-    // increment(i){
-    //  // this.counter = this.elem.nativeElement.getAttribute('value');
-    //   this.quantity[i]+=1;
-    //   this.totalAmnt(i);
-    //  // console.log(i,this.quantity[i]);
-    // }
-    // decrement(i){
-    //   if(this.quantity[i]>1){
-    //   this.quantity[i]-=1;
-    //   this.totalAmnt(i);
-    // }
-    // }
+    
     // totalAmnt(i){
     //     this.totalItemprice[i]=this.quantity[i] * 95;
     // }
-    // removeItem(itemKey){
-    //   this.addCart.removeData(this.data[itemKey].name);
-    // }
+    //
 

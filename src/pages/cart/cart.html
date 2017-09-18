@@ -15,13 +15,14 @@
         <ion-card-content>
 
             <ion-item *ngFor="let item of items;let i=index">
-
+                <div class="card no-margin">
+                    <div class="item item-item-text-wrap no-padding">
                 <ion-card>
 
 
 
                     <ion-card-content>
-                        <ion-icon name="backspace" item-left ></ion-icon>
+                        <ion-icon name="backspace" item-right (click)="removeItem(item.item.Name)"></ion-icon>
                         <ion-grid>
                             <ion-row>
                                 <ion-col col-10>
@@ -56,21 +57,32 @@
                         </ion-grid>
                     </ion-card-content>
                 </ion-card>
+            </div>
+            </div>
             </ion-item>
 
 
 
         </ion-card-content>
 
-    </ion-card>
+    </ion-card> 
 
 </ion-content>
 <ion-footer>
     <ion-toolbar>
+      <ion-row>
+        <ion-col col-6>
+            <button ion-button clear (click)="save()">Save</button>
+        </ion-col>  
+        <ion-col col-6>
         <div class="total">
+            
             <strong>Total&nbsp;:{{total}}
                         </strong>
         </div>
+          </ion-col>
+          
+      </ion-row>
         <button ion-button block (click)="checkout()">Checkout</button>
     </ion-toolbar>
 </ion-footer>

@@ -30,10 +30,10 @@
     <div class="itemGrid">
         <ion-card class="maincard">
             <ion-grid>
-                <ion-list *ngFor="let item of items">
+                <ion-list *ngFor="let item of itemForRecommnedation">
                     <ion-row>
-                        <ion-col col-6>
-                            <div class="card">
+                        <ion-col  *ngIf=item.IsRecommended >
+                            <div class="card" >
                                 <ion-card>
                                     <img src="{{item.Image}}" />
                                     
@@ -69,35 +69,23 @@
     <!-- <imagecard></imagecard> -->
     <hr>
     <ion-card>
-        <img src="assets/images/starters/starter4.png" />
-        <div class="card-title">starter</div>
+        <ion-list *ngFor="let item of items">
+            <div *ngIf=!item.IsRecommended >
+        <img  src="{{item.Image}}" />
+        <p text-align:left><strong>{{item.Name}}</strong></p>
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <div class="price3"> &#8377;95 </div>
+                    <div class="price3"> &#8377;{{item.Price}} </div>
                 </ion-col>
                 <ion-col>
-                    <div class="add"><button ion-button outline small>Add</button></div>
+                        <div class="add"><button ion-button outline small (click)="sendToCart(item)">Add</button></div>
                 </ion-col>
             </ion-row>
         </ion-grid>
-    
+            </div>
+        </ion-list>
     </ion-card>
     <hr>
-    
-    <ion-card>
-        <img src="assets/images/starters/FCBL.png" />
-        <div class="card-title">Starter</div>
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <div class="price3"> &#8377; 95 </div>
-                </ion-col>
-                <ion-col>
-                    <div class="add"><button ion-button outline small>Add</button></div>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    
-    </ion-card>
+
 </ion-content>

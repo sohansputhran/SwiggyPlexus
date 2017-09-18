@@ -17,7 +17,7 @@ export class MenuPage {
   restaurantName: string;
   items: any;
   restaurantRating: number;
-
+  itemForRecommnedation:any;
   constructor(public navCtrl: NavController, public add:AddToCartProvider, public navParams: NavParams,private apiService: ApiService) {
       
       this.courseId = this.navParams.get('courseId');
@@ -25,6 +25,8 @@ export class MenuPage {
       this.restaurantName = this.navParams.get('restaurantName');
       this.apiService.GetItemsForCourse(this.courseId).then(items => {
         this.items = items
+        this.itemForRecommnedation=items;
+        console.log("is recommend",this.itemForRecommnedation);
       });
     
   }
