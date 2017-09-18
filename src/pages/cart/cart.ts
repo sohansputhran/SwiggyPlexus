@@ -3,12 +3,6 @@ import { Storage } from '@ionic/storage';
 import { ToastController } from 'ionic-angular';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddToCartProvider } from "../../providers/add-to-cart/add-to-cart";
-/**
- * Generated class for the CartPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -22,6 +16,7 @@ export class CartPage {
   total: number = 0;
   constructor(public toastCtrl: ToastController,public navCtrl: NavController, public addCart: AddToCartProvider, public elem: ElementRef,public storage:Storage) {
 
+
   
    
   }
@@ -33,6 +28,8 @@ export class CartPage {
         this.total = totalPrice;
       })
     })
+
+    
   }
 
   changeQuantity(index, changeStatus) {
@@ -59,7 +56,6 @@ export class CartPage {
       closeButtonText: 'Ok'
     });
     toast.present();
-
   }
 
   removeItem(itemKey){
@@ -67,11 +63,4 @@ export class CartPage {
      }
     
 }
-
-
-    
-    // totalAmnt(i){
-    //     this.totalItemprice[i]=this.quantity[i] * 95;
-    // }
-    //
 

@@ -25,16 +25,15 @@ export class MenuPage {
       this.restaurantName = this.navParams.get('restaurantName');
       this.apiService.GetItemsForCourse(this.courseId).then(items => {
         this.items = items
+
         this.itemForRecommnedation=items;
         console.log("is recommend",this.itemForRecommnedation);
       });
     
-  }
+    }
 
   sendToCart(item){
     console.log("item: ",item);
     this.add.toCart(item);
   }
-
-
 }

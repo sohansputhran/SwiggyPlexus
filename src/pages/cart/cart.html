@@ -22,15 +22,19 @@
 
 
                     <ion-card-content>
+<<<<<<< HEAD
                         <ion-icon name="backspace" item-right (click)="removeItem(item.item.Name)"></ion-icon>
+=======
+                        <ion-icon name="backspace" item-left></ion-icon>
+>>>>>>> 381ec0dd492d357f51db69a4f0dc4c933123cc4c
                         <ion-grid>
                             <ion-row>
                                 <ion-col col-10>
-                                       
+
                                     <p> <strong>{{item.item.Name}}</strong></p>
                                 </ion-col>
                                 <ion-col col-2>
-                                    <div class="price2"> &#8377; {{item.item.Price}} </div>
+                                    <div class="price2"> &#8377; {{item.item.Price}} * {{item.quantity}}</div>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
@@ -41,18 +45,12 @@
 
                         <ion-grid>
                             <ion-row>
-                                <ion-col col-10>
+                                <ion-col>
                                     <ion-icon name="remove-circle" (click)="changeQuantity(i,false)"></ion-icon>
                                     &nbsp;
                                     <input type="text" size="4" name="quantity" style="color:black" value="{{item.quantity}}"> &nbsp;
                                     <ion-icon name="add-circle" (click)="changeQuantity(i,true)"></ion-icon>
                                 </ion-col>
-                                <ion-col col-2>
-                                    <!-- <h1> total item {{ totalItemprice[i] }}</h1> -->
-                                </ion-col>
-                                <!-- <ion-col col-2>
-                                    Total :&nbsp;
-                                </ion-col> -->
                             </ion-row>
                         </ion-grid>
                     </ion-card-content>
@@ -78,7 +76,10 @@
         <div class="total">
             
             <strong>Total&nbsp;:{{total}}
-                        </strong>
+
+            </strong>
+           
+
         </div>
           </ion-col>
           

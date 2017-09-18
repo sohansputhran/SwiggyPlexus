@@ -1,10 +1,5 @@
-hr {
-    border: none;
-    border-top: 1px dotted black;
-    color: #fff;
-    background-color: #fff;
-    height: 1px;
-    width: 100%;
+h1.restaurant {
+    text-align: left;
 }
 
 .card-title {
@@ -15,7 +10,7 @@ hr {
 .itemHeader {
     .uppertop {
         font-size: 2.2rem;
-        // margin: 5px 10px 0px 10px;
+        margin: 5px 10px 0px 10px;
     }
     .ratingstar {
         border: 1px;
@@ -35,38 +30,36 @@ hr {
     }
 }
 
+.price {
+    text-align: left;
+    color: green;
+    margin: 10px 5px;
+    padding-left: 10px;
+}
 
-    .price3 {
+.add {
+    text-align: right;
+    color: #807E00;
+    margin-top: 0px;
+    padding-right: 10px;
+    p {
+        text-indent: 50px;
+    }
+    .price6 {
         text-align: left;
         color: green;
         margin: 10px 5px;
         padding-left: 10px;
     }
-    .add {
+    .add6 {
         text-align: right;
-        color: #807E00;
+        color: green;
         margin-top: 0px;
         padding-right: 10px;
+
    p{
     text-indent: 50px;
     
    }
-   
-   .price6{
-    text-align: left;
-   color:green;
-     margin:10px 5px;
-   
-    padding-left:10px;
-  }
 
-  .add6 {
-    text-align:right;
-    color:green;
-    margin-top:0px; 
-    padding-right:10px;
-   }
-   .itemGrid{
-       display:inline;
-   }
-}
+}}
