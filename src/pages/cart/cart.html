@@ -16,11 +16,12 @@
             </div>   </ion-col>
            
             <ion-col col-6>
-            <button ion-button block (click)="save()" item-right>Save</button>
+            <button ion-button block (click)="save()" item-right small>Save</button>
             </ion-col></ion-row>
         </ion-card-header>
-        <ion-card-content>
-
+        <!-- <ion-card-content> -->
+        </ion-card> 
+       
             <ion-item *ngFor="let item of items;let i=index">
                 <div class="card no-margin">
                     <div class="item item-item-text-wrap no-padding">
@@ -29,8 +30,8 @@
 
 
                     <ion-card-content>
-
-                        <ion-icon name="backspace" item-right (click)="removeItem(item.item.Name)"></ion-icon>
+                            <img  src= {{item.item.Image}} />
+                       
 
                         <ion-grid>
                             <ion-row>
@@ -39,7 +40,7 @@
                                     <p> <strong>{{item.item.Name}}</strong></p>
                                 </ion-col>
                                 <ion-col col-2>
-                                    <div class="price2"> &#8377; {{item.item.Price}} * {{item.quantity}}</div>
+                                    <div class="price2"> &#8377; {{item.item.Price}} </div>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
@@ -53,8 +54,9 @@
                                 <ion-col>
                                     <ion-icon name="remove-circle" (click)="changeQuantity(i,false)"></ion-icon>
                                     &nbsp;
-                                    <input type="text" size="4" name="quantity" style="color:black" value="{{item.quantity}}"> &nbsp;
+                                    <input type="text" size="4" name="quantity" style="color:black" value="{{item.quantity}}"  > &nbsp;
                                     <ion-icon name="add-circle" (click)="changeQuantity(i,true)"></ion-icon>
+                                    <ion-icon name="backspace" item-right (click)="removeItem(item.item)"></ion-icon>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
@@ -65,17 +67,16 @@
             </ion-item>
 
 
-
-        </ion-card-content>
-
-    </ion-card> 
+      
+        
+      
 
 </ion-content>
 <ion-footer>
     <ion-toolbar>
       <ion-row>
         <ion-col col-6>
-            <button ion-button clear (click)="save()">Save</button>
+           
         </ion-col>  
         <ion-col col-6>
         <div class="total">

@@ -85,14 +85,6 @@ constructor(public storage: Storage){
       })
     })
   }
-
-
-
-
-
-
-
-
   
   save(){
     this.items.forEach(item=>{
