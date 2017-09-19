@@ -1,6 +1,12 @@
 <ion-header>
     <ion-navbar color="danger">
-        <ion-title>Swiggy Plexus</ion-title>
+        <ion-item>
+            <ion-label>Location</ion-label>
+            <ion-select [(ngModel)]="location" (ionChange)="locationChanged()">
+                <ion-option value="1">Bangalore</ion-option>
+                <ion-option value="2">Bhopal</ion-option>
+            </ion-select>
+        </ion-item>
     </ion-navbar>
 </ion-header>
 

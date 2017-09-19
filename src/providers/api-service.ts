@@ -8,9 +8,9 @@ baseUrl: string = 'http://localhost:24535/api/Data/';           //Replace this w
 constructor(public http: Http) {
 }
 
-GetRestaurants(){
+GetRestaurants(locationId){
     return new Promise((resolve,reject) => {
-     this.http.get(this.baseUrl + 'GetRestaurants')
+     this.http.get(this.baseUrl + 'GetRestaurants/' + locationId)
        .map(res => res.json())
        .subscribe(data => {
          resolve(data);

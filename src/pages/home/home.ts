@@ -10,14 +10,18 @@ import { MenuPage } from "../menu/menu";
 })
 export class HomePage {
   restaurants: any;
-
+  location: number = 1;
   constructor(public navCtrl: NavController, private apiService: ApiService) {
-
-    this.apiService.GetRestaurants().then(restaurants =>{
+    this.apiService.GetRestaurants(this.location).then(restaurants =>{
       this.restaurants = restaurants;
     })
   }
 
+  locationChanged(){
+    this.apiService.GetRestaurants(this.location).then(restaurants =>{
+      this.restaurants = restaurants;
+    })
+  }
 
   selectedRestaurant(restaurant){
     this.navCtrl.push(RestaurantPage, {

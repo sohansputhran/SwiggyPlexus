@@ -1,4 +1,4 @@
-using SwiggyPlexusApi.ViewModels;
+﻿using SwiggyPlexusApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +12,22 @@ namespace SwiggyPlexusApi.Controllers
     public class DataController : ApiController
     {
         [HttpGet]
-        [Route("GetRestaurants")]
-        public IEnumerable<Restaurant> GetRestaurants()
+        [Route("GetRestaurants/{locationId}")]
+        public IEnumerable<Restaurant> GetRestaurants(int locationId)
         {
             List<Restaurant> restaurants = new List<Restaurant>();
-
-            restaurants.Add(new Restaurant { RestaurantId = 1, Image = "../../assets/images/logos/empire.jpg", Name = "Empire", Location = "Assam", Rating = 5 });
-            restaurants.Add(new Restaurant { RestaurantId = 2, Image = "../../assets/images/logos/green_leaf.png", Name = "Juice Maker", Location = "Mysuru", Rating = 4 });
-            restaurants.Add(new Restaurant { RestaurantId = 3, Image = "../../assets/images/logos/empire.jpg", Name = "Bowl Company", Location = "Bhopal", Rating = 3 });
+            if (locationId == 1)
+            {
+                restaurants.Add(new Restaurant { RestaurantId = 1, Image = "../../assets/images/logos/empire.jpg", Name = "Empire", Location = "Assam", Rating = 5, Cost = 300, DeliveryTime =35, Description="Indori Poha" });
+                restaurants.Add(new Restaurant { RestaurantId = 2, Image = "../../assets/images/logos/green_leaf.png", Name = "Juice Maker", Location = "Mysuru", Rating = 4 });
+                restaurants.Add(new Restaurant { RestaurantId = 3, Image = "../../assets/images/logos/empire.jpg", Name = "Bowl Company", Location = "Bhopal", Rating = 3 });
+            }
+            else if (locationId == 2)
+            {
+                restaurants.Add(new Restaurant { RestaurantId = 1, Image = "../../assets/images/logos/empire.jpg", Name = "Empir1", Location = "Assam", Rating = 5 });
+                restaurants.Add(new Restaurant { RestaurantId = 2, Image = "../../assets/images/logos/green_leaf.png", Name = "Juice Maker1", Location = "Mysuru", Rating = 4 });
+                restaurants.Add(new Restaurant { RestaurantId = 3, Image = "../../assets/images/logos/empire.jpg", Name = "Bowl Company1", Location = "Bhopal", Rating = 3 });
+            }
 
             return restaurants;
         }
@@ -35,7 +43,7 @@ namespace SwiggyPlexusApi.Controllers
                 courses.Add(new Course { CourseId = 1, Name = "Main Course", Image = "../../assets/images/maincourse/golden.jpg" });
                 courses.Add(new Course { CourseId = 2, Name = "Starter", Image = "../../assets/images/starters/tikka.jpg" });
                 courses.Add(new Course { CourseId = 3, Name = "Desserts", Image = "../../assets/images/dessert/choclatecake.png" });
-                courses.Add(new Course { CourseId = 4, Name = "Drinks", Image = "" });
+                courses.Add(new Course { CourseId = 4, Name = "Drinks", Image = "../../assets/images/drinks/beer.jpg" });
             }
             else if (restraurantId == 2)
             {
@@ -90,16 +98,16 @@ namespace SwiggyPlexusApi.Controllers
             }
             else if (courseId == 5)
             {
-                items.Add(new Item { ItemId = 17, Image = "", Name = "Chicken Salad", Price = 200, Rating = 5, IsRecommended = true });
-                items.Add(new Item { ItemId = 18, Image = "", Name = "Veg Salad", Price = 150, Rating = 2, IsRecommended = true });
-                items.Add(new Item { ItemId = 19, Image = "", Name = "Healthy Salad", Price = 220, Rating = 1, IsRecommended = false });
+                items.Add(new Item { ItemId = 17, Image = "../../assets/images/dessert/brownie.jpg", Name = "Chicken Salad", Price = 200, Rating = 5, IsRecommended = true });
+                items.Add(new Item { ItemId = 18, Image = "../../assets/images/dessert/brownie.jpg", Name = "Veg Salad", Price = 150, Rating = 2, IsRecommended = true });
+                items.Add(new Item { ItemId = 19, Image = "../../assets/images/dessert/brownie.jpg", Name = "Healthy Salad", Price = 220, Rating = 1, IsRecommended = false });
             }
             else
             {
-                items.Add(new Item { ItemId = 20, Image = "../../assets/images/drinks/orange.jpg", Name = "Orange", Price = 50, Rating = 3, IsRecommended = true });
-                items.Add(new Item { ItemId = 21, Image = "../../assets/images/drinks/apple.jpg", Name = "Apple", Price = 60, Rating = 5, IsRecommended = false });
-                items.Add(new Item { ItemId = 22, Image = "../../assets/images/drinks/mango.jpg", Name = "Mango", Price = 50, Rating = 4, IsRecommended = true });
-                items.Add(new Item { ItemId = 23, Image = "../../assets/images/drinks/watermelon.jpg", Name = "Water Melon", Price = 30, Rating = 2, IsRecommended = true });
+                items.Add(new Item { ItemId = 20, Image = "../../assets/images/drinks/beer.jpg", Name = "Orange", Price = 50, Rating = 3, IsRecommended = true });
+                items.Add(new Item { ItemId = 21, Image = "../../assets/images/drinks/beer.jpg", Name = "Apple", Price = 60, Rating = 5, IsRecommended = false });
+                items.Add(new Item { ItemId = 22, Image = "../../assets/images/drinks/beer.jpg", Name = "Mango", Price = 50, Rating = 4, IsRecommended = true });
+                items.Add(new Item { ItemId = 23, Image = "../../assets/images/drinks/beer.jpg", Name = "Water Melon", Price = 30, Rating = 2, IsRecommended = true });
             }
 
             return items;
