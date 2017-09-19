@@ -6,14 +6,12 @@ import { Storage } from "@ionic/storage";
 
 @Injectable()
 export class AddToCartProvider {
-total : number=0;
-item: any;
+total = 0;
 itemDetails: string;
 retrievedItem: any;
-items:any=[];
-qty:any;
-
+items = [];
 itemsArray = [];
+
 constructor(public storage: Storage){
     this.getItemsList().then(res =>{
       this.itemsArray = res;
@@ -86,14 +84,6 @@ constructor(public storage: Storage){
     })
   }
 
-
-
-
-
-
-
-
-  
   save(){
     this.items.forEach(item=>{
       this.storage.set(item.item.Name, JSON.stringify(item));

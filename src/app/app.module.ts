@@ -5,7 +5,7 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 
 import { CartPage } from '../pages/cart/cart';
-import { ContactPage } from '../pages/contact/contact';
+import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RestaurantPage } from "../pages/restaurant/restaurant";
@@ -26,8 +26,8 @@ import { IonicStorageModule } from "@ionic/storage";
 @NgModule({
   declarations: [
     MyApp,
-     CartPage,
-    ContactPage,
+    CartPage,
+    LoginPage,
     HomePage,
     TabsPage,
     AccordianComponent,
@@ -44,8 +44,8 @@ import { IonicStorageModule } from "@ionic/storage";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-     CartPage,
-    ContactPage,
+    CartPage,
+    LoginPage,
     HomePage,
     TabsPage,
     AccordianComponent,

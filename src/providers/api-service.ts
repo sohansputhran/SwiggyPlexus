@@ -32,7 +32,7 @@ GetCoursesForRestaurants(restaurantId){
    });
 }
 
-GetItemsForCourse(courseId){
+GetItemsForCourse(courseId): Promise<any>{
     return new Promise((resolve,reject) => {
      this.http.get(this.baseUrl + 'GetItemsForCourse/' + courseId)
        .map(res => res.json())

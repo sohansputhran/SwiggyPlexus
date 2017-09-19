@@ -12,22 +12,32 @@ import { ApiService } from "../../providers/api-service";
   templateUrl: 'menu.html',
 })
 export class MenuPage {
+
   courseId : number;
   courseName : string;
   restaurantName: string;
   items: any;
+  recommendedItems: any;
+  notRecommendedItems: any;
   restaurantRating: number;
-  itemForRecommnedation:any;
+  itemsLength : number;
+
   constructor(public navCtrl: NavController, public add:AddToCartProvider, public navParams: NavParams,private apiService: ApiService) {
       
       this.courseId = this.navParams.get('courseId');
       this.courseName = this.navParams.get('courseName');
       this.restaurantName = this.navParams.get('restaurantName');
+      this.recommendedItems = [];
+      this.notRecommendedItems = [];
       this.apiService.GetItemsForCourse(this.courseId).then(items => {
-        this.items = items
-
-        this.itemForRecommnedation=items;
-        console.log("is recommend",this.itemForRecommnedation);
+        this.items = items;
+          for(var i = 0; i< items.length; i++){
+            if(items[i].IsRecommended == true){
+              this.recommendedItems.push(items[i]);
+            }else{
+              this.notRecommendedItems.push(items[i]);
+            }
+          }
       });
     
     }
@@ -35,5 +45,9 @@ export class MenuPage {
   sendToCart(item){
     console.log("item: ",item);
     this.add.toCart(item);
+  }
+
+  ionViewDidEnter(){
+    this.itemsLength = this.items.length - 1;
   }
 }

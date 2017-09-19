@@ -10,23 +10,7 @@ h1.restaurant {
 .itemHeader {
     .uppertop {
         font-size: 2.2rem;
-        margin: 5px 10px 0px 10px;
-    }
-    .ratingstar {
-        border: 1px;
-        margin: 1px 15px 15px 13px;
-        color: #DBE827;
-    }
-    .data {
-        border: 1px;
-        text-align: center;
-        font-size: 2.0rem;
-        margin: 1px 15px 0px 1px;
-    }
-    .price {
-        color: #088C1B;
-        text-align: right;
-        margin: 1px 15px 15px 13px;
+        margin: 15px 10px 10px 10px;
     }
 }
 
@@ -56,10 +40,8 @@ h1.restaurant {
         color: green;
         margin-top: 0px;
         padding-right: 10px;
-
-   p{
-    text-indent: 50px;
-    
-   }
-
-}}
+        p {
+            text-indent: 50px;
+        }
+    }
+}

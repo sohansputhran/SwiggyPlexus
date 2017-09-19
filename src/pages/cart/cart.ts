@@ -12,9 +12,9 @@ import { AddToCartProvider } from "../../providers/add-to-cart/add-to-cart";
 })
 export class CartPage {
   items: any;
-  totalItemprice: any = [];
-  total: number = 0;
-  constructor(public toastCtrl: ToastController,public navCtrl: NavController, public addCart: AddToCartProvider, public elem: ElementRef,public storage:Storage) {
+  totalItemprice = [];
+  total = 0;
+  constructor(public toastCtrl: ToastController,public navCtrl: NavController, public addCart: AddToCartProvider,public storage:Storage) {
 
 
   
