@@ -1,6 +1,6 @@
 <html>
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="danger">
         <ion-title>Cart</ion-title>
     </ion-navbar>
 </ion-header>
@@ -22,11 +22,9 @@
 
 
                     <ion-card-content>
-<<<<<<< HEAD
+
                         <ion-icon name="backspace" item-right (click)="removeItem(item.item.Name)"></ion-icon>
-=======
-                        <ion-icon name="backspace" item-left></ion-icon>
->>>>>>> 381ec0dd492d357f51db69a4f0dc4c933123cc4c
+
                         <ion-grid>
                             <ion-row>
                                 <ion-col col-10>
@@ -84,7 +82,7 @@
           </ion-col>
           
       </ion-row>
-        <button ion-button block (click)="checkout()">Checkout</button>
+        <button ion-button block (click)="checkout()" color="danger">Checkout</button>
     </ion-toolbar>
 </ion-footer>
 

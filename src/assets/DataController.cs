@@ -34,20 +34,20 @@ namespace SwiggyPlexusApi.Controllers
             {
                 courses.Add(new Course { CourseId = 1, Name = "Main Course", Image = "../../assets/images/maincourse/golden.jpg" });
                 courses.Add(new Course { CourseId = 2, Name = "Starter", Image = "../../assets/images/starters/tikka.jpg" });
-                courses.Add(new Course { CourseId = 3, Name = "Desserts", Image =  "../../assets/images/dessert/choclatecake.png" });
+                courses.Add(new Course { CourseId = 3, Name = "Desserts", Image = "../../assets/images/dessert/choclatecake.png" });
                 courses.Add(new Course { CourseId = 4, Name = "Drinks", Image = "" });
             }
             else if (restraurantId == 2)
             {
                 courses.Add(new Course { CourseId = 1, Name = "Main Course", Image = "../../assets/images/maincourse/golden.jpg" });
-                courses.Add(new Course { CourseId = 2, Name = "Starter", Image =  "../../assets/images/starters/tikka.jpg" });
+                courses.Add(new Course { CourseId = 2, Name = "Starter", Image = "../../assets/images/starters/tikka.jpg" });
                 courses.Add(new Course { CourseId = 5, Name = "Desserts", Image = "../../assets/images/dessert/choclatecake.png" });
                 courses.Add(new Course { CourseId = 6, Name = "Drinks", Image = "../../assets/images/drinks/beer.jpg" });
             }
             else
             {
                 courses.Add(new Course { CourseId = 1, Name = "Main Course", Image = "../../assets/images/maincourse/golden.jpg" });
-                courses.Add(new Course { CourseId = 2, Name = "Starter", Image =  "../../assets/images/starters/tikka.jpg" });
+                courses.Add(new Course { CourseId = 2, Name = "Starter", Image = "../../assets/images/starters/tikka.jpg" });
                 courses.Add(new Course { CourseId = 3, Name = "Desserts", Image = "../../assets/images/dessert/choclatecake.png" });
             }
 
@@ -96,10 +96,10 @@ namespace SwiggyPlexusApi.Controllers
             }
             else
             {
-                items.Add(new Item { ItemId = 20, Image = "", Name = "Orange", Price = 50, Rating = 3, IsRecommended = true });
-                items.Add(new Item { ItemId = 21, Image = "", Name = "Apple", Price = 60, Rating = 5, IsRecommended = false });
-                items.Add(new Item { ItemId = 22, Image = "", Name = "Mango", Price = 50, Rating = 4, IsRecommended = true });
-                items.Add(new Item { ItemId = 23, Image = "", Name = "Water Melon", Price = 30, Rating = 2, IsRecommended = true });
+                items.Add(new Item { ItemId = 20, Image = "../../assets/images/drinks/orange.jpg", Name = "Orange", Price = 50, Rating = 3, IsRecommended = true });
+                items.Add(new Item { ItemId = 21, Image = "../../assets/images/drinks/apple.jpg", Name = "Apple", Price = 60, Rating = 5, IsRecommended = false });
+                items.Add(new Item { ItemId = 22, Image = "../../assets/images/drinks/mango.jpg", Name = "Mango", Price = 50, Rating = 4, IsRecommended = true });
+                items.Add(new Item { ItemId = 23, Image = "../../assets/images/drinks/watermelon.jpg", Name = "Water Melon", Price = 30, Rating = 2, IsRecommended = true });
             }
 
             return items;
