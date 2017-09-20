@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { CartPage } from '../pages/cart/cart';
 import { LoginPage } from '../pages/login/login';
+import {  SignupPage } from '../pages/signup/signup';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RestaurantPage } from "../pages/restaurant/restaurant";
@@ -31,6 +32,7 @@ import { IonicStorageModule } from "@ionic/storage";
     MyApp,
     CartPage,
     LoginPage,
+    SignupPage,
     HomePage,
     TabsPage,
     AccordianComponent,
@@ -49,6 +51,7 @@ import { IonicStorageModule } from "@ionic/storage";
     MyApp,
     CartPage,
     LoginPage,
+    SignupPage,
     HomePage,
     TabsPage,
     AccordianComponent,
