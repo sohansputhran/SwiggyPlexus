@@ -53,8 +53,9 @@ export class CartPage {
       closeButtonText: 'Ok'
     });
     toast.present();
-    this.total = 0;
+    
     this.items = [];
+    this.total = 0;
   }
 
   removeItem(item) {

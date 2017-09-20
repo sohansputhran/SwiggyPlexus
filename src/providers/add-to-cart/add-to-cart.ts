@@ -3,6 +3,7 @@ import { NavController, NavParams } from "ionic-angular";
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Storage } from "@ionic/storage";
+import { ToastController } from 'ionic-angular';
 
 @Injectable()
 export class AddToCartProvider {
@@ -12,7 +13,7 @@ retrievedItem: any;
 items = [];
 itemsArray = [];
 
-constructor(public storage: Storage){
+constructor(public storage: Storage,public toastCtrl: ToastController){
     this.getItemsList().then(res =>{
       this.itemsArray = res;
     });
@@ -51,6 +52,14 @@ constructor(public storage: Storage){
     if(shouldSetNow){
       this.setData(this.itemsArray[index]);
     }
+    let toast = this.toastCtrl.create({
+      message: 'Added to Cart!',
+      duration: 100,
+      position: 'middle',
+      closeButtonText: 'Ok'
+    });
+    toast.present();
+
   }
 
   setData(itemObject){

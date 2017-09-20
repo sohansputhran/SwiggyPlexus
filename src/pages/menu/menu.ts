@@ -6,6 +6,7 @@ import {BasiccardComponent} from '../../components/basiccard/basiccard';
 import { AddToCartProvider } from "../../providers/add-to-cart/add-to-cart";
 import { ApiService } from "../../providers/api-service";
 
+import {ItemDetailModal} from "../../modals/itemdetail/itemdetail";
 @IonicPage()
 @Component({
   selector: 'page-menu',
@@ -22,7 +23,7 @@ export class MenuPage {
   restaurantRating: number;
   itemsLength : number;
 
-  constructor(public navCtrl: NavController, public add:AddToCartProvider, public navParams: NavParams,private apiService: ApiService) {
+  constructor(public navCtrl: NavController, public add:AddToCartProvider, public navParams: NavParams,private apiService: ApiService,public modalCtrl:ModalController) {
       
       this.courseId = this.navParams.get('courseId');
       this.courseName = this.navParams.get('courseName');
@@ -49,5 +50,11 @@ export class MenuPage {
 
   ionViewDidEnter(){
     this.itemsLength = this.items.length - 1;
+  }
+  itemDetail(itemId){
+
+    console.log(itemId)
+    let itemDetailModal = this.modalCtrl.create(ItemDetailModal,{item:this.items,i:itemId});
+    itemDetailModal.present();
   }
 }

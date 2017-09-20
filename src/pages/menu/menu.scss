@@ -6,14 +6,26 @@ h1.restaurant {
     padding: 20px 0px 0px 10px;
     font-size: 1.5rem;
 }
-
+.veg{
+    margin-left:22px;   
+}
 .itemHeader {
     .uppertop {
         font-size: 2.2rem;
         margin: 15px 10px 10px 10px;
     }
 }
-
+.label{
+    color:black;
+    display: inline;
+    font-size: 100%;
+    text-align: right;
+    margin-right:0px;
+}
+.recommended{
+    margin-top:1px;
+    margin-left:22px;
+}
 .price {
     text-align: left;
     color: green;
