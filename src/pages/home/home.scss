@@ -1,6 +1,5 @@
 * {
     font-family: 'Times New Roman', Times, serif;
-    font-style: oblique;
 }
 
 p.location {
@@ -13,4 +12,18 @@ h1.home {
 
 p.rating {
     color: green;
+}
+
+p.count {
+    margin-left: 30px;
+    margin-top: 13px;
+}
+
+#ordering {
+    margin-top: 0px;
+    align-items: right;
+}
+
+#details {
+    margin-top: 0px;
 }

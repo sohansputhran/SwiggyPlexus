@@ -1,71 +1,83 @@
 <ion-header>
-    <ion-navbar color="danger">
-        <ion-item>
-            <ion-label>Location</ion-label>
-            <ion-select [(ngModel)]="location" (ionChange)="locationChanged()">
-                <ion-option value="1">Bangalore</ion-option>
-                <ion-option value="2">Bhopal</ion-option>
-            </ion-select>
-        </ion-item>
-    </ion-navbar>
+    <ion-list>
+
+        <ion-select [(ngModel)]="location" (ionChange)="locationChanged()" name="location">
+            <ion-option value="1">Bangalore</ion-option>
+            <ion-option value="2">Bhopal</ion-option>
+        </ion-select>
+    </ion-list>
 </ion-header>
 
 <ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <p class="count"><strong>{{restCount}} RESTAURANTS</strong></p>
+            </ion-col>
+            <ion-col col-6>
+                <div id="ordering">
+                    <ion-list>
+                        <ion-select [(ngModel)]="filterType" (ionChange)="filters(filterType)" placeholder="FILTERS">
+                            <ion-option value="Rating">Rating</ion-option>
+                            <ion-option value="Cost">Cost</ion-option>
+                            <ion-option value="DeliveryTime">Delivery Time</ion-option>
+                        </ion-select>
+                    </ion-list>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
-    <ion-card>
-        <ion-card-header>
-            <h1 class="home">Restaurants</h1>
-        </ion-card-header>
+    <div *ngFor="let restaurant of restaurants" (click)="selectedRestaurant(restaurant)">
+        <ion-card>
+            <ion-card-content>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-5>
+                            <img item-left src="{{restaurant.Image}}">
+                        </ion-col>
 
-        <ion-card-content>
-            <div *ngFor="let restaurant of restaurants" (click)="selectedRestaurant(restaurant)">
-                <ion-card>
-                    <ion-card-content>
+                        <ion-col col-7>
+                            <p style="float: left">
+                                <strong>
+                                            {{restaurant.Name}}
+                                        </strong>
+                                <br> {{restaurant.Description}}
+                            </p><br>
+                            <br>
+                            <hr width="auto">
 
-                        <ion-grid>
-                            <ion-row>
 
-                                <ion-col col-5>
-                                    <img item-left src="{{restaurant.Image}} ">
-                                </ion-col>
+                        </ion-col>
 
-                                <ion-col col-7>
-                                    <h2 style="float: left"><strong>{{restaurant.Name}}</strong></h2>
-                                    <br>
-                                    <hr width="auto">
-                                </ion-col>
+                    </ion-row>
 
-                            </ion-row>
-                        </ion-grid>
+                    <div id="details">
+                        <ion-row>
+                            <ion-col col-3>
+                                <p class="rating">
+                                    <ion-icon name="star"> {{restaurant.Rating}}
+                                    </ion-icon>
+                                </p>
+                            </ion-col>
 
-                        <ion-grid>
-                            <ion-row>
+                            <ion-col col-4>
+                                <p class="location" style="float: left">
+                                    {{restaurant.DeliveryTime}} mins
+                                </p>
+                            </ion-col>
 
-                                <ion-col col-8>
-                                    <p class="location" style="float: left">
+                            <ion-col col-5>
+                                <p>
+                                    &#8377;{{restaurant.Cost}} for two</p>
+                            </ion-col>
 
-                                        <ion-icon name="navigate"> {{restaurant.Location}}
-                                        </ion-icon>
+                        </ion-row>
+                    </div>
+                </ion-grid>
 
-                                    </p>
-                                </ion-col>
-
-                                <ion-col col-4>
-                                    <p class="rating">
-
-                                        <ion-icon name="star"> {{restaurant.Rating}}
-                                        </ion-icon>
-
-                                    </p>
-                                </ion-col>
-
-                            </ion-row>
-                        </ion-grid>
-
-                    </ion-card-content>
-                </ion-card>
-                <br>
-            </div>
-        </ion-card-content>
-    </ion-card>
+            </ion-card-content>
+        </ion-card>
+        <br>
+    </div>
 </ion-content>
