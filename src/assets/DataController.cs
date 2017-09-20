@@ -18,9 +18,9 @@ namespace SwiggyPlexusApi.Controllers
             List<Restaurant> restaurants = new List<Restaurant>();
             if (locationId == 1)
             {
-                restaurants.Add(new Restaurant { RestaurantId = 1, Image = "../../assets/images/logos/empire.jpg", Name = "Empire", Location = "Assam", Rating = 5, Cost = 300, DeliveryTime =35, Description="Indori Poha" });
+                restaurants.Add(new Restaurant { RestaurantId = 1, Image = "../../assets/images/logos/empire.jpg", Name = "Empire", Location = "Assam", Rating = 5, Cost = 300, DeliveryTime =35, Description="Chicken Biryani" });
                 restaurants.Add(new Restaurant { RestaurantId = 2, Image = "../../assets/images/logos/green_leaf.png", Name = "Juice Maker", Location = "Mysuru", Rating = 4, Cost = 400, DeliveryTime =15, Description="North Indian" });
-                restaurants.Add(new Restaurant { RestaurantId = 3, Image = "../../assets/images/logos/empire.jpg", Name = "Bowl Company", Location = "Bhopal", Rating = 3, Cost = 500, DeliveryTime =5, Description="South Indian" });
+                restaurants.Add(new Restaurant { RestaurantId = 3, Image = "../../assets/images/logos/empire.jpg", Name = "Bowl Company", Location = "Bhopal", Rating = 3, Cost = 500, DeliveryTime =45, Description="South Indian" });
             }
             else if (locationId == 2)
             {
