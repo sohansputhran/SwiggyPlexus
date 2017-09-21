@@ -29,20 +29,21 @@ export class CartPage {
           this.isCheckoutDisable = false;
         }
       })
+      console.log("Cart:", this.items);
     })
   }
 
   changeQuantity(index, changeStatus) {
     this.isSaveDisable = false;
     if (changeStatus) {
-      this.items[index].quantity += 1;
-      this.total = this.total + this.items[index].item.Price;
+      this.items[index].Quantity += 1;
+      this.total = this.total + this.items[index].Item.Price;
 
     }
     else {
-      if (this.items[index].quantity > 1) {
-        this.items[index].quantity -= 1;
-        this.total = this.total - this.items[index].item.Price;
+      if (this.items[index].Quantity > 1) {
+        this.items[index].Quantity -= 1;
+        this.total = this.total - this.items[index].Item.Price;
       }
     }
 
@@ -61,8 +62,8 @@ export class CartPage {
   removeItem(item) {
     this.addCart.removeData(item.Name);
     for(var i = 0; i < this.items.length; i++){
-      if(this.items[i].item.Name == item.Name){
-        this.total = this.total - this.items[i].item.Price * this.items[i].quantity;
+      if(this.items[i].Item.Name == item.Name){
+        this.total = this.total - this.items[i].item.Price * this.items[i].Quantity;
         this.items.splice(i,1);
         break;
       }

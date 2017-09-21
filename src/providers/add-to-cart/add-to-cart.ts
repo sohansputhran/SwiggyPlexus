@@ -7,9 +7,8 @@ import { ToastController } from 'ionic-angular';
 
 @Injectable()
 export class AddToCartProvider {
+  
 total = 0;
-itemDetails: string;
-retrievedList: any;
 itemsArray = [];
 
 constructor(public storage: Storage,public toastCtrl: ToastController){
@@ -19,13 +18,9 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
 }
 
 getItemsList(): Promise<any>{
-  var itemsList = [];
   return new Promise(resolve =>{
-    this.storage.forEach((value, k, i)=>{
-
-      itemsList.push(JSON.parse(value));
-    }).then(val =>{
-      resolve(itemsList);
+    this.storage.get("Items").then(res =>{
+      resolve(res);
     });
   })
 }
@@ -35,20 +30,21 @@ getItemsList(): Promise<any>{
     var index = -1;
     for(var i = 0; i<this.itemsArray.length; i++){
 
-      if(item.Name == this.itemsArray[i].item.Name){
+      if(item.Name == this.itemsArray[i].Item.Name){
         index = i;
         break;
       }
     }
 
     if(index != -1){
-      this.itemsArray[index].quantity += 1;
+      this.itemsArray[index].Quantity += 1;
     }else{
       index = this.itemsArray.length;
-      this.itemsArray.push({Restaurant : restaurant.Name, Course : course.Name, Item: item, Quantity: 1});
+      let Meal = {Restaurant : restaurant.Name, Course : course.Name, Item: item, Quantity: 1};
+      this.itemsArray.push(Meal);
     }
 
-    this.setData(this.itemsArray[index]);                   //Uploading the items list to the local storage
+    this.storage.set("Items",this.itemsArray);                   //Uploading the items list to the local storage
 
     let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
       message: item.Name + ' has been added to Cart!',
@@ -57,15 +53,8 @@ getItemsList(): Promise<any>{
       closeButtonText: 'Ok'
     });
     toast.present();
-
+    console.log("Items Added:", this.itemsArray);
   }
-
-  setData(itemObject){
-    console.log('itemObject: ', itemObject);
-    this.itemDetails = JSON.stringify(itemObject);
-    this.storage.set("Items",this.itemDetails);
-  }
-
 
   sendData(): Promise<any>{
     return new Promise(resolve =>{
@@ -84,7 +73,7 @@ getItemsList(): Promise<any>{
       this.total = 0;
       this.getItemsList().then(res => {
         for (var i = 0; i < this.itemsArray.length; i++) {
-          this.total += this.itemsArray[i].item.Price * this.itemsArray[i].quantity;
+          this.total += this.itemsArray[i].Item.Price * this.itemsArray[i].Quantity;
         }
         resolve(this.total);
       })
@@ -106,7 +95,7 @@ getItemsList(): Promise<any>{
   save(items){
     this.itemsArray = items;
     this.itemsArray.forEach(item=>{
-      this.storage.set("Items", JSON.stringify(item));
+      this.storage.set("Items", item);
     });
   }
 }
