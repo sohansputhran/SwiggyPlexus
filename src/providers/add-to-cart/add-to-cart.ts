@@ -7,53 +7,53 @@ import { ToastController } from 'ionic-angular';
 
 @Injectable()
 export class AddToCartProvider {
-total = 0;
-itemDetails: string;
-retrievedItem: any;
-itemsArray = [];
-
-constructor(public storage: Storage,public toastCtrl: ToastController){
-    this.getItemsList().then(res =>{
+  total = 0;
+  itemDetails: string;
+  retrievedItem: any;
+  items = [];
+  itemsArray = [];
+  getUserDetails = [];
+  constructor(public storage: Storage, public toastCtrl: ToastController) {
+    this.getItemsList().then(res => {
       this.itemsArray = res;
     });
   }
-  
-  getItemsList(): Promise<any>{
+
+  getItemsList(): Promise<any> {
     var itemsList = [];
-    return new Promise(resolve =>{
-      this.storage.forEach((value, k, i)=>{
+    return new Promise(resolve => {
+      this.storage.forEach((value, k, i) => {
 
         itemsList.push(JSON.parse(value));
-      }).then(val =>{
+      }).then(val => {
         resolve(itemsList);
       });
     })
   }
 
   // Execution starts from here.
-  toCart(item, shouldSetNow = true){
+  toCart(item, shouldSetNow = true) {
     var index = -1;
-    for(var i = 0; i<this.itemsArray.length; i++){
+    for (var i = 0; i < this.itemsArray.length; i++) {
 
-      if(item.Name == this.itemsArray[i].item.Name){
+      if (item.Name == this.itemsArray[i].item.Name) {
         index = i;
         break;
       }
     }
 
-    if(index != -1){
+    if (index != -1) {
       this.itemsArray[index].quantity += 1;
-    }else{
+    } else {
       index = this.itemsArray.length;
-      this.itemsArray.push({item: item, quantity: 1});
+      this.itemsArray.push({ item: item, quantity: 1 });
     }
 
-    if(shouldSetNow){
+    if (shouldSetNow) {
       this.setData(this.itemsArray[index]);
     }
-
     let toast = this.toastCtrl.create({
-      message: item.Name + ' has been added to Cart!',
+      message: 'Added to Cart!',
       duration: 100,
       position: 'middle',
       closeButtonText: 'Ok'
@@ -62,30 +62,49 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
 
   }
 
-  setData(itemObject){
+  setData(itemObject) {
     console.log('itemObject: ', itemObject);
     this.itemDetails = JSON.stringify(itemObject);
-    this.storage.set(itemObject.item.Name,this.itemDetails);
+    this.storage.set(itemObject.item.Name, this.itemDetails);
   }
 
+  setUserDetail(user) {
+    this.storage.set("USERID", user);
+    // console.log("username:"+username+"password:"+password);
+  }
 
-  sendData(): Promise<any>{
-    return new Promise(resolve =>{
-      this.getItemsList().then(res =>{
+  getUserDetail(username, password) {
+
+    this.storage.get('USERID').then((val) => {
+      this.getUserDetails = val;
+      for (let i = 0; i < this.getUserDetails.length; i++) {
+        console.log(this.getUserDetails[0]);
+        if (this.getUserDetails[i].username == username && this.getUserDetails[i].password == password) {
+          console.log("Login succesful");
+          break;
+        }
+      }
+    });
+
+  }
+
+  sendData(): Promise<any> {
+    return new Promise(resolve => {
+      this.getItemsList().then(res => {
         resolve(res);
       })
     })
   }
-  
-  removeData(itemKey){
+
+  removeData(itemKey) {
     this.storage.remove(itemKey);
   }
 
-  totalPrice(): Promise<number>{
-    return new Promise(resolve =>{
+  totalPrice(): Promise<number> {
+    return new Promise(resolve => {
       this.total = 0;
-      this.getItemsList().then(res =>{
-        for(var i = 0; i<this.itemsArray.length; i++){
+      this.getItemsList().then(res => {
+        for (var i = 0; i < this.itemsArray.length; i++) {
           this.total += this.itemsArray[i].item.Price * this.itemsArray[i].quantity;
         }
         resolve(this.total);
@@ -93,7 +112,7 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
     })
   }
 
-  checkout(){
+  checkout() {
     this.storage.clear();
     let toast = this.toastCtrl.create({
       message: 'Tasty dish is on its way!',
@@ -106,9 +125,9 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
     this.total = 0;
   }
 
-  save(items){
+  save(items) {
     this.itemsArray = items;
-    this.itemsArray.forEach(item=>{
+    this.itemsArray.forEach(item => {
       this.storage.set(item.item.Name, JSON.stringify(item));
     });
   }
