@@ -20,7 +20,7 @@
 
 
                 <ion-col col-6>
-                    <button ion-button block (click)="save()" [disabled]="isSaveDisable" item-right>Save</button>
+                    <button ion-button block (click)="saveFunction()" [disabled]="isSaveDisable" item-right>Save</button>
                 </ion-col>
 
             </ion-row>
@@ -79,7 +79,7 @@
         <div class="total">
             <strong>Total&nbsp;:{{total}}</strong>
         </div>
-        <button ion-button block  (click)="checkout()" color="danger">Checkout</button>
+        <button ion-button block (click)="checkoutFunction()" [disabled]="isCheckoutDisable" color="danger">Checkout</button>
     </ion-toolbar>
 </ion-footer>
 

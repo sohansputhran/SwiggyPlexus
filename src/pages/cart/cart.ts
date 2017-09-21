@@ -15,6 +15,7 @@ export class CartPage {
   totalItemprice: any = [];
   total: number = 0;
   isSaveDisable: boolean = true;
+  isCheckoutDisable: boolean = true;
   constructor(public toastCtrl: ToastController, public navCtrl: NavController, public addCart: AddToCartProvider, public elem: ElementRef, public storage: Storage) {
 
   }
@@ -24,6 +25,9 @@ export class CartPage {
       this.items = items;
       this.addCart.totalPrice().then(totalPrice => {
         this.total = totalPrice;
+        if(this.total > 0){
+          this.isCheckoutDisable = false;
+        }
       })
     })
   }
@@ -42,18 +46,14 @@ export class CartPage {
       }
     }
 
+    if(this.total == 0){
+      this.isCheckoutDisable = true;
+    }
   }
 
-  checkout() {
-    this.storage.clear();
-    let toast = this.toastCtrl.create({
-      message: 'Tasty dish is on its way!',
-      duration: 3000,
-      position: 'middle',
-      closeButtonText: 'Ok'
-    });
-    toast.present();
-    
+  checkoutFunction() {
+    this.addCart.checkout();
+    this.isCheckoutDisable = true;
     this.items = [];
     this.total = 0;
   }
@@ -69,12 +69,13 @@ export class CartPage {
     }
   }
 
-  save() {
+  saveFunction() {
     this.isSaveDisable = true;
-    for (let i = 0; i < this.items.length; i++) {
-      this.addCart.setData(this.items[i]);
-    }
-
+    // for (let i = 0; i < this.items.length; i++) {
+    //   this.addCart.setData(this.items[i]);
+    // }
+    console.log("Save: ", this.items);
+    this.addCart.save(this.items);
   }
 
 }

@@ -10,7 +10,6 @@ export class AddToCartProvider {
 total = 0;
 itemDetails: string;
 retrievedItem: any;
-items = [];
 itemsArray = [];
 
 constructor(public storage: Storage,public toastCtrl: ToastController){
@@ -52,8 +51,9 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
     if(shouldSetNow){
       this.setData(this.itemsArray[index]);
     }
+
     let toast = this.toastCtrl.create({
-      message: 'Added to Cart!',
+      message: item.Name + ' has been added to Cart!',
       duration: 100,
       position: 'middle',
       closeButtonText: 'Ok'
@@ -93,8 +93,22 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
     })
   }
 
-  save(){
-    this.items.forEach(item=>{
+  checkout(){
+    this.storage.clear();
+    let toast = this.toastCtrl.create({
+      message: 'Tasty dish is on its way!',
+      duration: 2000,
+      position: 'middle',
+      closeButtonText: 'Ok'
+    });
+    toast.present();
+    this.itemsArray = [];
+    this.total = 0;
+  }
+
+  save(items){
+    this.itemsArray = items;
+    this.itemsArray.forEach(item=>{
       this.storage.set(item.item.Name, JSON.stringify(item));
     });
   }

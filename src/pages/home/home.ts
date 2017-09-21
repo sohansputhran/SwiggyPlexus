@@ -35,7 +35,7 @@ export class HomePage {
     if(this.filterType == "Cost"){
       for(var i=0; i< this.restaurants.length - 1; i++){
         for(var j=0; j < this.restaurants.length - 1 - i; j++){
-          if(this.restaurants[j].Cost < this.restaurants[j+1].Cost){
+          if(this.restaurants[j].Cost > this.restaurants[j+1].Cost){
             tempItem = this.restaurants[j];
             this.restaurants[j] = this.restaurants[j+1];
             this.restaurants[j+1] = tempItem;
