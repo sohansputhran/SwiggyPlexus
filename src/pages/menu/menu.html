@@ -12,9 +12,9 @@
     <div class="itemHeader">
         <ion-card>
             <div class="uppertop">
-                <h1 class="restaurant">{{restaurantName}}</h1>
+                <h1 class="restaurant">{{restaurant.Name}}</h1>
                 <hr>
-                <h3>{{courseName}}</h3>
+                <h3>{{course.Name}}</h3>
             </div>
 
         </ion-card>
@@ -49,7 +49,7 @@
                                                 <div class="price"> &#8377;{{recommendedItems[i-1].Price}} </div>
                                             </ion-col>
                                             <ion-col col-7>
-                                                <div class="add"><button ion-button outline small (click)="sendToCart(recommendedItems[i-1])">Add</button></div>
+                                                <div class="add"><button ion-button outline small (click)="cart(recommendedItems[i-1])">Add</button></div>
                                             </ion-col>
                                         </ion-row>
                                     </ion-grid>
@@ -73,7 +73,7 @@
                                             <div class="price"> &#8377;{{recommendedItems[i].Price}} </div>
                                         </ion-col>
                                         <ion-col col-7>
-                                            <div class="add"><button ion-button outline small (click)="sendToCart(recommendedItems[i])">Add</button></div>
+                                            <div class="add"><button ion-button outline small (click)="cart(recommendedItems[i])">Add</button></div>
                                         </ion-col>
                                     </ion-row>
                                 </ion-grid>
@@ -98,7 +98,7 @@
                                                 <div class="price"> &#8377;{{recommendedItems[i].Price}} </div>
                                             </ion-col>
                                             <ion-col col-7>
-                                                <div class="add"><button ion-button outline small (click)="sendToCart(recommendedItems[i])">Add</button></div>
+                                                <div class="add"><button ion-button outline small (click)="cart(recommendedItems[i])">Add</button></div>
                                             </ion-col>
                                         </ion-row>
                                     </ion-grid>
@@ -132,7 +132,7 @@
 
                     </ion-col>
                     <ion-col>
-                        <div class="add"><button ion-button outline small (click)="sendToCart(item)">Add</button></div>
+                        <div class="add"><button ion-button outline small (click)="cart(item)">Add</button></div>
                     </ion-col>
                 </ion-row>
             </ion-grid>

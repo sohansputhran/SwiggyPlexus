@@ -9,24 +9,21 @@ import { MenuPage } from '../../pages/menu/menu';
 })
 
 export class RestaurantPage {
-    restaurantId: number;
-    restaurantName: string;
+    restaurant: any;
     courses: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private apiService: ApiService) {
       
-      this.restaurantId = this.navParams.get('restaurantId');
-      this.restaurantName = this.navParams.get('restaurantName');
+      this.restaurant = this.navParams.get('restaurant');
       
-      this.apiService.GetCoursesForRestaurants(this.restaurantId).then(courses =>{
+      this.apiService.GetCoursesForRestaurants(this.restaurant.RestaurantId).then(courses =>{
         this.courses = courses;  
       });
       
   }  
 selectedCourse(course){
   this.navCtrl.push(MenuPage, {
-    courseId: course.CourseId,
-    courseName: course.Name,
-    restaurantName: this.restaurantName
+    course: course,
+    restaurant: this.restaurant
  });
 }
 

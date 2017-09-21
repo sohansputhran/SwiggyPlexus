@@ -71,9 +71,6 @@ export class CartPage {
 
   saveFunction() {
     this.isSaveDisable = true;
-    // for (let i = 0; i < this.items.length; i++) {
-    //   this.addCart.setData(this.items[i]);
-    // }
     console.log("Save: ", this.items);
     this.addCart.save(this.items);
   }

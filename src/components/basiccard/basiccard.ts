@@ -11,12 +11,6 @@ import { Component } from '@angular/core';
   templateUrl: 'basiccard.html'
 })
 export class BasiccardComponent {
-
-  text: string;
-
   constructor() {
-    console.log('Hello BasiccardComponent Component');
-    this.text = 'Hello World';
   }
-
 }

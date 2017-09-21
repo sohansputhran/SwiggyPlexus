@@ -32,7 +32,7 @@
             <div class="item item-item-text-wrap no-padding">
                 <ion-card>
                     <ion-card-content>
-                        <img src={{item.item.Image}} />
+                        <img src={{item.Item.Image}} />
 
 
 
@@ -40,11 +40,11 @@
                             <ion-row>
 
                                 <ion-col col-10>
-                                    <p> <strong>{{item.item.Name}}</strong></p>
+                                    <p> <strong>{{item.Item.Name}}</strong></p>
                                 </ion-col>
 
                                 <ion-col col-2>
-                                    <div class="price2"> &#8377; {{item.item.Price}} </div>
+                                    <div class="price2"> &#8377; {{item.Item.Price}} </div>
                                 </ion-col>
 
                             </ion-row>
@@ -59,9 +59,9 @@
                                 <ion-col>
                                     <ion-icon name="remove-circle" (click)="changeQuantity(i,false)"></ion-icon>
                                     &nbsp;
-                                    <input type="text" size="4" name="quantity" style="color:black" value="{{item.quantity}}"> &nbsp;
+                                    <input type="text" size="4" name="quantity" style="color:black" value="{{item.Quantity}}"> &nbsp;
                                     <ion-icon name="add-circle" (click)="changeQuantity(i,true)"></ion-icon>
-                                    <ion-icon name="backspace" item-right (click)="removeItem(item.item)"></ion-icon>
+                                    <ion-icon name="backspace" item-right (click)="removeItem(item.Item)"></ion-icon>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>

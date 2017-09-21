@@ -9,29 +9,23 @@ import { ToastController } from 'ionic-angular';
 export class AddToCartProvider {
 total = 0;
 itemDetails: string;
-retrievedItem: any;
+retrievedList: any;
 itemsArray = [];
 
 constructor(public storage: Storage,public toastCtrl: ToastController){
-    this.getItemsList().then(res =>{
-      this.itemsArray = res;
-    });
+    this.itemsArray = this.getItemsList();
   }
   
-  getItemsList(): Promise<any>{
-    var itemsList = [];
-    return new Promise(resolve =>{
-      this.storage.forEach((value, k, i)=>{
-
-        itemsList.push(JSON.parse(value));
-      }).then(val =>{
-        resolve(itemsList);
+  getItemsList(){
+    this.storage.get("Items").then(items => {
+      this.retrievedList = items;
+      console.log("RL:", this.retrievedList);
       });
-    })
+      return this.retrievedList;
   }
-
-  // Execution starts from here.
-  toCart(item, shouldSetNow = true){
+  
+  //This function is called when the Add button is pressed in the Menu Page. 
+  cartFunction(item, course, restaurant){
     var index = -1;
     for(var i = 0; i<this.itemsArray.length; i++){
 
@@ -45,14 +39,12 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
       this.itemsArray[index].quantity += 1;
     }else{
       index = this.itemsArray.length;
-      this.itemsArray.push({item: item, quantity: 1});
+      this.itemsArray.push({Restaurant : restaurant.Name, Course : course.Name, Item: item, Quantity: 1});
     }
 
-    if(shouldSetNow){
-      this.setData(this.itemsArray[index]);
-    }
+    this.setData(this.itemsArray[index]);                   //Uploading the items list to the local storage
 
-    let toast = this.toastCtrl.create({
+    let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
       message: item.Name + ' has been added to Cart!',
       duration: 100,
       position: 'middle',
@@ -65,16 +57,14 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
   setData(itemObject){
     console.log('itemObject: ', itemObject);
     this.itemDetails = JSON.stringify(itemObject);
-    this.storage.set(itemObject.item.Name,this.itemDetails);
+    this.storage.set("Items",this.itemDetails);
   }
 
 
   sendData(): Promise<any>{
     return new Promise(resolve =>{
-      this.getItemsList().then(res =>{
-        resolve(res);
-      })
-    })
+      this.getItemsList()
+    });
   }
   
   removeData(itemKey){
@@ -84,19 +74,18 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
   totalPrice(): Promise<number>{
     return new Promise(resolve =>{
       this.total = 0;
-      this.getItemsList().then(res =>{
-        for(var i = 0; i<this.itemsArray.length; i++){
-          this.total += this.itemsArray[i].item.Price * this.itemsArray[i].quantity;
-        }
+      this.itemsArray = this.getItemsList();
+      for(var i = 0; i<this.itemsArray.length; i++){
+        this.total += this.itemsArray[i].Item.Price * this.itemsArray[i].Quantity;
+      }
         resolve(this.total);
       })
-    })
   }
 
   checkout(){
     this.storage.clear();
     let toast = this.toastCtrl.create({
-      message: 'Tasty dish is on its way!',
+      message: 'Your Order has been placed.',
       duration: 2000,
       position: 'middle',
       closeButtonText: 'Ok'
@@ -109,7 +98,7 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
   save(items){
     this.itemsArray = items;
     this.itemsArray.forEach(item=>{
-      this.storage.set(item.item.Name, JSON.stringify(item));
+      this.storage.set("Items", JSON.stringify(item));
     });
   }
 }

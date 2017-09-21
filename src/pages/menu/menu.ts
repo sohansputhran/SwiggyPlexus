@@ -14,9 +14,8 @@ import {ItemDetailModal} from "../../modals/itemdetail/itemdetail";
 })
 export class MenuPage {
 
-  courseId : number;
-  courseName : string;
-  restaurantName: string;
+  course : any;
+  restaurant: any;
   items: any;
   recommendedItems: any;
   notRecommendedItems: any;
@@ -25,36 +24,36 @@ export class MenuPage {
 
   constructor(public navCtrl: NavController, public add:AddToCartProvider, public navParams: NavParams,private apiService: ApiService,public modalCtrl:ModalController) {
       
-      this.courseId = this.navParams.get('courseId');
-      this.courseName = this.navParams.get('courseName');
-      this.restaurantName = this.navParams.get('restaurantName');
-      this.recommendedItems = [];
-      this.notRecommendedItems = [];
-      this.apiService.GetItemsForCourse(this.courseId).then(items => {
-        this.items = items;
-          for(var i = 0; i< items.length; i++){
-            if(items[i].IsRecommended == true){
-              this.recommendedItems.push(items[i]);
-            }else{
-              this.notRecommendedItems.push(items[i]);
-            }
+    this.course = this.navParams.get('course');
+    this.restaurant = this.navParams.get('restaurant');
+    this.recommendedItems = [];
+    this.notRecommendedItems = [];
+    this.apiService.GetItemsForCourse(this.course.CourseId).then(items => {
+      this.items = items;
+        for(var i = 0; i< items.length; i++){
+          if(items[i].IsRecommended == true){
+            this.recommendedItems.push(items[i]);
           }
-      });
-    
-    }
 
-  sendToCart(item){
+          else{
+            this.notRecommendedItems.push(items[i]);
+          }
+        }
+    });
+  }
+
+  cart(item){
     console.log("item: ",item);
-    this.add.toCart(item);
+    this.add.cartFunction(item,this.course,this.restaurant);
   }
 
   ionViewDidEnter(){
     this.itemsLength = this.items.length - 1;
   }
-  itemDetail(itemId){
 
-    console.log(itemId)
-    let itemDetailModal = this.modalCtrl.create(ItemDetailModal,{item:this.items,i:itemId});
+  itemDetail(itemId){
+    console.log(itemId);
+    let itemDetailModal = this.modalCtrl.create(ItemDetailModal, {item: this.items, index: itemId});
     itemDetailModal.present();
   }
 }

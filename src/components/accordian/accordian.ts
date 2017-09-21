@@ -19,9 +19,7 @@ export class AccordianComponent {
   constructor(public navCtrl: NavController, private http: Http) {
     let localData = http.get('assets/accordiandata/accordiandata.json').map(res => res.json().items);
     localData.subscribe(data => {
-      
       this.information = data;
-      console.log('this.information: ', this.information);
     })
     
   }

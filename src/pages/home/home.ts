@@ -71,8 +71,7 @@ export class HomePage {
 
   selectedRestaurant(restaurant){
     this.navCtrl.push(RestaurantPage, {
-       restaurantId: restaurant.RestaurantId,
-       restaurantName: restaurant.Name
+       restaurant: restaurant,
     });
   }
 }

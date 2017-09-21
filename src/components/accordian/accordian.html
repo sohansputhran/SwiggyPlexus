@@ -1,55 +1,45 @@
-<!-- Generated template for the AccordianComponent component -->
-<!-- 
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Academy Pizza
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-  -->
-<!-- <ion-content> -->
-  <ion-list class="accordion-list">
-    <!-- First Level -->
-    <ion-list-header *ngFor="let item of information; let i = index" no-lines >
-      <!-- Toggle Button -->
-      
-      <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+<ion-content>
+    <ion-list class="accordion-list">
+        <!-- First Level -->
+        <ion-list-header *ngFor="let item of information; let i = index" no-lines>
+            <!-- Toggle Button -->
+
+            <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
         <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>
         <ion-icon item-left name="arrow-down" *ngIf="item.open"></ion-icon>
         <p text-uppercase  class="para" > {{ item.name }}</p>
       </button>
- 
-      <ion-list *ngIf="item.children && item.open" no-lines>
-        <!-- Second Level -->
-        <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
-          <!-- Toggle Button -->
-          <button ion-item (click)="toggleItem(i, j)" *ngIf="child.children" class="child" detail-none>
+
+            <ion-list *ngIf="item.children && item.open" no-lines>
+                <!-- Second Level -->
+                <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
+                    <!-- Toggle Button -->
+                    <button ion-item (click)="toggleItem(i, j)" *ngIf="child.children" class="child" detail-none>
             <ion-icon item-left name="add" *ngIf="!child.open"></ion-icon>
             <ion-icon item-left name="close" *ngIf="child.open"></ion-icon>
             <p text-uppercase  class="para" >  {{ child.name }}</p>
           </button>
- 
-          <!-- Direct Add Button as Fallback -->
-          <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
-            <h2>{{ child.name }}</h2>
-            <p text-lowercase>{{ child.information }}</p>
-            <button ion-button outline item-end (click)="buyItem(child)">ADD</button>
-          </ion-item>
- 
-          <ion-list *ngIf="child.children && child.open">
-            <!-- Third Level -->
-            <ion-item *ngFor="let item of child.children; let k = index" detail-none class="child-item" text-wrap>
-              <h2>{{ item.name }}</h2>
-              <p text-lowercase>{{ item.information }}</p>
-              <!-- Direct Add Button -->
-              <button ion-button outline item-end (click)="buyItem(item)">ADD</button>
-            </ion-item>
-          </ion-list>
- 
+
+                    <!-- Direct Add Button as Fallback -->
+                    <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
+                        <h2>{{ child.name }}</h2>
+                        <p text-lowercase>{{ child.information }}</p>
+                        <button ion-button outline item-end (click)="buyItem(child)">ADD</button>
+                    </ion-item>
+
+                    <ion-list *ngIf="child.children && child.open">
+                        <!-- Third Level -->
+                        <ion-item *ngFor="let item of child.children; let k = index" detail-none class="child-item" text-wrap>
+                            <h2>{{ item.name }}</h2>
+                            <p text-lowercase>{{ item.information }}</p>
+                            <!-- Direct Add Button -->
+                            <button ion-button outline item-end (click)="buyItem(item)">ADD</button>
+                        </ion-item>
+                    </ion-list>
+
+                </ion-list-header>
+            </ion-list>
+
         </ion-list-header>
-      </ion-list>
-      
-    </ion-list-header>
-  </ion-list>
-<!-- </ion-content> -->
+    </ion-list>
+</ion-content>
