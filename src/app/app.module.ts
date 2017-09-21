@@ -26,6 +26,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AddToCartProvider } from '../providers/add-to-cart/add-to-cart';
 import { IonicStorageModule } from "@ionic/storage";
+import { UserdetailProvider } from '../providers/userdetail/userdetail';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { IonicStorageModule } from "@ionic/storage";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AddToCartProvider,
-    ApiService
+    ApiService,
+    UserdetailProvider
   ]
 })
 export class AppModule {}

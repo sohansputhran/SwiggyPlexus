@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {SignupPage} from '../signup/signup';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
-import {AddToCartProvider} from '../../providers/add-to-cart/add-to-cart';
+import {UserdetailProvider} from '../../providers/userdetail/userdetail';
 /**
  * Generated class for the LoginPage page.
  *
@@ -17,7 +17,7 @@ import {AddToCartProvider} from '../../providers/add-to-cart/add-to-cart';
 })
 export class LoginPage {
   signin:FormGroup
-  constructor(public navCtrl: NavController, public navParams: NavParams,public addCart:AddToCartProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public usrDtl:UserdetailProvider) {
     this.signin = new FormGroup({
       name: new FormControl('', Validators.required),
       password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
@@ -32,7 +32,7 @@ export class LoginPage {
     let username=this.signin.value.name;
     let passwd = this.signin.value.password;
     
-    this.addCart.getUserDetail(username,passwd);
+    this.usrDtl.getUserDetail(username,passwd);
   }
 
   onSignUp(){

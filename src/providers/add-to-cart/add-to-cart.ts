@@ -12,7 +12,7 @@ export class AddToCartProvider {
   retrievedItem: any;
   items = [];
   itemsArray = [];
-  getUserDetails = [];
+ 
   constructor(public storage: Storage, public toastCtrl: ToastController) {
     this.getItemsList().then(res => {
       this.itemsArray = res;
@@ -66,26 +66,6 @@ export class AddToCartProvider {
     console.log('itemObject: ', itemObject);
     this.itemDetails = JSON.stringify(itemObject);
     this.storage.set(itemObject.item.Name, this.itemDetails);
-  }
-
-  setUserDetail(user) {
-    this.storage.set("USERID", user);
-    // console.log("username:"+username+"password:"+password);
-  }
-
-  getUserDetail(username, password) {
-
-    this.storage.get('USERID').then((val) => {
-      this.getUserDetails = val;
-      for (let i = 0; i < this.getUserDetails.length; i++) {
-        console.log(this.getUserDetails[0]);
-        if (this.getUserDetails[i].username == username && this.getUserDetails[i].password == password) {
-          console.log("Login succesful");
-          break;
-        }
-      }
-    });
-
   }
 
   sendData(): Promise<any> {

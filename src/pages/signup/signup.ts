@@ -2,7 +2,7 @@ import { Component,Inject,ViewChild,ElementRef,AfterViewInit } from '@angular/co
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import {LoginPage} from '../login/login';
-import {AddToCartProvider} from '../../providers/add-to-cart/add-to-cart';
+import {UserdetailProvider} from '../../providers/userdetail/userdetail';
 /**
  * Generated class for the SignupPage page.
  *
@@ -21,7 +21,7 @@ export class SignupPage {
   userDetail=[];
   password:any
   confirm_password :any
-constructor(public navCtrl: NavController, public navParams: NavParams,public addCart:AddToCartProvider) {
+constructor(public navCtrl: NavController, public navParams: NavParams,public usrDtl:UserdetailProvider) {
 	   this.signup = new FormGroup({
       name: new FormControl('', Validators.required),
       password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
@@ -41,7 +41,7 @@ constructor(public navCtrl: NavController, public navParams: NavParams,public ad
         };
         console.log("user:",user.username,"pass",user.password);
         this.userDetail.push(user);
-        this.addCart.setUserDetail(this.userDetail);
+        this.usrDtl.setUserDetail(this.userDetail);
     }
       
    }
