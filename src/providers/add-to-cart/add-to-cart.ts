@@ -13,17 +13,23 @@ retrievedList: any;
 itemsArray = [];
 
 constructor(public storage: Storage,public toastCtrl: ToastController){
-    this.itemsArray = this.getItemsList();
-  }
-  
-  getItemsList(){
-    this.storage.get("Items").then(items => {
-      this.retrievedList = items;
-      console.log("RL:", this.retrievedList);
-      });
-      return this.retrievedList;
-  }
-  
+  this.getItemsList().then(res =>{
+    this.itemsArray = res;
+  });
+}
+
+getItemsList(): Promise<any>{
+  var itemsList = [];
+  return new Promise(resolve =>{
+    this.storage.forEach((value, k, i)=>{
+
+      itemsList.push(JSON.parse(value));
+    }).then(val =>{
+      resolve(itemsList);
+    });
+  })
+}
+
   //This function is called when the Add button is pressed in the Menu Page. 
   cartFunction(item, course, restaurant){
     var index = -1;
@@ -63,8 +69,10 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
 
   sendData(): Promise<any>{
     return new Promise(resolve =>{
-      this.getItemsList()
-    });
+      this.getItemsList().then(res =>{
+        resolve(res);
+      })
+    })
   }
   
   removeData(itemKey){
@@ -74,14 +82,14 @@ constructor(public storage: Storage,public toastCtrl: ToastController){
   totalPrice(): Promise<number>{
     return new Promise(resolve =>{
       this.total = 0;
-      this.itemsArray = this.getItemsList();
-      for(var i = 0; i<this.itemsArray.length; i++){
-        this.total += this.itemsArray[i].Item.Price * this.itemsArray[i].Quantity;
-      }
+      this.getItemsList().then(res => {
+        for (var i = 0; i < this.itemsArray.length; i++) {
+          this.total += this.itemsArray[i].item.Price * this.itemsArray[i].quantity;
+        }
         resolve(this.total);
       })
+    })
   }
-
   checkout(){
     this.storage.clear();
     let toast = this.toastCtrl.create({

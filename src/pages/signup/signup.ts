@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,Inject,ViewChild,ElementRef,AfterViewInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 import {LoginPage} from '../login/login';
+import {UserdetailProvider} from '../../providers/userdetail/userdetail';
 /**
  * Generated class for the SignupPage page.
  *
@@ -14,13 +16,36 @@ import {LoginPage} from '../login/login';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+  signup:FormGroup
+  name:any
+  userDetail=[];
+  password:any
+  confirm_password :any
+constructor(public navCtrl: NavController, public navParams: NavParams,public usrDtl:UserdetailProvider) {
+	   this.signup = new FormGroup({
+      name: new FormControl('', Validators.required),
+      password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
+      confirm_password: new FormControl('', Validators.required),
+    });
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignupPage');
-  }
+	 onJoin(){
+    let username=this.signup.value.name;
+    let passwd = this.signup.value.password;
+    let confirmPass = this.signup.value.confirm_password;
+     if(passwd == confirmPass ){
+       
+       let  user={
+          username:username,
+          password:passwd
+        };
+        console.log("user:",user.username,"pass",user.password);
+        this.userDetail.push(user);
+        this.usrDtl.setUserDetail(this.userDetail);
+    }
+      
+   }
+  
   onLogin(){
     this.navCtrl.pop();
   }
