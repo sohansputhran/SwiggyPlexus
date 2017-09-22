@@ -12,13 +12,9 @@ itemsArray: any = [];
 
 constructor(public storage: Storage,public toastCtrl: ToastController){
   this.getItemsList().then(res =>{
-<<<<<<< HEAD
-    if(res!= null|| res!=undefined)
-    this.itemsArray = res;
-=======
     if(res != null || res != undefined)
       this.itemsArray = res;
->>>>>>> e2732759818ff1ce2731cc82c7af8ddc57f9d241
+
   });
 }
 
