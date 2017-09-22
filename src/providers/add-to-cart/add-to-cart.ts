@@ -7,14 +7,18 @@ import { ToastController } from 'ionic-angular';
 
 @Injectable()
 export class AddToCartProvider {
-  
 total = 0;
-itemsArray = [];
+itemsArray: any = [];
 
 constructor(public storage: Storage,public toastCtrl: ToastController){
   this.getItemsList().then(res =>{
+<<<<<<< HEAD
     if(res!= null|| res!=undefined)
     this.itemsArray = res;
+=======
+    if(res != null || res != undefined)
+      this.itemsArray = res;
+>>>>>>> e2732759818ff1ce2731cc82c7af8ddc57f9d241
   });
 }
 
@@ -31,7 +35,7 @@ getItemsList(): Promise<any>{
     var index = -1;
     for(var i = 0; i<this.itemsArray.length; i++){
 
-      if(item.Name == this.itemsArray[i].Item.Name){
+      if(item.Name == this.itemsArray[i].Item.Name && course.Name == this.itemsArray[i].Course && restaurant.Name == this.itemsArray[i].Restaurant){
         index = i;
         break;
       }
