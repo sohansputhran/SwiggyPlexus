@@ -63,7 +63,7 @@ export class CartPage {
     this.addCart.removeData(item.Name);
     for(var i = 0; i < this.items.length; i++){
       if(this.items[i].Item.Name == item.Name){
-        this.total = this.total - this.items[i].item.Price * this.items[i].Quantity;
+        this.total = this.total - this.items[i].Item.Price * this.items[i].Quantity;
         this.items.splice(i,1);
         break;
       }

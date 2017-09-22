@@ -6,7 +6,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="slide-in-both-ways">
     <ion-card>
         <ion-card-header>
             <ion-row>
@@ -42,7 +42,7 @@
                                     &nbsp;
                                     <input type="text" size="1" name="quantity" style="color:black" value="{{item.Quantity}}"> &nbsp;
                                     <ion-icon name="add-circle" (click)="changeQuantity(i,true)"></ion-icon>
-                                    <ion-icon name="backspace" item-right (click)="removeItem(item.Item)"></ion-icon>
+                                    <ion-icon name="close-circle" item-right (click)="removeItem(item.Item)"></ion-icon>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
