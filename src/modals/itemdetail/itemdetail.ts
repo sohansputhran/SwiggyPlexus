@@ -7,15 +7,22 @@ import { Component } from '@angular/core';
 })
 
 export class ItemDetailModal {
-    items: any
-    index: any
-    item: any
+    items: any;
+    itemId: number;
+    item: any;
+    restaurant: any;
+    course: any;
+
     constructor(public navParams: NavParams, public viewCtrl: ViewController) {
         this.items = this.navParams.get('item');
-        this.index = this.navParams.get('index');
+        this.itemId = this.navParams.get('itemId');
+        this.restaurant = this.navParams.get('restaurant');
+        this.course = this.navParams.get('course');
+        
         for (let i = 0; i < this.items.length; i++) {
-            if (this.index === this.items[i].ItemId) {
-                this.item = this.items[i]
+            if (this.itemId === this.items[i].ItemId) {
+                this.item = this.items[i];
+                break;
             }
         }
     }

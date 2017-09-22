@@ -1,28 +1,45 @@
 <ion-header>
-        <ion-navbar color="danger">
-            <ion-title>{{item.Name}}</ion-title>
-        </ion-navbar>
-    </ion-header>
+    <ion-navbar color="danger">
+        <ion-title>{{item.Name}}</ion-title>
+    </ion-navbar>
+</ion-header>
 
 
-    <ion-content padding>
-        <ion-card>
-            <img src={{item.Image}}/>
-        </ion-card>    
+<ion-content padding>
+    <ion-card>
+        <img class="description" src={{item.Image}}/>
+    </ion-card>
 
+    <h4>
+        <br>
+        <ion-icon name="basket"> {{restaurant.Name}}</ion-icon>
+        <br>
+        <ion-icon name="restaurant"> {{course.Name}}</ion-icon>
+        <br>
         <ion-grid>
-                <ion-row>
-                    <ion-col col-5>
-                        <div class="price"> &#8377;{{item.Price}} </div>
-                    </ion-col>
-                   
-                </ion-row>
-            </ion-grid>
-            
-        <ion-footer>
-                    <ion-toolbar>
-    <button ion-button (click)="dismiss()" block>Cancel</button>
-                    </ion-toolbar>             
-</ion-footer>
-                
-    </ion-content>
+            <ion-row>
+                <ion-col col-3></ion-col>
+
+                <ion-col col-3>
+                    &#8377;{{item.Price}}
+                </ion-col>
+
+                <ion-col col-2></ion-col>
+
+                <ion-col col-4>
+                    <ion-icon name="star"> {{item.Rating}} </ion-icon>
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+    </h4>
+
+    <h6 class="tag">"Good Food. Good Life."</h6>
+
+    <ion-footer>
+        <ion-toolbar>
+            <button ion-button (click)="dismiss()" block>Cancel</button>
+        </ion-toolbar>
+    </ion-footer>
+
+</ion-content>

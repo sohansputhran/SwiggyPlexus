@@ -13,14 +13,25 @@ export class HomePage {
   location: number = 1;
   filterType: any = "Rating";
   restCount: number = 0;
+  splash = true;
+  tabBarElement: any;
   
   constructor(public navCtrl: NavController, private apiService: ApiService) {
+    this.tabBarElement = document.querySelector('.tabbar');
     this.apiService.GetRestaurants(this.location).then(restaurants =>{
       this.restaurants = restaurants;
       this.restCount = this.restaurants.length;
       this.filters();
     })
     
+  }
+  
+  ionViewDidLoad() {
+    this.tabBarElement.style.display = 'none';
+    setTimeout(() => {
+      this.splash = false;
+      this.tabBarElement.style.display = 'flex';
+    }, 4000);
   }
 
   locationChanged(){

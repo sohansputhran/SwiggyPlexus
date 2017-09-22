@@ -1,31 +1,30 @@
 <html>
 <ion-header>
-    <ion-navbar color="danger">
+    <ion-navbar color="primary">
         <ion-title>Cart</ion-title>
     </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-    <ion-card>
-        <ion-card-header>
-            <ion-row>
+    <ion-grid>
+        <ion-row>
 
 
-                <ion-col col-6>
-                    <div class="heading"><strong><h1> Your Order</h1></strong>
-                    </div>
-                </ion-col>
+            <ion-col col-6>
+                <div class="heading">
+                    <h3><strong>Your Order</strong></h3>
+                </div>
+            </ion-col>
 
 
 
-                <ion-col col-6>
-                    <button ion-button block (click)="saveFunction()" [disabled]="isSaveDisable" item-right>Save</button>
-                </ion-col>
+            <ion-col col-6>
+                <button ion-button block (click)="saveFunction()" [disabled]="isSaveDisable" item-right>Save</button>
+            </ion-col>
 
-            </ion-row>
-        </ion-card-header>
-    </ion-card>
+        </ion-row>
+    </ion-grid>
 
     <div *ngFor="let item of items;let i=index">
         <div class="card">

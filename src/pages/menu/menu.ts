@@ -51,9 +51,9 @@ export class MenuPage {
     this.itemsLength = this.items.length - 1;
   }
 
-  itemDetail(itemId){
-    console.log(itemId);
-    let itemDetailModal = this.modalCtrl.create(ItemDetailModal, {item: this.items, index: itemId});
+  itemDetail(item){
+    console.log(item);
+    let itemDetailModal = this.modalCtrl.create(ItemDetailModal, {item: this.items, itemId: item.ItemId, restaurant : this.restaurant, course: this.course});
     itemDetailModal.present();
   }
 }
