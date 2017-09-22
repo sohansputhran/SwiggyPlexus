@@ -2,28 +2,28 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-p.location {
-    color: salmon;
-}
-
-h1.home {
-    text-align: center;
-}
-
-p.rating {
-    color: green;
-}
-
-p.count {
-    margin-left: 30px;
-    margin-top: 13px;
-}
-
-#ordering {
-    margin-top: 0px;
-    align-items: right;
-}
-
-#details {
-    margin-top: 0px;
+page-home {
+    p.location {
+        color: salmon;
+    }
+    h1.home {
+        text-align: center;
+    }
+    p.rating {
+        color: green;
+    }
+    p.count {
+        margin-left: 30px;
+        margin-top: 13px;
+    }
+    #ordering {
+        margin-top: 0px;
+        align-items: right;
+    }
+    #details {
+        margin-top: 0px;
+    }
+    img {
+        max-width: 90%;
+    }
 }
