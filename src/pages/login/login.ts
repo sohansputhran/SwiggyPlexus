@@ -32,7 +32,11 @@ export class LoginPage {
     let username=this.signin.value.name;
     let passwd = this.signin.value.password;
     
-    this.usrDtl.getUserDetail(username,passwd);
+  this.usrDtl.getUserDetail(passwd)
+    {
+     this.navCtrl.pop();
+   }
+   
   }
 
   onSignUp(){

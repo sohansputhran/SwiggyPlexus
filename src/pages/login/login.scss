@@ -4,3 +4,19 @@ img{
 .login{
     margin-left: 55px;
 }
+.toolbar-title {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    /* text-overflow: ellipsis; */
+    text-align: center;
+    white-space: nowrap;
+    padding: 0 12px;
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+.toolbar-background-wp {
+    border-color: rgba(14, 145, 201, 0.90);
+    background: rgba(14, 145, 201, 0.90);
+
+}

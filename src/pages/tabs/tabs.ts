@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CartPage } from "../cart/cart";
-import { LoginPage } from '../login/login';
+import {LoginPage}  from "../login/login";
+import { SetPasswordPage } from '../set-password/set-password';
 import { HomePage } from '../home/home';
 import {Storage} from '@ionic/storage';
 import {NavController} from 'ionic-angular';
@@ -13,9 +14,10 @@ export class TabsPage {
   counter:number=0;
   tab1Root = HomePage;
   tab2Root = CartPage;
-  tab3Root = LoginPage;
+  tab3Root = SetPasswordPage;
 
   constructor(public storage:Storage,public navCtrl:NavController) {  
+    this.onSignInorSignUp();
   }
   ionViewDidEnter() {
   
@@ -36,20 +38,16 @@ export class TabsPage {
   
   onSignInorSignUp(){
     console.log("this.counter outer",this.counter);
-        this.fn().then( val =>{
-         
-          if(this.counter>0){
-            console.log("counter",this.counter)
-            this.navCtrl.push(LoginPage);
-          }
-          else
-          {
-            this.navCtrl.push(SignupPage);       
-          } 
-
-        });
-          
-   
+    this.fn().then( val =>{
       
-}
-}
+       if(this.counter>0){
+         console.log("counter",this.counter)
+         this.navCtrl.push(LoginPage);
+       }
+       else
+       {
+         this.navCtrl.push(SignupPage);       
+       } 
+
+     });
+}}
