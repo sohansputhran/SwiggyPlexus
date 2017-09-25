@@ -7,14 +7,15 @@
 </div>
 
 <ion-header>
-    <ion-list>
-
+    <ion-toolbar>
         <ion-select [(ngModel)]="location" (ionChange)="locationChanged()" name="location">
             <ion-option value="1">Bangalore</ion-option>
             <ion-option value="2">Bhopal</ion-option>
         </ion-select>
-    </ion-list>
+    </ion-toolbar>
 </ion-header>
+
+
 
 <ion-content>
     <ion-grid>
@@ -37,6 +38,7 @@
             </ion-col>
         </ion-row>
     </ion-grid>
+
 
     <div *ngFor="let restaurant of restaurants" (click)="selectedRestaurant(restaurant)">
         <ion-card>

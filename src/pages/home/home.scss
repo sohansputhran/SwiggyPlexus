@@ -18,7 +18,15 @@ page-home {
     }
     #ordering {
         margin-top: 0px;
-        align-items: right;
+        width: 100%;
+    }
+    .select-md .select-icon,
+    .select-ios.select-icon {
+        position: absolute;
+        width: 12px;
+        height: 19px;
+        left: 125px;
+        top: 17px;
     }
     #details {
         margin-top: 0px;

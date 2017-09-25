@@ -22,6 +22,7 @@ getItemsList(): Promise<any>{
   return new Promise(resolve =>{
     this.storage.get("Items").then(res =>{
       resolve(res);
+      console.log("res: ", res);
     });
   })
 }
@@ -36,21 +37,20 @@ getItemsList(): Promise<any>{
         break;
       }
     }
-
+    
     if(index != -1){
       this.itemsArray[index].Quantity += 1;
     }else{
       index = this.itemsArray.length;
-      let Meal = {Restaurant : restaurant.Name, Course : course.Name, Item: item, Quantity: 1};
-      this.itemsArray.push(Meal);
+      this.itemsArray.push({Restaurant : restaurant.Name, Course : course.Name, Item: item, Quantity: 1});
     }
 
     this.storage.set("Items",this.itemsArray);                   //Uploading the items list to the local storage
 
     let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
       message: item.Name + ' has been added to Cart!',
-      duration: 100,
-      position: 'middle',
+      duration: 200,
+      position: 'bottom',
       closeButtonText: 'Ok'
     });
     toast.present();
@@ -95,9 +95,7 @@ getItemsList(): Promise<any>{
 
   save(items){
     this.itemsArray = items;
-    this.itemsArray.forEach(item=>{
-      this.storage.set("Items", item);
-    });
+    this.storage.set("Items",this.itemsArray);
   }
 }
 
