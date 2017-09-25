@@ -85,7 +85,7 @@ getItemsList(): Promise<any>{
     let toast = this.toastCtrl.create({
       message: 'Your Order has been placed.',
       duration: 2000,
-      position: 'middle',
+      position: 'bottom',
       closeButtonText: 'Ok'
     });
     toast.present();

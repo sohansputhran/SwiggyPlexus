@@ -11,7 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RestaurantPage } from "../pages/restaurant/restaurant";
 import { ApiService } from "../providers/api-service";
-
+import {SetPasswordPage} from "../pages/set-password/set-password";
 import {MenuPage} from '../pages/menu/menu';
 
 //Components
@@ -40,6 +40,7 @@ import { UserdetailProvider } from '../providers/userdetail/userdetail';
     RestaurantPage,
     BasiccardComponent,
     MenuPage,
+    SetPasswordPage,
     ItemDetailModal
   ],
   imports: [
@@ -59,6 +60,7 @@ import { UserdetailProvider } from '../providers/userdetail/userdetail';
     RestaurantPage,
     BasiccardComponent,
     MenuPage,
+    SetPasswordPage,
     ItemDetailModal
   ],
   providers: [
@@ -72,3 +74,7 @@ import { UserdetailProvider } from '../providers/userdetail/userdetail';
   ]
 })
 export class AppModule {}
+ 
+
+ 
+
