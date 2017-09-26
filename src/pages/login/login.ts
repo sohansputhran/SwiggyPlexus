@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import {SignupPage} from '../signup/signup';
+import {TabsPage} from '../tabs/tabs';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import {UserdetailProvider} from '../../providers/userdetail/userdetail';
 /**
@@ -17,7 +18,7 @@ import {UserdetailProvider} from '../../providers/userdetail/userdetail';
 })
 export class LoginPage {
   signin:FormGroup
-  constructor(public navCtrl: NavController, public navParams: NavParams,public usrDtl:UserdetailProvider) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController,public navParams: NavParams,public usrDtl:UserdetailProvider) {
     this.signin = new FormGroup({
       name: new FormControl('', Validators.required),
       password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
@@ -29,13 +30,22 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   onSignin(){
-    let username=this.signin.value.name;
     let passwd = this.signin.value.password;
     
-  this.usrDtl.getUserDetail(passwd)
-    {
-     this.navCtrl.pop();
-   }
+  let res = this.usrDtl.isPasswordValid(passwd);
+  console.log("res",res)
+  if(res == true){
+    this.navCtrl.pop();
+  }else{
+    let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
+      message: 'invalid pass',
+      duration: 100,
+      position: 'bottom',
+      closeButtonText: 'Ok'
+    });
+    console.log("login sucessfull")
+    toast.present();
+  }
    
   }
 
