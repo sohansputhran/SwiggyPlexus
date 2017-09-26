@@ -1,0 +1,71 @@
+<!--
+  Generated template for the AccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-grid>
+        <p>
+            <ion-row class="head">
+                <ion-col col-9>
+                    <h1>{{userAccount.username}}</h1>
+                </ion-col>
+
+                <ion-col col-3>
+                    <button ion-button item-right (click)="changeInfo()" clear>EDIT</button>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+
+                <ion-col col-5>
+                    <div class="num">{{num}}</div>
+                </ion-col>
+                <ion-col col-2>.</ion-col>
+                <ion-col col-5>
+                    <div class="email"></div>{{email}}
+                </ion-col>
+            </ion-row>
+        </p>
+    </ion-grid>
+</ion-header>
+
+<ion-content padding class="backgd">
+    <ion-list>
+
+        <ion-item (click)="changePassword()">
+            <div class="changePassword">
+                Change Password
+                <p class="pass">Change your Current password</p>
+            </div>
+
+        </ion-item>
+
+        <ion-item>
+            <div class="help">
+                Help
+                <p class="pass">FAQs and Links</p>
+            </div>
+        </ion-item>
+    </ion-list>
+    <!-- <button ion-button item-right (click)="changePassword()" block outline round>
+            Change Password
+          </button> -->
+
+    <!-- <div class="help">
+        <button ion-button item-right block outline round>
+            Help
+          </button>
+    </div> -->
+
+
+    <div class="logout">
+        <button ion-button item-right block outline>
+            Log Out
+          </button>
+    </div>
+    <br>
+    <p class="version">App version 1.0.0</p>
+
+</ion-content>

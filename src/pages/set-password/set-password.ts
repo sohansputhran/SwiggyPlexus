@@ -34,12 +34,14 @@ export class SetPasswordPage {
   }
 
   changePassword(){
-    console.log('changePassword called');
+
+
     let oldPassword=this.recover.value.oldPassword;
     let newPassword = this.recover.value.newPassword;
     let confirmPassword = this.recover.value.confirmPassword;
-    if(oldPassword != newPassword && newPassword==confirmPassword){
-      this.userdetail.getUserPassword(oldPassword,newPassword);
+    if( oldPassword != newPassword && newPassword == confirmPassword ){
+      this.userdetail.getUserPassword( oldPassword, newPassword );
+
       let toast = this.toastCtrl.create({                     
         message:' Password changed successfully..',
         duration: 300,
