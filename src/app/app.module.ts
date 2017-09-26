@@ -13,6 +13,7 @@ import { RestaurantPage } from "../pages/restaurant/restaurant";
 import { ApiService } from "../providers/api-service";
 import {SetPasswordPage} from "../pages/set-password/set-password";
 import {MenuPage} from '../pages/menu/menu';
+import { AccountPage } from '../pages/account/account';
 
 //Components
 import {AccordianComponent} from '../components/accordian/accordian';
@@ -41,7 +42,8 @@ import { UserdetailProvider } from '../providers/userdetail/userdetail';
     BasiccardComponent,
     MenuPage,
     SetPasswordPage,
-    ItemDetailModal
+    ItemDetailModal,
+    AccountPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -61,7 +63,8 @@ import { UserdetailProvider } from '../providers/userdetail/userdetail';
     BasiccardComponent,
     MenuPage,
     SetPasswordPage,
-    ItemDetailModal
+    ItemDetailModal,
+    AccountPage
   ],
   providers: [
     StatusBar,

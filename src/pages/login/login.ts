@@ -4,6 +4,8 @@ import {SignupPage} from '../signup/signup';
 import {TabsPage} from '../tabs/tabs';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import {UserdetailProvider} from '../../providers/userdetail/userdetail';
+import { Storage } from "@ionic/storage";
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -17,8 +19,11 @@ import {UserdetailProvider} from '../../providers/userdetail/userdetail';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  signin:FormGroup
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController,public navParams: NavParams,public usrDtl:UserdetailProvider) {
+  
+  signin:FormGroup;
+  userAccount: any;
+
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController,public storage: Storage,public navParams: NavParams,public usrDtl:UserdetailProvider) {
     this.signin = new FormGroup({
       name: new FormControl('', Validators.required),
       password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
@@ -27,7 +32,9 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    this.storage.get("USERID").then(value =>{
+      this.userAccount = value;
+    });
   }
 
   signInFunction(){
