@@ -7,26 +7,35 @@ import {Storage} from '@ionic/storage';
 import {NavController} from 'ionic-angular';
 import {SignupPage} from '../signup/signup';
 
+/**
+ * 
+ * 
+TabsPage is the root page now.
+ *
+ */
+
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-  counter:number=0;
+  counter: boolean = false;
   tab1Root = HomePage;
   tab2Root = CartPage;
   tab3Root = SetPasswordPage;
 
   constructor(public storage:Storage,public navCtrl:NavController) {  
-    this.onSignInorSignUp();
+    this.userAccount();
   }
   ionViewDidEnter() {
   
   }
-  fn(): Promise<any>{
+
+  //Checks whether the user has created an account or not.
+  userIdPresent(): Promise<any>{
     return new Promise(resolve =>{
       this.storage.get("USERID").then(res =>{
         if(res!=null || res!=undefined){
-          this.counter++;
+          this.counter = true;
         }
        
         resolve(res);
@@ -34,13 +43,12 @@ export class TabsPage {
     })
   }
   
-
-  
-  onSignInorSignUp(){
+  //Decides which page to load based on the return value of the userIdPresent function.
+  userAccount(){
     console.log("this.counter outer",this.counter);
-    this.fn().then( val =>{
+    this.userIdPresent().then( val =>{
       
-       if(this.counter>0){
+       if(this.counter){
          console.log("counter",this.counter)
          this.navCtrl.push(LoginPage);
        }

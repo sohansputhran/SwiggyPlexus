@@ -29,29 +29,22 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  onSignin(){
-    let passwd = this.signin.value.password;
-    
-  let res = this.usrDtl.isPasswordValid(passwd);
-  console.log("res",res)
-  if(res == true){
-    this.navCtrl.pop();
-  }else{
-    let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
-      message: 'invalid pass',
-      duration: 100,
-      position: 'bottom',
-      closeButtonText: 'Ok'
-    });
-    console.log("login sucessfull")
-    toast.present();
-  }
-   
-  }
 
-  onSignUp(){
-    
-    this.navCtrl.push(SignupPage);
-  
-  }
+  signInFunction(){
+    let password = this.signin.value.password;  
+    this.usrDtl.isPasswordValid(password).then(passwordMatch =>{
+      console.log("passwordMatch: ",passwordMatch);
+      if(passwordMatch == true){
+        this.navCtrl.pop();
+      }else{
+        let toast = this.toastCtrl.create({                   
+          message: 'Invalid Password',
+          duration: 200,
+          position: 'center',
+          closeButtonText: 'Ok'
+        });
+        toast.present();
+      }
+    });
+  } 
 }

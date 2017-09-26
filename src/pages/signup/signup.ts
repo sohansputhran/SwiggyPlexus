@@ -21,52 +21,46 @@ export class SignupPage {
   name:any
   userDetail=[];
   password:any
-  confirm_password :any
-constructor(public toastCtrl:ToastController,public navCtrl: NavController, public navParams: NavParams,public usrDtl:UserdetailProvider) {
-	   this.signup = new FormGroup({
+  confirmPassword :any
+  
+  constructor(public toastCtrl:ToastController,public navCtrl: NavController, public navParams: NavParams,public usrDtl:UserdetailProvider) {
+	  this.signup = new FormGroup({
       name: new FormControl('', Validators.required),
       password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
-      confirm_password: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required),
     });
-
   }
-	 onJoin(){
-    let username=this.signup.value.name;
-    let passwd = this.signup.value.password;
-    let confirmPass = this.signup.value.confirm_password;
-     if(passwd == confirmPass && passwd !="" ){
-       
-       let  user={
-          username:username,
-          password:passwd
-        };
-        console.log("user:",user.username,"pass",user.password);
-        this.userDetail.push(user);
-        this.usrDtl.setUserDetail(this.userDetail);
-        let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
-          message:  'User Created!',
-          duration: 1000,
-          position: 'bottom',
-          closeButtonText: 'Ok'
-        });
-        toast.present();
-          this.navCtrl.pop();
-    }
-    else{
-      let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
-        message:  'Please enter Username and password',
-        duration: 1000,
-        position: 'bottom',
+
+  onJoin(){
+    let userName=this.signup.value.name;
+    let password = this.signup.value.password;
+    let confirmPassword = this.signup.value.confirmPassword;
+  
+    if(password == confirmPassword && password !="" ){
+      console.log("user:",userName,"pass",password);
+      this.userDetail.push({username: userName, password : password});
+      this.usrDtl.setUserDetail(this.userDetail);
+      let toast = this.toastCtrl.create({                     
+        message:  'User Created!',
+        duration: 2000,
+        position: 'middle',
         closeButtonText: 'Ok'
       });
       toast.present();
-
+      this.navCtrl.pop();
     }
-    
-   }
+    else{
+      let toast = this.toastCtrl.create({                     
+        message:  'Entered passwords do not match! Please try again.',
+        duration: 2000,
+        position: 'middle',
+        closeButtonText: 'Ok'
+      });
+      toast.present();
+    }
+  }
   
   onLogin(){
     this.navCtrl.pop();
   }
-
 }

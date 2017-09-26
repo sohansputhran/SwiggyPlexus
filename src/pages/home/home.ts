@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { ApiService } from "../../providers/api-service";
 import { RestaurantPage } from "../restaurant/restaurant";
 import { MenuPage } from "../menu/menu";
-import { PopoverController } from 'ionic-angular';
 
 
 @Component({
@@ -18,7 +17,7 @@ export class HomePage {
   splash = true;
   tabBarElement: any;
   
-  constructor(public navCtrl: NavController, private apiService: ApiService,public popoverCtrl: PopoverController) {
+  constructor(public navCtrl: NavController, private apiService: ApiService) {
     this.tabBarElement = document.querySelector('.tabbar');
     this.apiService.GetRestaurants(this.location).then(restaurants =>{
       this.restaurants = restaurants;

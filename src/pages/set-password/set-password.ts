@@ -18,34 +18,34 @@ export class SetPasswordPage {
     recover:FormGroup
   constructor(public toastCtrl:ToastController,public navCtrl: NavController, public navParams: NavParams,public userdetail:UserdetailProvider) {
     this.recover = new FormGroup({
-      oldpassword: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
-      newpassword: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
-      cnfrmpassword: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)])
+      oldPassword: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
+      newPassword: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
+      reTypePassword: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)])
     });
   }
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SetPasswordPage');
   }
+
   onSave(){
-    let oldpassword=this.recover.value.oldpassword;
-    let newpasswd = this.recover.value.newpassword;
-    let confirmPass = this.recover.value.cnfrmpassword;
-    if(oldpassword !=newpasswd && newpasswd==confirmPass){
-      this.userdetail.getUserPassword(oldpassword,newpasswd);
-      let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
-        message:' Password changed successfull..',
-        duration: 100,
+    let oldPassword=this.recover.value.oldPassword;
+    let newPassword = this.recover.value.newPassword;
+    let reTypePassword = this.recover.value.reTypePassword;
+    if(oldPassword != newPassword && newPassword==reTypePassword){
+      this.userdetail.getUserPassword(oldPassword,newPassword);
+      let toast = this.toastCtrl.create({                     
+        message:' Password changed successfully..',
+        duration: 300,
         position: 'bottom',
         closeButtonText: 'Ok'
       });
       toast.present();
     }
     else{
-      let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
-        message:'Please enter correct password..',
-        duration: 100,
+      let toast = this.toastCtrl.create({                    
+        message:'Please Enter Correct Password..',
+        duration: 300,
         position: 'bottom',
         closeButtonText: 'Ok'
       });
