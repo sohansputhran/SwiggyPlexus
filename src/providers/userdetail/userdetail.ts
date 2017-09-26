@@ -16,39 +16,21 @@ export class UserdetailProvider {
     console.log('Hello UserdetailProvider Provider');
   }
 
-  getUserDetail(password) {
-
-    this.storage.get('USERID').then((val) => {
-      this.getUserDetails = val;
-      for (let i = 0; i < this.getUserDetails.length; i++) {
-        console.log(this.getUserDetails[0]);
-        if (this.getUserDetails[i].password == password) {
-          let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
-            message: ' Succesfull logged in..',
-            duration: 100,
-            position: 'bottom',
-            closeButtonText: 'Ok'
-          });
-          console.log("login sucessfull")
-          toast.present();
-          break;
-        }
-        else {
-          let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
-            message: ' Please enter correct Password..',
-            duration: 100,
-            position: 'bottom',
-            closeButtonText: 'Ok'
-          });
-          toast.present();
-        }
-
+isPasswordValid(password):any{
+  
+  this.storage.get('USERID').then((val) => {
+    this.getUserDetails = val;
+    for (let i = 0; i < this.getUserDetails.length; i++) {
+      if (this.getUserDetails[i].password === password) {
+        console.log("inside if",this.getUserDetails[i]);
+        return true;
+        
       }
+    }
+  return false;}
 
-    });
-    //this.navCtrl.pop();
-  }
-
+);
+}
   setNewPassword(username, newPwd) {
     this.storage.set("USERID", { username: username, password: newPwd })
 
@@ -58,7 +40,7 @@ export class UserdetailProvider {
       this.getUserDetails = val;
       let i;
       for (i = 0; i < this.getUserDetails.length; i++) {
-        if (this.getUserDetails[i].password = password) {
+        if (this.getUserDetails[i].password == password) {
           this.setNewPassword(this.getUserDetails[i].username, newPwd);
           break;
         }

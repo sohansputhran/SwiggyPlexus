@@ -68,6 +68,7 @@ export class CartPage {
         break;
       }
     }
+    this.isSaveDisable = false;
   }
 
   saveFunction() {
