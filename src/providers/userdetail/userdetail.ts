@@ -17,9 +17,7 @@ export class UserdetailProvider {
   isPasswordValid(password):Promise <any>{
     return new Promise (resolve =>{this.storage.get('USERID').then((value) => {
       this.getUserDetails = value;
-
-      if (this.getUserDetails[0].password === password) {
-
+      if (this.getUserDetails[0].password == password) {
         console.log("inside if",this.getUserDetails);
           resolve(true);
         }else{

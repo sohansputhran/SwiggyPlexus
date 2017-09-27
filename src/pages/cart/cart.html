@@ -5,69 +5,73 @@
 </ion-header>
 
 <ion-content padding class="slide-in-both-ways">
-    <ion-card>
-        <ion-card-header>
-            <ion-grid>
+    <div class="backgd">
+        <ion-card>
+            <ion-card-header>
+                <ion-grid>
 
-                <ion-row>
+                    <ion-row>
 
-                    <ion-col col-5>
-                        <div class="heading">
-                            <h2><strong>Your Order</strong></h2>
+                        <ion-col col-5>
+                            <div class="heading">
+                                <h2><strong>Your Order</strong></h2>
+                            </div>
+                        </ion-col>
+
+                        <ion-col col-2>
+                        </ion-col>
+
+                        <ion-col col-5>
+                            <button ion-button block (click)="saveFunction()" [disabled]="isSaveDisable" item-right>Save</button>
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+            </ion-card-header>
+        </ion-card>
+
+        <div *ngFor="let item of items; let i=index">
+            <div class="card">
+                <ion-card>
+                    <ion-card-content>
+                        <div class="cross hello">
+                            <ion-icon name="close-circle" style="float: right;" (click)="removeItem(item.Item)" color="red"></ion-icon>
                         </div>
-                    </ion-col>
+                        <ion-grid>
+                            <ion-row>
 
-                    <ion-col col-2>
-                    </ion-col>
+                                <ion-col col-5>
+                                    <img src="{{item.Item.Image}}">
+                                </ion-col>
 
-                    <ion-col col-5>
-                        <button ion-button block (click)="saveFunction()" [disabled]="isSaveDisable" item-right>Save</button>
-                    </ion-col>
+                                <ion-col col-7>
+                                    <ion-icon name="remove-circle" (click)="changeQuantity(i,false)"></ion-icon>
+                                    &nbsp;
+                                    <input type="text" size="1" name="quantity" style="color:black" value="{{item.Quantity}}"> &nbsp;
+                                    <ion-icon name="add-circle" (click)="changeQuantity(i,true)"></ion-icon>
 
-                </ion-row>
-            </ion-grid>
-        </ion-card-header>
-    </ion-card>
+                                </ion-col>
 
-    <div *ngFor="let item of items; let i=index">
-        <div class="card">
-            <ion-card>
-                <ion-card-content>
-                       <div class="cross hello"> <ion-icon name="close-circle" style="float: right;" (click)="removeItem(item.Item)" color="red"></ion-icon></div>
-                    <ion-grid>
-                        <ion-row>
+                            </ion-row>
+                        </ion-grid>
 
-                            <ion-col col-5>
-                                <img src="{{item.Item.Image}}">
-                            </ion-col>
+                        <ion-grid>
+                            <ion-row>
 
-                            <ion-col col-7>
-                                <ion-icon name="remove-circle" (click)="changeQuantity(i,false)"></ion-icon>
-                                &nbsp;
-                                <input type="text" size="1" name="quantity" style="color:black" value="{{item.Quantity}}"> &nbsp;
-                                <ion-icon name="add-circle" (click)="changeQuantity(i,true)"></ion-icon>
-                               
-                            </ion-col>
+                                <ion-col col-8>
+                                    <p> <strong>{{item.Item.Name}}</strong><br> {{item.Restaurant}}
+                                    </p>
+                                </ion-col>
 
-                        </ion-row>
-                    </ion-grid>
+                                <ion-col col-4>
+                                    <div class="price"> &#8377; {{item.Item.Price}} </div>
+                                </ion-col>
 
-                    <ion-grid>
-                        <ion-row>
-
-                            <ion-col col-8>
-                                <p> <strong>{{item.Item.Name}}</strong><br> {{item.Restaurant}}
-                                </p>
-                            </ion-col>
-
-                            <ion-col col-4>
-                                <div class="price"> &#8377; {{item.Item.Price}} </div>
-                            </ion-col>
-
-                        </ion-row>
-                    </ion-grid>
-                </ion-card-content>
-            </ion-card>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-card-content>
+                </ion-card>
+            </div>
         </div>
     </div>
 </ion-content>

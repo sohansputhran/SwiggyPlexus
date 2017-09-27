@@ -6,14 +6,15 @@
 
 </ion-header>
 
-<ion-content class="card-background-page">
-    <ion-list *ngFor='let course of courses'>
-        <ion-item (click)="selectedCourse(course)">
-            <ion-card>
-                <img src="{{course.Image}}" />
-                <div class="card-title">{{course.Name}}</div>
-            </ion-card>
-        </ion-item>
-    </ion-list>
-
+<ion-content padding class="card-background-page">
+    <div class="backgd">
+        <ion-list *ngFor='let course of courses'>
+            <ion-item (click)="selectedCourse(course)">
+                <ion-card>
+                    <img src="{{course.Image}}" />
+                    <div class="card-title">{{course.Name}}</div>
+                </ion-card>
+            </ion-item>
+        </ion-list>
+    </div>
 </ion-content>
