@@ -3,6 +3,7 @@
 }
 
 page-home {
+    
     p.location {
         color: rgb(133, 135, 133);
     }
@@ -290,4 +291,27 @@ page-home {
             transform: matrix3d(2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
         }
     }
+}
+.alert-md .alert-button {
+    color: #f4f4f4;  
+ }
+ .alert-md .alert-head {
+     color: rgba(211, 84, 0,1.0);
+     background-color: rgba(211, 84, 0,1.0);
+ }
+ .alert-md [aria-checked=true] .alert-radio-label {
+     color: rgba(211, 84, 0,1.0);
+ }
+ .alert-md .alert-radio-inner {
+     background-color: rgba(211, 84, 0,1.0);
+ }
+ .alert-md .alert-button-group {
+     background-color: rgba(211, 84, 0,1.0);
+ }
+ .alert-md [aria-checked=true] .alert-radio-icon {
+    border-color: rgba(211, 84, 0,1.0);
+}
+.toolbar-background-md {
+    border-color: rgba(211, 84, 0,1.0);
+    background: rgba(211, 84, 0,1.0);
 }
