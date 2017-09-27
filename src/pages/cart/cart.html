@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar color="primary">
+    <ion-navbar color="danger">
         <ion-title>Cart</ion-title>
     </ion-navbar>
 </ion-header>
@@ -22,7 +22,7 @@
                         </ion-col>
 
                         <ion-col col-5>
-                            <button ion-button block (click)="saveFunction()" [disabled]="isSaveDisable" item-right>Save</button>
+                            <button ion-button block (click)="saveFunction()" [disabled]="isSaveDisable" color="danger"item-right>Save</button>
                         </ion-col>
 
                     </ion-row>
@@ -77,11 +77,11 @@
 </ion-content>
 
 <ion-footer>
-    <ion-toolbar>
+   
 
         <div class="total">
             <strong>Total&nbsp;:{{total}}</strong>
         </div>
         <button ion-button block (click)="checkoutFunction()" [disabled]="isCheckoutDisable" color="danger">Checkout</button>
-    </ion-toolbar>
+    
 </ion-footer>
