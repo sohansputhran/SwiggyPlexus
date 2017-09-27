@@ -1,59 +1,63 @@
-h1.restaurant {
-    text-align: left;
-}
-
-.card-title {
-    padding: 20px 0px 0px 10px;
-    font-size: 1.5rem;
-}
-.veg{
-    margin-left:22px;   
-}
-.itemHeader {
-    .uppertop {
-        font-size: 2.2rem;
-        margin: 15px 10px 10px 10px;
+page-menu {
+    h1.restaurant {
+        text-align: left;
     }
-}
-.label{
-    color:black;
-    display: inline;
-    font-size: 100%;
-    text-align: right;
-    margin-right:0px;
-}
-.recommended{
-    margin-top:1px;
-    margin-left:22px;
-}
-.price {
-    text-align: left;
-    color: green;
-    margin: 10px 5px;
-    padding-left: 10px;
-}
-
-.add {
-    text-align: right;
-    color: #807E00;
-    margin-top: 0px;
-    padding-right: 10px;
-    p {
-        text-indent: 50px;
+    .card-title {
+        padding: 20px 0px 0px 10px;
+        font-size: 1.5rem;
     }
-    .price6 {
+    .veg {
+        margin-left: 22px;
+    }
+    .itemHeader {
+        .uppertop {
+            font-size: 2.2rem;
+            margin: 15px 10px 10px 10px;
+            text-align: center;
+        }
+    }
+    img {
+        max-width: 100%;
+    }
+    .label {
+        color: black;
+        display: inline;
+        font-size: 100%;
+        text-align: right;
+        margin-right: 0px;
+    }
+    .recommended {
+        margin-top: 1px;
+        margin-left: 22px;
+    }
+    .price {
         text-align: left;
         color: green;
         margin: 10px 5px;
         padding-left: 10px;
     }
-    .add6 {
+    .add {
         text-align: right;
-        color: green;
+        color: #807E00;
         margin-top: 0px;
         padding-right: 10px;
         p {
             text-indent: 50px;
+        }
+        .price6 {
+            text-align: left;
+            color: green;
+            margin: 10px 5px;
+            padding-left: 10px;
+        }
+        .add6 {
+            text-align: right;
+            color: green;
+            margin-top: 0px;
+            padding-right: 10px;
+            p {
+                text-indent: 50px;
+            }
         }
     }
 }
