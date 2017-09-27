@@ -49,7 +49,7 @@ getItemsList(): Promise<any>{
 
     let toast = this.toastCtrl.create({                     //Displaying a toast message after adding the item to the cart
       message: item.Name + ' has been added to Cart!',
-      duration: 200,
+      duration: 500,
       position: 'bottom',
       closeButtonText: 'Ok'
     });
@@ -96,6 +96,14 @@ getItemsList(): Promise<any>{
   save(items){
     this.itemsArray = items;
     this.storage.set("Items",this.itemsArray);
+
+    let toast = this.toastCtrl.create({               
+      message: 'Your Cart has been saved.',
+      duration: 1000,
+      position: 'bottom',
+      closeButtonText: 'Ok'
+    });
+    toast.present();
   }
 }
 
