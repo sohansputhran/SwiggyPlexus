@@ -81,7 +81,7 @@ getItemsList(): Promise<any>{
     })
   }
   checkout(){
-    this.storage.clear();
+    this.storage.remove("Items");
     let toast = this.toastCtrl.create({
       message: 'Your Order has been placed.',
       duration: 2000,

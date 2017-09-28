@@ -13,18 +13,18 @@
                 </ion-col>
 
                 <ion-col col-3>
-                    <button ion-button item-right (click)="changeInfo()" color ="danger"clear>EDIT</button>
+                    <button ion-button item-right (click)="changeInfo()" color="danger" clear>EDIT</button>
                 </ion-col>
             </ion-row>
 
             <ion-row>
 
-                <ion-col col-5>
-                    <div class="num">{{num}}</div>
+                <ion-col col-4>
+                    <div class="num">{{userAccount.phoneNo}}</div>
                 </ion-col>
                 <ion-col col-2>.</ion-col>
-                <ion-col col-5>
-                    <div class="email"></div>{{email}}
+                <ion-col col-6>
+                    <div class="email" text-align="right"></div>{{userAccount.email}}
                 </ion-col>
             </ion-row>
         </p>
@@ -61,7 +61,7 @@
 
 
     <div class="logout">
-        <button ion-button item-right color ="danger" block outline>
+        <button ion-button item-right color="danger" block outline>
             Log Out
           </button>
     </div>

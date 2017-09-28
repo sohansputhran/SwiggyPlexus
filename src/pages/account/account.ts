@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController, AlertController } from 'ionic-angular';
 import { Storage } from "@ionic/storage";
 import {LoginPage}  from "../login/login";
 import { SetPasswordPage } from "../set-password/set-password"
@@ -21,11 +21,10 @@ import { ActionSheetController } from 'ionic-angular';
 export class AccountPage {
 
   userAccount: any;
-  num = "1234567890";
-  email = "abc@abc.com";
   info: FormGroup;
 
-  constructor(public navCtrl: NavController,public actionSheetCtrl: ActionSheetController, public navParams: NavParams, public storage: Storage) {
+
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public alertCtrl: AlertController,public actionSheetCtrl: ActionSheetController, public navParams: NavParams, public storage: Storage) {
     this.userAccount = this.getUserInfo();
     this.info = new FormGroup({
       number: new FormControl('', Validators.required),
@@ -45,7 +44,48 @@ export class AccountPage {
   }
 
   changeInfo(){
-      
+    console.log("userAccount: ", this.userAccount);
+    let alert = this.alertCtrl.create({
+      title: 'Change User Information',
+      inputs: [
+        {
+          name: 'phoneNumber',
+          placeholder: this.userAccount.phoneNo
+        },
+        {
+          name: 'email',
+          placeholder: this.userAccount.email
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+            text: 'Save',
+            role: 'save',
+            handler: data => {
+              console.log('Save clicked');
+              this.storage.set("USERID", {username : this.userAccount.username, password: this.userAccount.password, phoneNo: data.phoneNumber, email: data.email});
+                let toast = this.toastCtrl.create({                   
+                  message: "Changes are saved",
+                  duration: 2000,
+                  position: 'bottom',
+                  closeButtonText: 'Ok'
+                });
+                toast.present();
+              }
+        }
+      ]
+    });
+    alert.present();
+    alert.onDidDismiss(()=>{
+      this.getUserInfo();
+    })
     }
 
   changePassword(){

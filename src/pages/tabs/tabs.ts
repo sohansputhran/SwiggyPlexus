@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CartPage } from "../cart/cart";
-import {LoginPage}  from "../login/login";
+
 import { AccountPage } from '../account/account';
 import { HomePage } from '../home/home';
 import {Storage} from '@ionic/storage';
 import {NavController} from 'ionic-angular';
+import {LoginPage}  from "../login/login";
 import {SignupPage} from '../signup/signup';
 
 /**
@@ -23,9 +24,10 @@ export class TabsPage {
   tab2Root = CartPage;
   tab3Root = AccountPage;
 
-  constructor(public storage:Storage,public navCtrl:NavController) {  
+  constructor(public navCtrl:NavController, public storage:Storage) {  
     this.userAccount();
   }
+
   ionViewDidEnter() {
   
   }
