@@ -5,11 +5,13 @@ import { RestaurantPage } from "../restaurant/restaurant";
 import { MenuPage } from "../menu/menu";
 
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  counter: boolean = false;
   restaurants: any;
   location: number = 1;
   filterType: any = "Rating";
@@ -18,23 +20,13 @@ export class HomePage {
   tabBarElement: any;
   
   constructor(public navCtrl: NavController, private apiService: ApiService) {
-    this.tabBarElement = document.querySelector('.tabbar');
     this.apiService.GetRestaurants(this.location).then(restaurants =>{
       this.restaurants = restaurants;
       this.restCount = this.restaurants.length;
       this.filters();
     })
-    
   }
   
-  ionViewDidLoad() {
-    this.tabBarElement.style.display = 'none';
-    setTimeout(() => {
-      this.splash = false;
-      this.tabBarElement.style.display = 'flex';
-    }, 4000);
-  }
-
   locationChanged(){
     this.apiService.GetRestaurants(this.location).then(restaurants =>{
       this.restaurants = restaurants;

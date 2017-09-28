@@ -17,7 +17,7 @@ export class UserdetailProvider {
   isPasswordValid(password):Promise <any>{
     return new Promise (resolve =>{this.storage.get('USERID').then((value) => {
       this.getUserDetails = value;
-      if (this.getUserDetails[0].password == password) {
+      if (this.getUserDetails.password == password) {
         console.log("inside if",this.getUserDetails);
           resolve(true);
         }else{
@@ -33,7 +33,7 @@ export class UserdetailProvider {
     this.storage.get('USERID').then((value) => {
       this.getUserDetails = value;
       if(this.getUserDetails.password == oldPassword) {
-          this.storage.set("USERID", {username : this.getUserDetails.username, password: newPassword});
+          this.storage.set("USERID", {username : this.getUserDetails.username, password: newPassword, phoneNo: this.getUserDetails.phoneNo, email: this.getUserDetails.email});
         }
     });
   }

@@ -6,10 +6,8 @@
 
 
 <ion-content padding class="backgd">
-
     <form [formGroup]="signin" (ngSubmit)="signInFunction()">
         <ion-list>
-
             <ion-item>
                 <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
             </ion-item>
@@ -17,4 +15,6 @@
         </ion-list>
         <button ion-button type="submit" color="danger" block item-left>Sign In</button>
     </form>
+
+    <a (click)="forgotPassword()">Forgot Password?</a>
 </ion-content>

@@ -17,17 +17,20 @@ import { ToastController } from 'ionic-angular';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-  signup:FormGroup
-  name:any
-  userDetail=[];
-  password:any
-  confirmPassword :any
+  signup:FormGroup;
+  name:any;
+  password:any;
+  confirmPassword :any;
+  phoneNo: number;
+  email: any;
   
   constructor(public toastCtrl:ToastController,public navCtrl: NavController, public navParams: NavParams,public usrDtl:UserdetailProvider) {
 	  this.signup = new FormGroup({
       name: new FormControl('', Validators.required),
       password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
       confirmPassword: new FormControl('', Validators.required),
+      phoneNo: new FormControl('', Validators.compose([Validators.required, Validators.pattern('[0-9]*')])),
+      email: new FormControl('', Validators.compose([Validators.required,Validators.pattern('[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}')]))
     });
   }
 
@@ -35,13 +38,14 @@ export class SignupPage {
     let userName=this.signup.value.name;
     let password = this.signup.value.password;
     let confirmPassword = this.signup.value.confirmPassword;
-  
+    let phoneNo = this.signup.value.phoneNo;
+    let email = this.signup.value.email;
+
     if(password == confirmPassword && password !="" ){
       console.log("user:",userName,"pass",password);
-      this.userDetail.push({username: userName, password : password});
-      this.usrDtl.setUserDetail(this.userDetail);
+      this.usrDtl.setUserDetail({username: userName, password : password, phoneNo: phoneNo, email: email});
       let toast = this.toastCtrl.create({                     
-        message:  'User Created!',
+        message:  'User Account Created!',
         duration: 2000,
         position: 'middle',
         closeButtonText: 'Ok'
@@ -51,7 +55,7 @@ export class SignupPage {
     }
     else{
       let toast = this.toastCtrl.create({                     
-        message:  'Entered passwords do not match! Please try again.',
+        message:  'User Account not Created! Enter correct data....',
         duration: 2000,
         position: 'middle',
         closeButtonText: 'Ok'
