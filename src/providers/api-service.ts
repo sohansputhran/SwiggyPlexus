@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class ApiService {
 baseUrl: string = 'http://localhost:24535/api/Data/';           //Replace this with ur ip address
+// baseUrl: string = 'http://192.175.5.5:24535/api/Data/'; 
 
 constructor(public http: Http) {
 }

@@ -8,13 +8,25 @@
 <ion-content padding class="backgd">
 
     <form [formGroup]="signin" (ngSubmit)="signInFunction()">
+        <div class="form-group">
         <ion-list>
 
             <ion-item>
-                <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+                <ion-input #login type="text"  placeholder="Password" formControlName="password"></ion-input>
+                <div *ngIf="signin.controls['password'].hasError['minlength']" class="alert alert-danger" >
+                        Please enter atleast 4 character
+                </div>
+                <div *ngIf="signin.controls['password'].hasError['maxlength']" class="alert alert-danger" >
+                        Please enter a valid password
+                </div>
+                <div *ngIf="signin.controls['password'].hasError['required']" class="alert alert-danger" >
+                        Please enter a password
+                </div>  
             </ion-item>
 
         </ion-list>
+   
+</div>
         <button ion-button type="submit" color="danger" block item-left>Sign In</button>
     </form>
 </ion-content>

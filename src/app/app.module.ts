@@ -18,7 +18,8 @@ import { AccountPage } from '../pages/account/account';
 //Components
 import {AccordianComponent} from '../components/accordian/accordian';
 import {BasiccardComponent} from '../components/basiccard/basiccard';
-
+// import {ShowHideInput} from '../components/show-hide-password/show-hide-input';
+// import {ShowHideContainer} from '../components/show-hide-password/show-hide-container';
 
 //modals
 import{ItemDetailModal} from '../modals/itemdetail/itemdetail'
@@ -40,6 +41,8 @@ import { UserdetailProvider } from '../providers/userdetail/userdetail';
     AccordianComponent,
     RestaurantPage,
     BasiccardComponent,
+    // ShowHideInput,
+    //  ShowHideContainer,
     MenuPage,
     SetPasswordPage,
     ItemDetailModal,
@@ -61,6 +64,9 @@ import { UserdetailProvider } from '../providers/userdetail/userdetail';
     AccordianComponent,
     RestaurantPage,
     BasiccardComponent,
+  //    ShowHideContainer,
+  //  ShowHideInput,
+
     MenuPage,
     SetPasswordPage,
     ItemDetailModal,

@@ -26,7 +26,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public toastCtrl: ToastController,public storage: Storage,public navParams: NavParams,public usrDtl:UserdetailProvider) {
     this.signin = new FormGroup({
       name: new FormControl('', Validators.required),
-      password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]),
+      password: new FormControl('fgfg', [Validators.required, Validators.minLength(4)]),
      
     });
   }
